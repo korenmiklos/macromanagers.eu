@@ -1,0 +1,49 @@
+publications:
+- text: Publications
+  url: "/"
+- text: CV
+  url: "/cv/"
+- text: Project
+  url: "/project/"
+- text: More
+  dropdown:
+  - text: Courses
+    url: "https://koren.dev"
+  - text: Software
+    url: "https://koren.dev/software/"
+  - text: Blog
+    url: "https://codedthinking.com"
+  - text: Codedthinking Story
+    url: "https://codedthinking.com/story/"
+
+courses:
+- text: Courses
+  url: "/"
+- text: Software
+  url: "/software/"
+- text: More
+  dropdown:
+  - text: Publications
+    url: "https://koren.mk"
+  - text: CV
+    url: "https://koren.mk/cv/"
+  - text: Blog
+    url: "https://codedthinking.com"
+  - text: Codedthinking Story
+    url: "https://codedthinking.com/story/"
+
+blog:
+- text: Blog
+  url: "/"
+- text: The story
+  url: "/story/"
+- text: More
+  dropdown:
+  - text: Courses
+    url: "https://koren.dev"
+  - text: Software
+    url: "https://koren.dev/software/"
+  - text: Publications
+    url: "https://koren.mk"
+  - text: CV
+    url: "https://koren.mk/cv/"

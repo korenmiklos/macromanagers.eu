@@ -1,0 +1,14 @@
+---
+layout: null
+---
+[
+  {% for item in site.courses %}
+    {
+      "title"    : "{{ item.title | escape }}",
+      "category" : "{{ item.category }}",
+      "tags"     : "{{ item.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ item.url }}",
+      "date"     : "{{ item.date }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

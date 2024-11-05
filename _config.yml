@@ -1,0 +1,89 @@
+---
+title: Macromanagers
+description: Lorem ipsum dolorem
+url: 
+baseurl: 
+lang: en
+permalink: "/:title/"
+
+remote_theme: korenmiklos/remote-theme
+
+website: courses # options: blog | courses | publications
+
+google_analytics: 
+
+paginate: 4
+paginate_path: "/blog/:num/" 
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+- jekyll-seo-tag
+- jekyll-paginate
+
+exclude:
+- vendor
+- ".bundle"
+- ".sass-cache"
+- config
+- Gemfile
+- Gemfile.lock
+- node_modules
+- log
+- tmp
+- Rakefile
+- package.json
+- CHANGELOG
+- LICENSE
+- README
+- "/docs"
+
+livereload: true
+
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name
+  courses:
+    output: true
+    permalink: /:collection/:name
+  posts:
+    output: true
+    permalink: /:collection/:name
+  software:
+    output: false
+  events:
+    output: true
+    permalink: /:collection/:name
+  datasets:
+    output: true
+    permalink: /:collection/:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+  - scope:
+      path: ""
+      type: courses
+    values:
+      layout: course
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: event
+  - scope:
+      path: ""
+      type: datasets
+    values:
+      layout: dataset
