@@ -1,1 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Courses | Macromanagers</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Courses" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Lorem ipsum dolorem" />
+<meta property="og:description" content="Lorem ipsum dolorem" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Macromanagers" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Courses" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Lorem ipsum dolorem","headline":"Courses","name":"Macromanagers","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="shortcut icon" type="image/png" href="http://localhost:4000/assets/images/favicon.png">
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+</head>
+
+  <body x-data="{ mobile: false }" class="relative">
+  
+    <header @click.outside="mobile = false"
+  class="bg-white transition duration-500 relative">
+  <div class="mx-auto max-w-7xl flex flex-wrap items-center space-x-8 justify-between px-6 lg:px-8 py-11 lg:py-12">
+    <a href="/">
+      <img class="h-14 lg:h-24" src="http://localhost:4000/assets/images/koren-dev.svg" height="96" alt="Macromanagers">
+    </a>
+
+    <div class="flex items-center flex-1 justify-end">
+            
+      <nav class="hidden lg:flex lg:mr-5">
+        
+          
+
+          
+            <a class="text-lg hover:text-red py-2.5 px-4 text-red" href="/" >Courses</a>
+          
+        
+          
+
+          
+            <a class="text-lg hover:text-red py-2.5 px-4 text-red" href="/software/" >Software</a>
+          
+        
+          
+
+          
+            <div class="relative" x-data="{ dropdown: false }">
+              <button type="button" @click.prevent="dropdown = ! dropdown"
+                :class="{ 'shadow-dropdown': dropdown, '': !(dropdown) }"
+                class="group bg-white inline-flex transform-none items-center text-lg py-2.5 px-4 rounded-t-md focus:outline-none text-red"
+                aria-expanded="false">
+                <div class="absolute top-3 left-0 right-0 -bottom-2 z-40 bg-white"></div>
+                <span class="relative z-50">More</span>
+                <svg
+                  class="ml-0.5 h-5 w-5 group-hover:text-red text-red transform-none relative z-50"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414.0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414.0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <div x-show="dropdown" :class="{ 'block': dropdown, 'hidden': !(dropdown) }"
+                x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 translate-y-0"
+                x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-100"
+                x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-0"
+                @click.outside="dropdown = false"
+                class="absolute -mt-1 z-30 w-screen max-w-[13rem] transform lg:left-0 hidden"
+                style="display: none;">
+                <div class="overflow-hidden rounded-md rounded-tl-none shadow-dropdown">
+                  <div class="relative grid gap-7 bg-white px-4 py-4">
+                    
+                                          
+                      <a href="https://koren.mk"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-dark hover:text-red">
+                        
+                        <div>
+                          <p class="text-lg">Publications</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="https://koren.mk/cv/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-dark hover:text-red">
+                        
+                        <div>
+                          <p class="text-lg">CV</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="https://codedthinking.com"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-dark hover:text-red">
+                        
+                        <div>
+                          <p class="text-lg">Blog</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="https://codedthinking.com/story/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-dark hover:text-red">
+                        
+                        <div>
+                          <p class="text-lg">Codedthinking Story</p>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+                    
+      </nav>
+
+      <div :class="{ 'block': mobile, 'hidden': !(mobile) }" 
+        class="w-full lg:w-72 xl:w-[21.25rem] absolute lg:relative bottom-0 right-0 px-4 lg:px-0 hidden lg:block">
+        <div class="w-full">
+          <label for="search-input" class="sr-only">Search</label>
+          <div class="relative px-1.5">
+            <input id="search-input" name="search" data-minchars="1" data-maxitems="30"
+              class="block relative z-20 w-full rounded-md border-0 bg-[#F9F9FF] py-3 pl-10 pr-3 text-blue ring-0 placeholder:text-gray-2 focus:ring-0 text-base sm:leading-6"
+              placeholder="Search for..." type="search" autocomplete="off">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 z-20">
+              <svg class="h-5 w-5 text-red" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>  
+            <ul class="absolute z-10 -top-2 left-0 right-0 w-full pt-16 px-4 pb-3 rounded-md text-sm shadow-xl bg-white text-gray-1 max-h-96 overflow-y-auto hidden" id="results-container"></ul>
+          </div>
+        </div>
+      </div>
+      <button @click="mobile = ! mobile" type="button" class="relative lg:hidden ml-4" aria-label="Open navigation">
+        <svg :class="{ 'hidden': mobile, 'block': !(mobile) }" class="w-[1.625rem] h-[1.625rem]" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="26" y="6.65479" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 6.65479)" fill="#E61E25"/>
+          <rect x="26" y="16.25" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 16.25)" fill="#E61E25"/>
+          <rect x="26" y="25.8452" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 25.8452)" fill="#E61E25"/>
+        </svg>
+        <svg :class="{ 'block': mobile, 'hidden': !(mobile) }" class="w-[1.625rem] h-[1.625rem] hidden" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="26" y="6.65479" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 6.65479)" fill="#E61E25"/>
+          <rect x="26" y="16.25" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 16.25)" fill="#E61E25"/>
+          <rect x="26" y="25.8452" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 25.8452)" fill="#E61E25"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div x-show="mobile"
+    :class="{ 'block': mobile, 'hidden': !(mobile) }"
+    x-transition:enter="duration-200 ease-out"
+    x-transition:enter-start="opacity-0 scale-95"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="duration-100 ease-in"
+    x-transition:leave-start="opacity-100 scale-100"
+    x-transition:leave-end="opacity-0 scale-95"
+    class="z-10 origin-top transform transition hidden lg:hidden"
+    >
+    <div class="overflow-hidden bg-white">
+      <div class="space-y-1 p-6 pb-20">
+        
+          
+
+          
+            <a href="/" class="block py-4 text-2xl font-bold uppercase text-red" 
+            >Courses</a>
+          
+        
+          
+
+          
+            <a href="/software/" class="block py-4 text-2xl font-bold uppercase text-red" 
+            >Software</a>
+          
+        
+          
+
+          
+            <div x-data="{ accordion: false }">
+              <a
+                href="#"
+                class="flex items-center py-4 text-2xl font-bold uppercase text-red"
+                @click.prevent="accordion = ! accordion"
+              >
+                <span class="mr-4">More</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="{ 'rotate-90': accordion, 'transform-none': !(accordion) }"
+                  class="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <div x-show="accordion" :class="{ 'block': accordion, 'hidden': !(accordion) }">
+                
+                                      
+                  <a href="https://koren.mk" class="py-4 block text-lg text-dark hover:text-red">Publications</a>
+                
+                                      
+                  <a href="https://koren.mk/cv/" class="py-4 block text-lg text-dark hover:text-red">CV</a>
+                
+                                      
+                  <a href="https://codedthinking.com" class="py-4 block text-lg text-dark hover:text-red">Blog</a>
+                
+                                      
+                  <a href="https://codedthinking.com/story/" class="py-4 block text-lg text-dark hover:text-red">Codedthinking Story</a>
+                
+              </div>
+            </div>
+          
+         
+      </div>
+    </div>
+  </div>
+</header>
+
+<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+<script>
+	window.simpleJekyllSearch = new SimpleJekyllSearch({
+		searchInput: document.getElementById('search-input'),
+		resultsContainer: document.getElementById('results-container'),
+		searchResultTemplate: '<li><a class="py-2 block leading-tight hover:text-red" href="{url}">{title}</a></li>',
+		noResultsText: '<li class="no-results py-3">No results found</li>',
+		json: "/search-courses.json"
+	});
+	
+	searchResults();
+
+  var search = document.getElementById("search-input");
+  var results = document.getElementById("results-container");
+
+  search.addEventListener('input', function() {
+    if (search.value === '') {
+        results.classList.add('hidden');
+    } else {
+        results.classList.remove('hidden');
+    }
+  });
+
+	function searchResults() {
+
+		var currentItem = null;
+		var search = document.getElementById("search-input");
+		var results = document.getElementById( "results-container");
+
+		function removeActive() {
+			for (i = 0; i < results.children.length; i++) {
+				// results.children[i].classList.remove("bg-slate-50");
+        results.children[i].classList.remove("text-red");
+			}
+		}
+
+		results.addEventListener("mouseover", function(event) {
+
+			removeActive();
+			// event.target.parentElement.classList.add("bg-slate-50");
+      event.target.parentElement.classList.add("text-red");
+			currentItem = null;
+
+		});
+
+		results.addEventListener("mouseout", function(event) {
+			// event.target.parentElement.classList.remove("bg-slate-50");
+      event.target.parentElement.classList.remove("text-red");
+		});
+
+
+		search.addEventListener("keyup", function(event) {
+
+			var resultItems = results.children;
+			var resultCount = results.children.length;
+
+			if (event.keyCode === 40) {
+
+				if (currentItem < (resultCount - 1)) {
+					if (currentItem === null) {
+						currentItem = 0;
+					} else {
+						removeActive();
+						currentItem++;
+					}
+					removeActive();
+					// resultItems[currentItem].classList.add("bg-slate-50");
+          resultItems[currentItem].classList.add("text-red");
+				}
+
+			} else if (event.keyCode === 38) {
+				if (currentItem > 0) {
+					if (currentItem === null) {
+						currentItem = 0;
+					} else {
+						removeActive();
+						currentItem--;
+					}
+					removeActive();
+					// resultItems[currentItem].classList.add("bg-slate-50");
+          resultItems[currentItem].classList.add("text-red");
+				}
+
+			} else if (event.keyCode === 13 && currentItem !== null) {
+        resultItems[currentItem].children[0].click();
+      }
+
+		});
+
+	}
+</script>
+
+
+
+
+    
+<div class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="md:hidden h-auto w-full absolute top-0 left-0 right-0 bottom-0" src="http://localhost:4000/assets/images/koren-dev-hero-sm-1.svg" alt="">
+    <img class="md:hidden w-[74%] absolute bottom-14 -left-1 z-10" src="http://localhost:4000/assets/images/koren-dev-hero-sm-2.svg" alt="">
+    <img class="hidden md:block object-cover object-center h-full w-full" src="http://localhost:4000/assets/images/koren-dev-hero.svg" alt="">
+  </div>
+  <div class="mx-auto max-w-5xl px-6 lg:px-8 pt-24 lg:pt-6 lg:pb-24 xl:pb-40 relative">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <div class="grid md:grid-cols-2 items-end gap-14 md:gap-0">
+          <div class="md:pr-12">
+            <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">Coding for Economists</h1>
+            
+              <p class="text-lg leading-relaxed text-gray-2 mt-4 max-w-2xl mx-auto line-clamp-2">This course teaches how to organize data and code on your computer, how to write simple programs in Python to automate tasks, and how to use Stata throughout the steps of the your research process.</p>
+            
+            <a class="mt-9 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="/courses/coding-for-economists" >
+              <span>View now</span>
+              <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>            
+            </a>  
+          </div>
+          <div class="-mx-6 md:mx-0">
+            <div class="w-[68.5%] md:w-full relative">
+              <div class="aspect-w-16 aspect-h-16 md:aspect-h-12 md:rounded overflow-hidden">
+                <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" alt="Coding for Economists">
+              </div>
+              <svg class="absolute -left-14 top-16 hidden md:block" width="84" height="32" viewBox="0 0 84 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.918 10.5278H71.6448C72.4554 10.5278 73.1125 11.185 73.1125 11.9956V21.0278H12.3858C11.5751 21.0278 10.918 20.3707 10.918 19.56V10.5278Z" fill="#E61E25"/>
+                <path d="M0.417969 1.49562C0.417969 0.684982 1.07512 0.027832 1.88575 0.027832H9.45018C10.2608 0.027832 10.918 0.684982 10.918 1.49562V10.5278H1.88575C1.07512 10.5278 0.417969 9.87068 0.417969 9.06005V1.49562Z" fill="#E61E25"/>
+                <path d="M83.6123 30.06C83.6123 30.8707 82.9552 31.5278 82.1445 31.5278L74.5801 31.5278C73.7695 31.5278 73.1123 30.8707 73.1123 30.06L73.1123 21.0278L82.1445 21.0278C82.9552 21.0278 83.6123 21.685 83.6123 22.4956L83.6123 30.06Z" fill="#E61E25"/>
+              </svg>
+              <svg class="absolute -right-5 bottom-20 hidden md:block" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.500977 1.72706C0.500977 0.916427 1.15813 0.259277 1.96876 0.259277H9.53319C10.3438 0.259277 11.001 0.916427 11.001 1.72706V10.7593H1.96876C1.15813 10.7593 0.500977 10.1021 0.500977 9.29149V1.72706Z" fill="#E61E25"/>
+                <path d="M21.501 1.72706C21.501 0.916427 22.1581 0.259277 22.9688 0.259277H30.5332C31.3438 0.259277 32.001 0.916427 32.001 1.72706V9.29149C32.001 10.1021 31.3438 10.7593 30.5332 10.7593H21.501V1.72706Z" fill="#E61E25"/>
+                <path d="M11.001 30.2915C11.001 31.1021 10.3438 31.7593 9.53319 31.7593L1.96876 31.7593C1.15813 31.7593 0.500977 31.1021 0.500976 30.2915L0.500976 22.7271C0.500976 21.9164 1.15812 21.2593 1.96876 21.2593L11.001 21.2593L11.001 30.2915Z" fill="#E61E25"/>
+                <path d="M21.501 19.7915C21.501 20.6021 20.8438 21.2593 20.0332 21.2593L11.001 21.2593L11.001 10.7593L21.501 10.7593L21.501 19.7915Z" fill="#E61E25"/>
+              </svg>              
+            </div>
+          </div>
+        </div>
+        
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<div class="mx-auto max-w-7xl px-6 lg:px-8 pb-20 pt-24 lg:pt-12">
+  <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2] md:text-center">Courses</h2>
+  <div class="swiper swiper-courses mt-8 lg:mt-12 overflow-hidden relative -mr-6 sm:mr-0" aria-label="Slider">
+    <div class="swiper-wrapper flex">
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Discovering Discrimination with Data">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ceu</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Discovering Discrimination with Data</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">This course is an immersive simulation game using the statistical concepts learned earlier to argue about patterns of gender discrimination in the workplace. The focus is on interpreting and communicating data analysis results rather than performing statistical calculations. Various assignments, including readings, essays, and presentations, reinforce the learned concepts.</p>
+  
+  <a href="/courses/discovering-discrimination-with" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Empirical Research Seminar">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ceu</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Empirical Research Seminar</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">This course guides you through the process of empirical research in applied microeconomics, from selecting research ideas and appropriate methods, through collecting data, to submitting your final paper to a journal. We won't talk about these steps, we will do these steps together. Each student and instructor completes a paper during the two terms of the course, which they submit at the end of the course to peer-reviewed journals.</p>
+  
+  <a href="/courses/empirical-research-seminar" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Advanced Macroeconomics">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ceu</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Advanced Macroeconomics</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">The course introduces two building blocks of macroeconomic modeling: forward-looking dynamic models and general equilibrium with heterogeneous agents. These tools are applied to problems of economic growth, labor market search, and industry dynamics. Quantitative model solutions are also illustrated using the Julia programming language.</p>
+  
+  <a href="/courses/advanced-macroeconomics" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Reproducible Research from Day One">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">dataeditor</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Reproducible Research from Day One</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">missing</p>
+  
+  <a href="/courses/reproducible-research-from" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Engineering and Analytics">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ceu</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Engineering and Analytics</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">Data engineering is increasingly important to leverage the value created by data scientists and analysts. Executives who understand the basics of data engineering can help their team create data products that are easy to change in response to ever changing business requirements. This course offers a high-level overview of the types of decisions data engineers have to make, and a hands-on illustration of the most common problems on real-world data. The key goal of this course is to help executives make decisions about the data analytics efforts of their business and ask the right questions from their team. This will help increase the Return On Investment of analytics projects so that data can serve as a competitive advantage of the business.</p>
+  
+  <a href="/courses/engineering-and-analytics" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Coding for Economists">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ceu</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Coding for Economists</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">This course teaches how to organize data and code on your computer, how to write simple programs in Python to automate tasks, and how to use Stata throughout the steps of the your research process.</p>
+  
+  <a href="/courses/coding-for-economists" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Introduction to the Command Line for Economics">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">carpentries</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Introduction to the Command Line for Economics</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">This lesson will introduce learners to fundamental skills needed for working with their computers through a command-line interface (using the bash shell). They will learn how to navigate their file system, computationally manipulate their files (e.g. copying, moving, renaming), search files, redirect output and write shell scripts. By the end of the lesson, learners will be prepared to move on to using more advanced command line tools.</p>
+  
+  <a href="/courses/introduction-to-the" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="Economics with Stata">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">carpentries</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Economics with Stata</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">missing</p>
+  
+  <a href="/courses/economics-with-stata" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+        <div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/course.jpg" loading="lazy" alt="International Trade">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">missing</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">International Trade</h3>
+  
+    <p class="text-gray-2 text-lg mt-1 line-clamp-2">The course examines alternative theories of the causes of international trade and its impact on national economies (welfare, productivity, income inequality). It evaluates these theories in light of recent empirical evidence.</p>
+  
+  <a href="/courses/international-trade" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>
+
+      
+    </div>
+    <div class="flex justify-between items-center mt-12 lg:mt-24 space-x-4 max-w-2xl mx-auto pr-6 sm:pr-0">
+      <div class="swiper-button-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>        
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>        
+      </div>
+    </div>
+    <div class="absolute top-0 right-0 bottom-16 w-1/5 bg-gradient-to-r from-transparent to-white/75 sm:hidden"></div>
+  </div>
+  <script>
+    var swiper = new Swiper(".swiper-courses", {
+      slidesPerView: 1.3,
+      spaceBetween: 20,
+      // Responsive breakpoints
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20
+        }
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    
+    });
+  </script>
+</div>
+
+<div class="relative overflow-hidden">
+  <svg class="absolute md:hidden left-1/4 top-20" width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0L9.03222 0C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222L0 1.46779Z" fill="#E61E25"/>
+    <path d="M21 1.46779C21 0.65715 21.6571 0 22.4678 0L30.0322 0C30.8428 0 31.5 0.65715 31.5 1.46778V9.03222C31.5 9.84285 30.8429 10.5 30.0322 10.5H21V1.46779Z" fill="#E61E25"/>
+    <path d="M21 19.5322C21 20.3429 20.3429 21 19.5322 21L11.9678 21C11.1572 21 10.5 20.3429 10.5 19.5322L10.5 10.5L21 10.5L21 19.5322Z" fill="#E61E25"/>
+  </svg>    
+  <svg class="absolute md:hidden right-0 top-2" width="156" height="177" viewBox="0 0 156 177" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M51.2471 171.594V155.014H67.8273C70.3125 155.014 72.3273 157.028 72.3273 159.514L72.3273 171.594C72.3273 174.079 70.3125 176.094 67.8273 176.094H55.7471C53.2618 176.094 51.2471 174.079 51.2471 171.594Z" fill="#D4D2E3"/>
+    <path d="M4.5 103.768H51.2472V155.015H4.5C2.01472 155.015 0 153 0 150.515V108.268C0 105.782 2.01471 103.768 4.5 103.768Z" fill="#D4D2E3"/>
+    <path d="M51.8379 103.767V4.5C51.8379 2.01472 53.8526 0 56.3379 0H155.062V103.767H51.8379Z" fill="#D4D2E3"/>
+    <path d="M52.5 43.5H113.227C114.037 43.5 114.695 44.1571 114.695 44.9678V54H53.9678C53.1571 54 52.5 53.3429 52.5 52.5322V43.5Z" fill="#E61E25"/>
+    <path d="M42 34.4678C42 33.6571 42.6571 33 43.4678 33H51.0322C51.8429 33 52.5 33.6571 52.5 34.4678V43.5H43.4678C42.6571 43.5 42 42.8429 42 42.0322V34.4678Z" fill="#E61E25"/>
+    <path d="M125.194 63.0322C125.194 63.8429 124.537 64.5 123.727 64.5L116.162 64.5C115.351 64.5 114.694 63.8428 114.694 63.0322L114.694 54L123.727 54C124.537 54 125.194 54.6571 125.194 55.4678L125.194 63.0322Z" fill="#E61E25"/>
+  </svg>    
+  <svg class="absolute md:hidden left-0 top-[37%]" width="268" height="94" viewBox="0 0 268 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M196.642 4.49999C196.642 2.01471 194.627 -1.71448e-07 192.142 -3.82939e-07L4.5002 -1.63508e-05C2.01492 -1.65623e-05 0.000213448 2.0147 0.000213231 4.49998L0.000205908 88.6678C0.000205692 91.1531 2.01492 93.1678 4.50021 93.1678L192.142 93.1679C194.627 93.1679 196.642 91.1531 196.642 88.6679L196.642 4.49999Z" fill="#D4D2E3"/>
+    <path d="M236 62.9033C236 62.0927 236.657 61.4355 237.468 61.4355H245.032C245.843 61.4355 246.5 62.0927 246.5 62.9033V71.9355H237.468C236.657 71.9355 236 71.2784 236 70.4678V62.9033Z" fill="#E61E25"/>
+    <path d="M257 62.9033C257 62.0927 257.657 61.4355 258.468 61.4355H266.032C266.843 61.4355 267.5 62.0927 267.5 62.9033V70.4678C267.5 71.2784 266.843 71.9355 266.032 71.9355H257V62.9033Z" fill="#E61E25"/>
+    <path d="M246.5 91.4678C246.5 92.2784 245.843 92.9355 245.032 92.9355L237.468 92.9355C236.657 92.9355 236 92.2784 236 91.4678L236 83.9033C236 83.0927 236.657 82.4355 237.468 82.4355L246.5 82.4355L246.5 91.4678Z" fill="#E61E25"/>
+    <path d="M257 80.9678C257 81.7784 256.343 82.4355 255.532 82.4355L246.5 82.4355L246.5 71.9355L257 71.9355L257 80.9678Z" fill="#E61E25"/>
+  </svg>    
+  <svg class="absolute hidden md:block right-36 top-10" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0H9.03222C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222V1.46779Z" fill="#E61E25"/>
+    <path d="M21 1.46779C21 0.65715 21.6571 0 22.4678 0H30.0322C30.8428 0 31.5 0.65715 31.5 1.46778V9.03222C31.5 9.84285 30.8429 10.5 30.0322 10.5H21V1.46779Z" fill="#E61E25"/>
+    <path d="M10.5 30.0322C10.5 30.8429 9.84285 31.5 9.03222 31.5L1.46778 31.5C0.65715 31.5 -5.74498e-08 30.8429 -1.28318e-07 30.0322L-7.89621e-07 22.4678C-8.60489e-07 21.6572 0.657148 21 1.46778 21L10.5 21L10.5 30.0322Z" fill="#E61E25"/>
+    <path d="M21 19.5322C21 20.3429 20.3429 21 19.5322 21L10.5 21L10.5 10.5L21 10.5L21 19.5322Z" fill="#E61E25"/>
+  </svg>
+  <svg class="absolute hidden md:block right-[40%] bottom-[38%]" width="84" height="32" viewBox="0 0 84 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.5 10.5H71.2268C72.0374 10.5 72.6946 11.1571 72.6946 11.9678V21H11.9678C11.1571 21 10.5 20.3429 10.5 19.5322V10.5Z" fill="#E61E25"/>
+    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0H9.03222C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222V1.46779Z" fill="#E61E25"/>
+    <path d="M83.1943 30.0322C83.1943 30.8429 82.5372 31.5 81.7266 31.5L74.1621 31.5C73.3515 31.5 72.6943 30.8428 72.6943 30.0322L72.6943 21L81.7266 21C82.5372 21 83.1943 21.6571 83.1943 22.4678L83.1943 30.0322Z" fill="#E61E25"/>
+  </svg>
+    
+  <div class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-20 lg:pt-28 lg:pb-16 relative">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-28 md:gap-0">
+        <div class="md:pl-12 xl:pl-28 md:order-last">
+          <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">Upcoming events</h2>
+          
+            <p class="text-lg leading-relaxed text-gray-2 mt-3.5 max-w-2xl mx-auto">A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor.</p>
+          
+          <a class="mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="/events/" >
+            <span>More events</span>
+            <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+          </a>  
+        </div>
+        <div>
+          <div class="swiper swiper-events overflow-hidden -mr-6 md:mr-0 relative" aria-label="Slider">
+            <div class="swiper-wrapper flex">
+              
+              
+              
+              
+              
+                <div class="swiper-slide shrink-0">
+                  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden relative">
+                    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/event.jpg" loading="lazy" alt="Command Line and Version Control">
+                    <div class="absolute top-0 left-0 bottom-0 w-1/3 bg-red text-white flex justify-center items-center flex-col px-3">
+                      <p class="font-bold text-xl uppercase">Jun</p>
+                      <p class="font-bold text-6xl leading-none my-2">01</p>
+                      <div class="bg-white/50 h-px w-full"></div>
+                      <p class="font-bold text-xs mt-4">2025</p>
+                    </div>
+                  </div>
+                  <ul class="flex flex-wrap gap-2 mt-5">
+                    
+                      <li class="uppercase text-xs text-white font-bold bg-blue rounded-sm px-3 pt-2 pb-1.5">topic label</li>
+                    
+                  </ul>
+                  <h3 class="mt-5 text-gray-1 font-bold text-xl">Command Line and Version Control</h3>
+                  
+                    <p class="text-gray-2 text-lg mt-1 line-clamp-2">Couple lines about the event</p>
+                  
+                  
+                    <p class="mt-3 flex space-x-1.5 items-center">
+                      <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.99984 18.3327C9.80539 18.3327 9.63873 18.2771 9.49984 18.166C9.36095 18.0549 9.25678 17.9091 9.18734 17.7285C8.92345 16.9507 8.59012 16.2216 8.18734 15.541C7.79845 14.8605 7.24984 14.0618 6.5415 13.1452C5.83317 12.2285 5.25678 11.3535 4.81234 10.5202C4.38178 9.68685 4.1665 8.6799 4.1665 7.49935C4.1665 5.87435 4.729 4.49935 5.854 3.37435C6.99289 2.23546 8.37484 1.66602 9.99984 1.66602C11.6248 1.66602 12.9998 2.23546 14.1248 3.37435C15.2637 4.49935 15.8332 5.87435 15.8332 7.49935C15.8332 8.76324 15.5901 9.81879 15.104 10.666C14.6318 11.4993 14.0832 12.3257 13.4582 13.1452C12.7082 14.1452 12.1387 14.9785 11.7498 15.6452C11.3748 16.298 11.0623 16.9924 10.8123 17.7285C10.7429 17.923 10.6318 18.0757 10.479 18.1868C10.3401 18.2841 10.1804 18.3327 9.99984 18.3327ZM9.99984 9.58268C10.5832 9.58268 11.0762 9.38129 11.479 8.97852C11.8818 8.57574 12.0832 8.08268 12.0832 7.49935C12.0832 6.91601 11.8818 6.42296 11.479 6.02018C11.0762 5.6174 10.5832 5.41602 9.99984 5.41602C9.4165 5.41602 8.92345 5.6174 8.52067 6.02018C8.11789 6.42296 7.9165 6.91601 7.9165 7.49935C7.9165 8.08268 8.11789 8.57574 8.52067 8.97852C8.92345 9.38129 9.4165 9.58268 9.99984 9.58268Z" fill="#5D5A88"/>
+                      </svg>
+                      <span class="text-gray-1 italic text-[0.9375rem]">Spain, Madrid</span>
+                    </p>
+                                  
+                  <a href="/events/event-1-copy" class="text-red mt-4 inline-block">Read more &rarr;</a>
+                </div>            
+              
+                <div class="swiper-slide shrink-0">
+                  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden relative">
+                    <img class="w-full h-full object-center object-cover" src="http://localhost:4000/assets/images/event.jpg" loading="lazy" alt="Command Line and Version Control">
+                    <div class="absolute top-0 left-0 bottom-0 w-1/3 bg-red text-white flex justify-center items-center flex-col px-3">
+                      <p class="font-bold text-xl uppercase">Apr</p>
+                      <p class="font-bold text-6xl leading-none my-2">01</p>
+                      <div class="bg-white/50 h-px w-full"></div>
+                      <p class="font-bold text-xs mt-4">2025</p>
+                    </div>
+                  </div>
+                  <ul class="flex flex-wrap gap-2 mt-5">
+                    
+                      <li class="uppercase text-xs text-white font-bold bg-blue rounded-sm px-3 pt-2 pb-1.5">topic label</li>
+                    
+                  </ul>
+                  <h3 class="mt-5 text-gray-1 font-bold text-xl">Command Line and Version Control</h3>
+                  
+                    <p class="text-gray-2 text-lg mt-1 line-clamp-2">Couple lines about the event</p>
+                  
+                  
+                    <p class="mt-3 flex space-x-1.5 items-center">
+                      <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.99984 18.3327C9.80539 18.3327 9.63873 18.2771 9.49984 18.166C9.36095 18.0549 9.25678 17.9091 9.18734 17.7285C8.92345 16.9507 8.59012 16.2216 8.18734 15.541C7.79845 14.8605 7.24984 14.0618 6.5415 13.1452C5.83317 12.2285 5.25678 11.3535 4.81234 10.5202C4.38178 9.68685 4.1665 8.6799 4.1665 7.49935C4.1665 5.87435 4.729 4.49935 5.854 3.37435C6.99289 2.23546 8.37484 1.66602 9.99984 1.66602C11.6248 1.66602 12.9998 2.23546 14.1248 3.37435C15.2637 4.49935 15.8332 5.87435 15.8332 7.49935C15.8332 8.76324 15.5901 9.81879 15.104 10.666C14.6318 11.4993 14.0832 12.3257 13.4582 13.1452C12.7082 14.1452 12.1387 14.9785 11.7498 15.6452C11.3748 16.298 11.0623 16.9924 10.8123 17.7285C10.7429 17.923 10.6318 18.0757 10.479 18.1868C10.3401 18.2841 10.1804 18.3327 9.99984 18.3327ZM9.99984 9.58268C10.5832 9.58268 11.0762 9.38129 11.479 8.97852C11.8818 8.57574 12.0832 8.08268 12.0832 7.49935C12.0832 6.91601 11.8818 6.42296 11.479 6.02018C11.0762 5.6174 10.5832 5.41602 9.99984 5.41602C9.4165 5.41602 8.92345 5.6174 8.52067 6.02018C8.11789 6.42296 7.9165 6.91601 7.9165 7.49935C7.9165 8.08268 8.11789 8.57574 8.52067 8.97852C8.92345 9.38129 9.4165 9.58268 9.99984 9.58268Z" fill="#5D5A88"/>
+                      </svg>
+                      <span class="text-gray-1 italic text-[0.9375rem]">Spain, Madrid</span>
+                    </p>
+                                  
+                  <a href="/events/event-1" class="text-red mt-4 inline-block">Read more &rarr;</a>
+                </div>            
+              
+            </div>
+            <div class="flex justify-between md:justify-center items-center mt-12 md:mt-16 space-x-4 max-w-2xl mx-auto pr-6 md:pr-0">
+              <div class="swiper-button-prev md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>        
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>        
+              </div>
+            </div>
+            <div class="absolute top-0 right-0 bottom-16 w-1/5 bg-gradient-to-r from-transparent to-white/75 lg:hidden"></div>
+          </div>
+          <script>
+            var swiper = new Swiper(".swiper-events", {
+              slidesPerView: 1.3,
+              spaceBetween: 20,
+              // Responsive breakpoints
+              breakpoints: {
+                1024: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                }
+              },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            
+            });
+          </script>      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="md:hidden h-auto w-full absolute top-0 left-0 right-0" src="http://localhost:4000/assets/images/koren-dev-software-sm.svg" alt="">
+    <img class="hidden md:block absolute top-0 left-0 h-3/5 w-auto" src="http://localhost:4000/assets/images/koren-dev-software.svg" alt="">
+  </div>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-20 lg:pt-28 lg:pb-16 relative">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-40 md:gap-0">
+      <div class="md:pr-12 xl:pr-28">
+        <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">Download software</h2>
+        
+          <p class="text-lg leading-relaxed text-gray-2 mt-3.5 max-w-2xl mx-auto">A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor.</p>
+        
+        <a class="mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="/software/" >
+          <span>More software</span>
+          <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>            
+        </a>  
+      </div>
+      <div>
+        <div class="swiper swiper-software overflow-hidden -mr-6 md:mr-0" aria-label="Slider">
+          <div class="swiper-wrapper flex">
+            
+            
+              <div class="swiper-slide shrink-0">
+  <div class="rounded-md bg-blue text-white p-4 h-44 text-[0.9375rem] font-light overflow-hidden">using Kezdi
+@use "distances.dta"
+@replace distance = 5 @if distance < 5</div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">julia</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Kezdi.jl</h3>
+  
+    <p class="text-gray-2 text-lg mt-1">A data analysis package for economists</p>
+  
+  
+  <a href="https://github.com/codedthinking/Kezdi.jl" class="text-red mt-4 inline-flex items-center space-x-1" target="_blank" rel="noopener" >
+    <span>Download</span>
+    <svg class="flex-none mb-1" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.728 8.30686C6.728 8.40286 6.70667 8.48819 6.664 8.56286C6.632 8.64819 6.15733 9.14419 5.24 10.0509L3.784 11.5069C3.70933 11.5815 3.58133 11.6189 3.4 11.6189C3.21867 11.6189 3.09067 11.5815 3.016 11.5069L1.32 9.81086C0.552 9.03219 0.152 8.61619 0.12 8.56286C0.0986663 8.52019 0.0826663 8.48286 0.0719996 8.45086L0.0719996 8.29086L0.0719996 8.11486C0.0826663 8.09353 0.0986663 8.06153 0.12 8.01886C0.226666 7.84819 0.328 7.74153 0.424 7.69886C0.562666 7.61353 0.765333 7.61353 1.032 7.69886C1.07467 7.72019 1.15467 7.78419 1.272 7.89086C1.38933 7.99753 1.608 8.21086 1.928 8.53086L2.728 9.33086L2.728 5.44286C2.728 2.90419 2.73867 1.58153 2.76 1.47486C2.81333 1.31486 2.88267 1.19753 2.968 1.12286C3.07467 1.02686 3.21867 0.978859 3.4 0.978859L3.496 0.978859C3.57067 0.978859 3.62933 0.989526 3.672 1.01086L3.688 1.01086C3.85867 1.12819 3.95467 1.22419 3.976 1.29886C4.02933 1.45886 4.06133 1.62953 4.072 1.81086C4.08267 1.99219 4.08267 2.50953 4.072 3.36286L4.072 9.33086L4.872 8.53086C5.20267 8.21086 5.42133 7.99753 5.528 7.89086C5.64533 7.78419 5.72533 7.72019 5.768 7.69886L5.96 7.63486C6.06667 7.61353 6.168 7.61886 6.264 7.65086C6.36 7.68286 6.44 7.73086 6.504 7.79486C6.58933 7.88019 6.64267 7.94953 6.664 8.00286C6.70667 8.07753 6.728 8.17886 6.728 8.30686Z" fill="#E61E25"/>
+    </svg>      
+  </a>
+  
+</div>
+
+            
+              <div class="swiper-slide shrink-0">
+  <div class="rounded-md bg-blue text-white p-4 h-44 text-[0.9375rem] font-light overflow-hidden">assert estimate1.coefficient.similar(estimate2.coefficient)
+assert estimate1.coefficient.significant() == estimate2.coefficient.significant()</div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ipsum</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Coding for Economists</h3>
+  
+    <p class="text-gray-2 text-lg mt-1">Use your computer effectively for reproducible research.</p>
+  
+  
+  <a href="/" class="text-red mt-4 inline-flex items-center space-x-1" >
+    <span>Download</span>
+    <svg class="flex-none mb-1" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.728 8.30686C6.728 8.40286 6.70667 8.48819 6.664 8.56286C6.632 8.64819 6.15733 9.14419 5.24 10.0509L3.784 11.5069C3.70933 11.5815 3.58133 11.6189 3.4 11.6189C3.21867 11.6189 3.09067 11.5815 3.016 11.5069L1.32 9.81086C0.552 9.03219 0.152 8.61619 0.12 8.56286C0.0986663 8.52019 0.0826663 8.48286 0.0719996 8.45086L0.0719996 8.29086L0.0719996 8.11486C0.0826663 8.09353 0.0986663 8.06153 0.12 8.01886C0.226666 7.84819 0.328 7.74153 0.424 7.69886C0.562666 7.61353 0.765333 7.61353 1.032 7.69886C1.07467 7.72019 1.15467 7.78419 1.272 7.89086C1.38933 7.99753 1.608 8.21086 1.928 8.53086L2.728 9.33086L2.728 5.44286C2.728 2.90419 2.73867 1.58153 2.76 1.47486C2.81333 1.31486 2.88267 1.19753 2.968 1.12286C3.07467 1.02686 3.21867 0.978859 3.4 0.978859L3.496 0.978859C3.57067 0.978859 3.62933 0.989526 3.672 1.01086L3.688 1.01086C3.85867 1.12819 3.95467 1.22419 3.976 1.29886C4.02933 1.45886 4.06133 1.62953 4.072 1.81086C4.08267 1.99219 4.08267 2.50953 4.072 3.36286L4.072 9.33086L4.872 8.53086C5.20267 8.21086 5.42133 7.99753 5.528 7.89086C5.64533 7.78419 5.72533 7.72019 5.768 7.69886L5.96 7.63486C6.06667 7.61353 6.168 7.61886 6.264 7.65086C6.36 7.68286 6.44 7.73086 6.504 7.79486C6.58933 7.88019 6.64267 7.94953 6.664 8.00286C6.70667 8.07753 6.728 8.17886 6.728 8.30686Z" fill="#E61E25"/>
+    </svg>      
+  </a>
+  
+</div>
+
+            
+              <div class="swiper-slide shrink-0">
+  <div class="rounded-md bg-blue text-white p-4 h-44 text-[0.9375rem] font-light overflow-hidden">assert estimate1.coefficient.similar(estimate2.coefficient)
+assert estimate1.coefficient.significant() == estimate2.coefficient.significant()</div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ipsum</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Coding for Economists</h3>
+  
+    <p class="text-gray-2 text-lg mt-1">Use your computer effectively for reproducible research.</p>
+  
+  
+  <a href="/" class="text-red mt-4 inline-flex items-center space-x-1" >
+    <span>Download</span>
+    <svg class="flex-none mb-1" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.728 8.30686C6.728 8.40286 6.70667 8.48819 6.664 8.56286C6.632 8.64819 6.15733 9.14419 5.24 10.0509L3.784 11.5069C3.70933 11.5815 3.58133 11.6189 3.4 11.6189C3.21867 11.6189 3.09067 11.5815 3.016 11.5069L1.32 9.81086C0.552 9.03219 0.152 8.61619 0.12 8.56286C0.0986663 8.52019 0.0826663 8.48286 0.0719996 8.45086L0.0719996 8.29086L0.0719996 8.11486C0.0826663 8.09353 0.0986663 8.06153 0.12 8.01886C0.226666 7.84819 0.328 7.74153 0.424 7.69886C0.562666 7.61353 0.765333 7.61353 1.032 7.69886C1.07467 7.72019 1.15467 7.78419 1.272 7.89086C1.38933 7.99753 1.608 8.21086 1.928 8.53086L2.728 9.33086L2.728 5.44286C2.728 2.90419 2.73867 1.58153 2.76 1.47486C2.81333 1.31486 2.88267 1.19753 2.968 1.12286C3.07467 1.02686 3.21867 0.978859 3.4 0.978859L3.496 0.978859C3.57067 0.978859 3.62933 0.989526 3.672 1.01086L3.688 1.01086C3.85867 1.12819 3.95467 1.22419 3.976 1.29886C4.02933 1.45886 4.06133 1.62953 4.072 1.81086C4.08267 1.99219 4.08267 2.50953 4.072 3.36286L4.072 9.33086L4.872 8.53086C5.20267 8.21086 5.42133 7.99753 5.528 7.89086C5.64533 7.78419 5.72533 7.72019 5.768 7.69886L5.96 7.63486C6.06667 7.61353 6.168 7.61886 6.264 7.65086C6.36 7.68286 6.44 7.73086 6.504 7.79486C6.58933 7.88019 6.64267 7.94953 6.664 8.00286C6.70667 8.07753 6.728 8.17886 6.728 8.30686Z" fill="#E61E25"/>
+    </svg>      
+  </a>
+  
+</div>
+
+            
+              <div class="swiper-slide shrink-0">
+  <div class="rounded-md bg-blue text-white p-4 h-44 text-[0.9375rem] font-light overflow-hidden">assert estimate1.coefficient.similar(estimate2.coefficient)
+assert estimate1.coefficient.significant() == estimate2.coefficient.significant()</div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    
+      <li class="uppercase text-xs text-blue font-bold bg-gray-3 rounded-sm px-4 py-1.5">ipsum</li>
+    
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">Coding for Economists</h3>
+  
+    <p class="text-gray-2 text-lg mt-1">Use your computer effectively for reproducible research.</p>
+  
+  
+  <a href="/" class="text-red mt-4 inline-flex items-center space-x-1" >
+    <span>Download</span>
+    <svg class="flex-none mb-1" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.728 8.30686C6.728 8.40286 6.70667 8.48819 6.664 8.56286C6.632 8.64819 6.15733 9.14419 5.24 10.0509L3.784 11.5069C3.70933 11.5815 3.58133 11.6189 3.4 11.6189C3.21867 11.6189 3.09067 11.5815 3.016 11.5069L1.32 9.81086C0.552 9.03219 0.152 8.61619 0.12 8.56286C0.0986663 8.52019 0.0826663 8.48286 0.0719996 8.45086L0.0719996 8.29086L0.0719996 8.11486C0.0826663 8.09353 0.0986663 8.06153 0.12 8.01886C0.226666 7.84819 0.328 7.74153 0.424 7.69886C0.562666 7.61353 0.765333 7.61353 1.032 7.69886C1.07467 7.72019 1.15467 7.78419 1.272 7.89086C1.38933 7.99753 1.608 8.21086 1.928 8.53086L2.728 9.33086L2.728 5.44286C2.728 2.90419 2.73867 1.58153 2.76 1.47486C2.81333 1.31486 2.88267 1.19753 2.968 1.12286C3.07467 1.02686 3.21867 0.978859 3.4 0.978859L3.496 0.978859C3.57067 0.978859 3.62933 0.989526 3.672 1.01086L3.688 1.01086C3.85867 1.12819 3.95467 1.22419 3.976 1.29886C4.02933 1.45886 4.06133 1.62953 4.072 1.81086C4.08267 1.99219 4.08267 2.50953 4.072 3.36286L4.072 9.33086L4.872 8.53086C5.20267 8.21086 5.42133 7.99753 5.528 7.89086C5.64533 7.78419 5.72533 7.72019 5.768 7.69886L5.96 7.63486C6.06667 7.61353 6.168 7.61886 6.264 7.65086C6.36 7.68286 6.44 7.73086 6.504 7.79486C6.58933 7.88019 6.64267 7.94953 6.664 8.00286C6.70667 8.07753 6.728 8.17886 6.728 8.30686Z" fill="#E61E25"/>
+    </svg>      
+  </a>
+  
+</div>
+
+            
+          </div>
+          <div class="flex justify-between md:justify-center items-center mt-12 md:mt-24 space-x-4 max-w-2xl mx-auto pr-6 md:pr-0">
+            <div class="swiper-button-prev md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </svg>        
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>        
+            </div>
+          </div>
+        </div>
+        <script>
+          var swiper = new Swiper(".swiper-software", {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
+            // Responsive breakpoints
+            breakpoints: {
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              }
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          
+          });
+        </script>      
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="relative">
+  <svg class="absolute top-32 left-28 hidden lg:block" width="84" height="32" viewBox="0 0 84 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.5 10.5H71.2268C72.0374 10.5 72.6946 11.1571 72.6946 11.9678V21H11.9678C11.1571 21 10.5 20.3429 10.5 19.5322V10.5Z" fill="#E61E25"/>
+    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0H9.03222C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222V1.46779Z" fill="#E61E25"/>
+    <path d="M83.1943 30.0322C83.1943 30.8429 82.5372 31.5 81.7266 31.5L74.1621 31.5C73.3515 31.5 72.6943 30.8428 72.6943 30.0322L72.6943 21L81.7266 21C82.5372 21 83.1943 21.6571 83.1943 22.4678L83.1943 30.0322Z" fill="#E61E25"/>
+  </svg>
+  <svg class="absolute bottom-32 right-0 hidden lg:block" width="135" height="177" viewBox="0 0 135 177" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M104.097 171.594L104.097 155.4L88.0532 155.4C85.5679 155.4 83.5532 157.415 83.5532 159.9L83.5532 171.594C83.5532 174.079 85.5679 176.094 88.0532 176.094L99.5972 176.094C102.082 176.094 104.097 174.079 104.097 171.594Z" fill="#D4D2E3"/>
+    <path d="M135 103.562L104.1 103.563L104.1 155.4L135 155.4L135 103.562Z" fill="#D4D2E3"/>
+    <path d="M104.099 103.563L104.099 4.5C104.099 2.01472 102.084 3.52264e-07 99.5991 7.86805e-07L4.50049 1.74144e-05C2.01521 1.78489e-05 0.000488634 2.01474 0.000489068 4.50002L0.000505602 99.0633C0.000506037 101.549 2.01522 103.563 4.50051 103.563L104.099 103.563Z" fill="#D4D2E3"/>
+  </svg>
+  <div class="mx-auto max-w-[66rem] px-6 lg:px-8 pt-16 pb-20 lg:py-28 relative">
+    <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2] md:text-center">Browse datasets</h2>
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-20 xl:gap-40 mt-12 lg:mt-16">
+      
+      
+        <div class="">
+          <h3 class="uppercase text-blue font-bold text-[1.75rem] leading-tight">Opten Cégjegyzék <span class="bg-red inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1 relative -top-1.5">Public</span> </h3>
+          
+            <div class="mt-5 flex items-center space-x-2">
+              <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.8327 2.16602H4.16602C2.74935 2.16602 1.66602 3.24935 1.66602 4.66602V16.3327C1.66602 17.7493 2.74935 18.8327 4.16602 18.8327H15.8327C17.2493 18.8327 18.3327 17.7493 18.3327 16.3327V4.66602C18.3327 3.24935 17.2493 2.16602 15.8327 2.16602ZM6.66602 14.666C6.66602 15.166 6.33268 15.4993 5.83268 15.4993C5.33268 15.4993 4.99935 15.166 4.99935 14.666V11.3327C4.99935 10.8327 5.33268 10.4993 5.83268 10.4993C6.33268 10.4993 6.66602 10.8327 6.66602 11.3327V14.666ZM10.8327 14.666C10.8327 15.166 10.4993 15.4993 9.99935 15.4993C9.49935 15.4993 9.16602 15.166 9.16602 14.666V6.33268C9.16602 5.83268 9.49935 5.49935 9.99935 5.49935C10.4993 5.49935 10.8327 5.83268 10.8327 6.33268V14.666ZM14.9993 14.666C14.9993 15.166 14.666 15.4993 14.166 15.4993C13.666 15.4993 13.3327 15.166 13.3327 14.666V9.66602C13.3327 9.16602 13.666 8.83268 14.166 8.83268C14.666 8.83268 14.9993 9.16602 14.9993 9.66602V14.666Z" fill="#5D5A88"/>
+              </svg>
+              <span class="text-gray-2 text-lg">1B+ records</span>
+            </div>
+          
+          
+            <div class="mt-0.5 flex items-center space-x-2">
+              <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.99984 18.8327C9.80539 18.8327 9.63873 18.7771 9.49984 18.666C9.36095 18.5549 9.25678 18.4091 9.18734 18.2285C8.92345 17.4507 8.59012 16.7216 8.18734 16.041C7.79845 15.3605 7.24984 14.5618 6.5415 13.6452C5.83317 12.7285 5.25678 11.8535 4.81234 11.0202C4.38178 10.1868 4.1665 9.1799 4.1665 7.99935C4.1665 6.37435 4.729 4.99935 5.854 3.87435C6.99289 2.73546 8.37484 2.16602 9.99984 2.16602C11.6248 2.16602 12.9998 2.73546 14.1248 3.87435C15.2637 4.99935 15.8332 6.37435 15.8332 7.99935C15.8332 9.26324 15.5901 10.3188 15.104 11.166C14.6318 11.9993 14.0832 12.8257 13.4582 13.6452C12.7082 14.6452 12.1387 15.4785 11.7498 16.1452C11.3748 16.798 11.0623 17.4924 10.8123 18.2285C10.7429 18.423 10.6318 18.5757 10.479 18.6868C10.3401 18.7841 10.1804 18.8327 9.99984 18.8327ZM9.99984 10.0827C10.5832 10.0827 11.0762 9.88129 11.479 9.47852C11.8818 9.07574 12.0832 8.58268 12.0832 7.99935C12.0832 7.41601 11.8818 6.92296 11.479 6.52018C11.0762 6.1174 10.5832 5.91602 9.99984 5.91602C9.4165 5.91602 8.92345 6.1174 8.52067 6.52018C8.11789 6.92296 7.9165 7.41601 7.9165 7.99935C7.9165 8.58268 8.11789 9.07574 8.52067 9.47852C8.92345 9.88129 9.4165 10.0827 9.99984 10.0827Z" fill="#5D5A88"/>
+                </svg>                
+              <span class="text-gray-2 text-lg">World</span>
+            </div>
+          
+          
+            <div class="mt-0.5 flex items-center space-x-2">
+              <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.8337 3.83268H15.0003V2.99935C15.0003 2.49935 14.667 2.16602 14.167 2.16602C13.667 2.16602 13.3337 2.49935 13.3337 2.99935V3.83268H6.66699V2.99935C6.66699 2.49935 6.33366 2.16602 5.83366 2.16602C5.33366 2.16602 5.00033 2.49935 5.00033 2.99935V3.83268H4.16699C2.75033 3.83268 1.66699 4.91602 1.66699 6.33268V7.16602H18.3337V6.33268C18.3337 4.91602 17.2503 3.83268 15.8337 3.83268ZM1.66699 16.3327C1.66699 17.7493 2.75033 18.8327 4.16699 18.8327H15.8337C17.2503 18.8327 18.3337 17.7493 18.3337 16.3327V8.83268H1.66699V16.3327ZM14.167 10.4993C14.667 10.4993 15.0003 10.8327 15.0003 11.3327C15.0003 11.8327 14.667 12.166 14.167 12.166C13.667 12.166 13.3337 11.8327 13.3337 11.3327C13.3337 10.8327 13.667 10.4993 14.167 10.4993ZM14.167 13.8327C14.667 13.8327 15.0003 14.166 15.0003 14.666C15.0003 15.166 14.667 15.4993 14.167 15.4993C13.667 15.4993 13.3337 15.166 13.3337 14.666C13.3337 14.166 13.667 13.8327 14.167 13.8327ZM10.0003 10.4993C10.5003 10.4993 10.8337 10.8327 10.8337 11.3327C10.8337 11.8327 10.5003 12.166 10.0003 12.166C9.50033 12.166 9.16699 11.8327 9.16699 11.3327C9.16699 10.8327 9.50033 10.4993 10.0003 10.4993ZM10.0003 13.8327C10.5003 13.8327 10.8337 14.166 10.8337 14.666C10.8337 15.166 10.5003 15.4993 10.0003 15.4993C9.50033 15.4993 9.16699 15.166 9.16699 14.666C9.16699 14.166 9.50033 13.8327 10.0003 13.8327ZM5.83366 10.4993C6.33366 10.4993 6.66699 10.8327 6.66699 11.3327C6.66699 11.8327 6.33366 12.166 5.83366 12.166C5.33366 12.166 5.00033 11.8327 5.00033 11.3327C5.00033 10.8327 5.33366 10.4993 5.83366 10.4993ZM5.83366 13.8327C6.33366 13.8327 6.66699 14.166 6.66699 14.666C6.66699 15.166 6.33366 15.4993 5.83366 15.4993C5.33366 15.4993 5.00033 15.166 5.00033 14.666C5.00033 14.166 5.33366 13.8327 5.83366 13.8327Z" fill="#5D5A88"/>
+                </svg>                
+              <span class="text-gray-2 text-lg">1978-2018</span>
+            </div>
+           
+          <ul class="mt-5 flex flex-wrap gap-1.5">
+            
+              <li class="bg-blue border-blue border inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1">users</li>
+            
+              <li class="bg-blue border-blue border inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1">software</li>
+            
+          </ul>     
+          <ul class="mt-4 flex flex-wrap gap-1.5">
+            
+              <li class="border-blue border inline-block uppercase text-xs text-blue font-bold rounded-sm px-3 pt-1.5 pb-1">managers</li>
+            
+              <li class="border-blue border inline-block uppercase text-xs text-blue font-bold rounded-sm px-3 pt-1.5 pb-1">world</li>
+            
+          </ul>         
+          <a href="/datasets/dataset-2" class="text-red mt-7 lg:mt-8 inline-block">More details &rarr;</a>
+          
+          <hr class="border-gray-3 mt-7 lg:hidden">
+          
+        </div>
+      
+        <div class="">
+          <h3 class="uppercase text-blue font-bold text-[1.75rem] leading-tight">GitHub Torrent metadata snapshot <span class="bg-red inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1 relative -top-1.5">Limited use</span> </h3>
+          
+            <div class="mt-5 flex items-center space-x-2">
+              <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.8327 2.16602H4.16602C2.74935 2.16602 1.66602 3.24935 1.66602 4.66602V16.3327C1.66602 17.7493 2.74935 18.8327 4.16602 18.8327H15.8327C17.2493 18.8327 18.3327 17.7493 18.3327 16.3327V4.66602C18.3327 3.24935 17.2493 2.16602 15.8327 2.16602ZM6.66602 14.666C6.66602 15.166 6.33268 15.4993 5.83268 15.4993C5.33268 15.4993 4.99935 15.166 4.99935 14.666V11.3327C4.99935 10.8327 5.33268 10.4993 5.83268 10.4993C6.33268 10.4993 6.66602 10.8327 6.66602 11.3327V14.666ZM10.8327 14.666C10.8327 15.166 10.4993 15.4993 9.99935 15.4993C9.49935 15.4993 9.16602 15.166 9.16602 14.666V6.33268C9.16602 5.83268 9.49935 5.49935 9.99935 5.49935C10.4993 5.49935 10.8327 5.83268 10.8327 6.33268V14.666ZM14.9993 14.666C14.9993 15.166 14.666 15.4993 14.166 15.4993C13.666 15.4993 13.3327 15.166 13.3327 14.666V9.66602C13.3327 9.16602 13.666 8.83268 14.166 8.83268C14.666 8.83268 14.9993 9.16602 14.9993 9.66602V14.666Z" fill="#5D5A88"/>
+              </svg>
+              <span class="text-gray-2 text-lg">10M+ records</span>
+            </div>
+          
+          
+            <div class="mt-0.5 flex items-center space-x-2">
+              <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.99984 18.8327C9.80539 18.8327 9.63873 18.7771 9.49984 18.666C9.36095 18.5549 9.25678 18.4091 9.18734 18.2285C8.92345 17.4507 8.59012 16.7216 8.18734 16.041C7.79845 15.3605 7.24984 14.5618 6.5415 13.6452C5.83317 12.7285 5.25678 11.8535 4.81234 11.0202C4.38178 10.1868 4.1665 9.1799 4.1665 7.99935C4.1665 6.37435 4.729 4.99935 5.854 3.87435C6.99289 2.73546 8.37484 2.16602 9.99984 2.16602C11.6248 2.16602 12.9998 2.73546 14.1248 3.87435C15.2637 4.99935 15.8332 6.37435 15.8332 7.99935C15.8332 9.26324 15.5901 10.3188 15.104 11.166C14.6318 11.9993 14.0832 12.8257 13.4582 13.6452C12.7082 14.6452 12.1387 15.4785 11.7498 16.1452C11.3748 16.798 11.0623 17.4924 10.8123 18.2285C10.7429 18.423 10.6318 18.5757 10.479 18.6868C10.3401 18.7841 10.1804 18.8327 9.99984 18.8327ZM9.99984 10.0827C10.5832 10.0827 11.0762 9.88129 11.479 9.47852C11.8818 9.07574 12.0832 8.58268 12.0832 7.99935C12.0832 7.41601 11.8818 6.92296 11.479 6.52018C11.0762 6.1174 10.5832 5.91602 9.99984 5.91602C9.4165 5.91602 8.92345 6.1174 8.52067 6.52018C8.11789 6.92296 7.9165 7.41601 7.9165 7.99935C7.9165 8.58268 8.11789 9.07574 8.52067 9.47852C8.92345 9.88129 9.4165 10.0827 9.99984 10.0827Z" fill="#5D5A88"/>
+                </svg>                
+              <span class="text-gray-2 text-lg">Germany</span>
+            </div>
+          
+          
+            <div class="mt-0.5 flex items-center space-x-2">
+              <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.8337 3.83268H15.0003V2.99935C15.0003 2.49935 14.667 2.16602 14.167 2.16602C13.667 2.16602 13.3337 2.49935 13.3337 2.99935V3.83268H6.66699V2.99935C6.66699 2.49935 6.33366 2.16602 5.83366 2.16602C5.33366 2.16602 5.00033 2.49935 5.00033 2.99935V3.83268H4.16699C2.75033 3.83268 1.66699 4.91602 1.66699 6.33268V7.16602H18.3337V6.33268C18.3337 4.91602 17.2503 3.83268 15.8337 3.83268ZM1.66699 16.3327C1.66699 17.7493 2.75033 18.8327 4.16699 18.8327H15.8337C17.2503 18.8327 18.3337 17.7493 18.3337 16.3327V8.83268H1.66699V16.3327ZM14.167 10.4993C14.667 10.4993 15.0003 10.8327 15.0003 11.3327C15.0003 11.8327 14.667 12.166 14.167 12.166C13.667 12.166 13.3337 11.8327 13.3337 11.3327C13.3337 10.8327 13.667 10.4993 14.167 10.4993ZM14.167 13.8327C14.667 13.8327 15.0003 14.166 15.0003 14.666C15.0003 15.166 14.667 15.4993 14.167 15.4993C13.667 15.4993 13.3337 15.166 13.3337 14.666C13.3337 14.166 13.667 13.8327 14.167 13.8327ZM10.0003 10.4993C10.5003 10.4993 10.8337 10.8327 10.8337 11.3327C10.8337 11.8327 10.5003 12.166 10.0003 12.166C9.50033 12.166 9.16699 11.8327 9.16699 11.3327C9.16699 10.8327 9.50033 10.4993 10.0003 10.4993ZM10.0003 13.8327C10.5003 13.8327 10.8337 14.166 10.8337 14.666C10.8337 15.166 10.5003 15.4993 10.0003 15.4993C9.50033 15.4993 9.16699 15.166 9.16699 14.666C9.16699 14.166 9.50033 13.8327 10.0003 13.8327ZM5.83366 10.4993C6.33366 10.4993 6.66699 10.8327 6.66699 11.3327C6.66699 11.8327 6.33366 12.166 5.83366 12.166C5.33366 12.166 5.00033 11.8327 5.00033 11.3327C5.00033 10.8327 5.33366 10.4993 5.83366 10.4993ZM5.83366 13.8327C6.33366 13.8327 6.66699 14.166 6.66699 14.666C6.66699 15.166 6.33366 15.4993 5.83366 15.4993C5.33366 15.4993 5.00033 15.166 5.00033 14.666C5.00033 14.166 5.33366 13.8327 5.83366 13.8327Z" fill="#5D5A88"/>
+                </svg>                
+              <span class="text-gray-2 text-lg">1991-2021</span>
+            </div>
+           
+          <ul class="mt-5 flex flex-wrap gap-1.5">
+            
+              <li class="bg-blue border-blue border inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1">individuals</li>
+            
+              <li class="bg-blue border-blue border inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1">businesses</li>
+            
+          </ul>     
+          <ul class="mt-4 flex flex-wrap gap-1.5">
+            
+              <li class="border-blue border inline-block uppercase text-xs text-blue font-bold rounded-sm px-3 pt-1.5 pb-1">managers</li>
+            
+              <li class="border-blue border inline-block uppercase text-xs text-blue font-bold rounded-sm px-3 pt-1.5 pb-1">germany</li>
+            
+          </ul>         
+          <a href="/datasets/dataset-1" class="text-red mt-7 lg:mt-8 inline-block">More details &rarr;</a>
+          
+          <hr class="border-gray-3 mt-7 lg:hidden">
+          
+        </div>
+      
+    </div>
+    <div class="mt-9 md:mt-20 flex justify-center">
+      <a class="text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full sm:w-auto" href="/datasets/">
+        <span>More datasets</span>
+        <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>            
+      </a> 
+    </div>
+  </div>
+</div>
+
+<div class="mx-auto max-w-[66rem] px-6 lg:px-8 pt-16 pb-20 lg:py-28">
+  <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2] md:text-center">Browse publications</h2>
+  <div class="grid md:grid-cols-3 gap-8 lg:gap-20 mt-12 lg:mt-16">
+    
+    
+      <div class="">
+        <h3 class="uppercase text-blue font-bold text-[1.75rem] leading-tight">Expatriate Managers: Effects on Firm Performance</h3>
+        
+          <p class="text-gray-2 italic text-sm mt-4">Koren, Miklós and Álmos Telegdy. 2024. "Expatriate Managers: Effects on Firm Performance"</p>
+        
+        <hr class="border-gray-3 mt-2 hidden lg:block">
+        <a href="https://koren.mk/publications/expat" class="text-red mt-4 lg:mt-12 inline-block">Read more &rarr;</a>
+        
+        <hr class="border-gray-3 mt-4 lg:hidden">
+        
+      </div>
+    
+      <div class="">
+        <h3 class="uppercase text-blue font-bold text-[1.75rem] leading-tight">Can Machine Learning Beat Gravity for Predicting Flows?</h3>
+        
+          <p class="text-gray-2 italic text-sm mt-4">Ruzicska, G., Chariag, R., Kiss, O., Koren, M. 2024.  Can Machine Learning Beat Gravity in Flow Prediction? In: Matyas, L. (eds) The Econometrics of Multi-dimensional Panels. Advanced Studies in Theoretical and Applied Econometrics, vol 54. Springer, Cham. https://doi.org/10.1007/978-3-031-49849-7_16</p>
+        
+        <hr class="border-gray-3 mt-2 hidden lg:block">
+        <a href="https://koren.mk/publications/gravity-vs-ml" class="text-red mt-4 lg:mt-12 inline-block">Read more &rarr;</a>
+        
+        <hr class="border-gray-3 mt-4 lg:hidden">
+        
+      </div>
+    
+      <div class="">
+        <h3 class="uppercase text-blue font-bold text-[1.75rem] leading-tight">eventbaseline - Correct Event Study After xthdidregress</h3>
+        
+          <p class="text-gray-2 italic text-sm mt-4">Koren, Miklós. 2024. "eventbaseline - Correct Event Study After xthdidregress [software]" Available at https://github.com/codedthinking/eventbaseline</p>
+        
+        <hr class="border-gray-3 mt-2 hidden lg:block">
+        <a href="https://koren.mk/publications/eventbaseline" class="text-red mt-4 lg:mt-12 inline-block">Read more &rarr;</a>
+        
+      </div>
+    
+  </div>
+  <a class="mt-9 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:hidden" href="#">
+    <span>More</span>
+    <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>            
+  </a> 
+</div> 
+    
+    <footer class="mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="flex flex-col lg:flex-row items-center lg:justify-between">
+    <div class="pt-11 pb-12">
+      <a href="/">
+        <img class="h-24 w-auto" src="http://localhost:4000/assets/images/koren-dev.svg" loading="lazy" height="96" alt="Macromanagers">
+      </a>
+    </div>
+    <div class="flex space-x-6 border-t lg:border-0 border-gray-3 w-full lg:w-auto justify-center pt-8">
+      
+  <a href="#" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">Facebook</span>
+    <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="0.848145" width="36" height="36" rx="8" fill="#E61E25"/>
+      <path d="M19.4638 27.8481V19.6375H22.3585L22.7919 16.4376H19.4637V14.3947C19.4637 13.4682 19.7339 12.8369 21.1293 12.8369L22.909 12.8361V9.97422C22.6012 9.93529 21.5447 9.84814 20.3157 9.84814C17.7497 9.84814 15.9929 11.3393 15.9929 14.0779V16.4376H13.0908V19.6375H15.9929V27.8481H19.4638V27.8481Z" fill="white"/>
+    </svg>      
+  </a>
+
+
+  <a href="#" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">Twitter</span>
+    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.333252" y="0.848145" width="36" height="36" rx="8" fill="#E61E25"/>
+      <path d="M21.3603 11.5495V11.5463H22.2043L22.5127 11.6079C22.7183 11.6478 22.9049 11.7002 23.0727 11.7651C23.2404 11.8299 23.4027 11.9056 23.5596 11.992C23.7165 12.0784 23.8588 12.1665 23.9865 12.2562C24.1131 12.3448 24.2267 12.4388 24.3273 12.5382C24.4268 12.6387 24.5821 12.6646 24.7931 12.616C25.0041 12.5674 25.2314 12.4999 25.4748 12.4134C25.7183 12.327 25.9591 12.2297 26.1971 12.1217C26.4352 12.0136 26.5802 11.945 26.6321 11.9158C26.6829 11.8856 26.71 11.8694 26.7133 11.8672L26.7165 11.8623L26.7327 11.8542L26.7489 11.8461L26.7652 11.838L26.7814 11.8299L26.7846 11.825L26.7895 11.8218L26.7944 11.8186L26.7976 11.8137L26.8139 11.8088L26.8301 11.8056L26.8269 11.8299L26.822 11.8542L26.8139 11.8785L26.8057 11.9028L26.7976 11.9191L26.7895 11.9353L26.7814 11.9596C26.776 11.9758 26.7706 11.9974 26.7652 12.0244C26.7598 12.0514 26.7084 12.1595 26.611 12.3486C26.5136 12.5377 26.3919 12.7295 26.2458 12.924C26.0997 13.1185 25.9688 13.2654 25.853 13.3648C25.7362 13.4653 25.6588 13.5356 25.6209 13.5756C25.583 13.6166 25.5371 13.6544 25.4829 13.689L25.4018 13.7425L25.3856 13.7506L25.3693 13.7587L25.3661 13.7636L25.3612 13.7668L25.3563 13.7701L25.3531 13.7749L25.3369 13.783L25.3206 13.7911L25.3174 13.796L25.3125 13.7992L25.3076 13.8025L25.3044 13.8073L25.3012 13.8122L25.2963 13.8154L25.2914 13.8187L25.2882 13.8235H25.3693L25.8238 13.7263C26.1268 13.6615 26.4162 13.5831 26.6921 13.4913L27.1304 13.3454L27.1791 13.3292L27.2034 13.3211L27.2196 13.313L27.2359 13.3049L27.2521 13.2968L27.2683 13.2887L27.3008 13.2838L27.3333 13.2806V13.313L27.3251 13.3162L27.317 13.3211L27.3138 13.3259L27.3089 13.3292L27.304 13.3324L27.3008 13.3373L27.2976 13.3422L27.2927 13.3454L27.2878 13.3486L27.2846 13.3535L27.2813 13.3584L27.2764 13.3616L27.2683 13.3778L27.2602 13.394L27.2553 13.3973C27.2532 13.4005 27.1845 13.4923 27.0492 13.6728C26.914 13.8543 26.8409 13.9462 26.8301 13.9484C26.8193 13.9516 26.8041 13.9678 26.7846 13.997C26.7663 14.0272 26.6516 14.1477 26.4406 14.3584C26.2296 14.5691 26.0229 14.7566 25.8206 14.9209C25.6171 15.0862 25.5143 15.2893 25.5122 15.5303C25.5089 15.7702 25.4965 16.0414 25.4748 16.344C25.4532 16.6465 25.4126 16.9734 25.3531 17.3246C25.2936 17.6757 25.2016 18.0729 25.0772 18.5159C24.9527 18.9589 24.8012 19.3911 24.6227 19.8126C24.4442 20.234 24.2575 20.6122 24.0627 20.9471C23.868 21.2821 23.6894 21.5658 23.5271 21.7981C23.3648 22.0304 23.1998 22.2492 23.0321 22.4545C22.8644 22.6598 22.6523 22.8911 22.3958 23.1482C22.1383 23.4043 21.9977 23.5448 21.9738 23.5697C21.949 23.5934 21.8429 23.6821 21.6557 23.8355C21.4696 23.99 21.2694 24.1445 21.0552 24.299C20.842 24.4525 20.6461 24.5805 20.4676 24.6832C20.2891 24.7858 20.0737 24.9031 19.8216 25.0349C19.5706 25.1678 19.299 25.291 19.0068 25.4045C18.7147 25.5179 18.4063 25.6233 18.0817 25.7205C17.7571 25.8178 17.4433 25.8934 17.1403 25.9474C16.8373 26.0015 16.4938 26.0474 16.1096 26.0852L15.5334 26.1419V26.15H14.4784V26.1419L14.3405 26.1338C14.2485 26.1284 14.1728 26.123 14.1132 26.1176C14.0537 26.1122 13.8292 26.0825 13.4397 26.0285C13.0501 25.9745 12.7444 25.9204 12.5226 25.8664C12.3008 25.8124 11.9708 25.7097 11.5325 25.5584C11.0943 25.4072 10.7194 25.2543 10.4077 25.0997C10.0972 24.9463 9.90242 24.849 9.82342 24.808C9.74552 24.768 9.65787 24.7183 9.56048 24.6589L9.41441 24.5697L9.41118 24.5649L9.40629 24.5616L9.40142 24.5584L9.39818 24.5535L9.38194 24.5454L9.36571 24.5373L9.36248 24.5324L9.3576 24.5292L9.35273 24.526L9.34948 24.5211L9.34625 24.5162L9.34137 24.513H9.33325V24.4806L9.34948 24.4838L9.36571 24.4887L9.43875 24.4968C9.48744 24.5022 9.62 24.5103 9.83641 24.5211C10.0528 24.5319 10.2828 24.5319 10.5262 24.5211C10.7697 24.5103 11.0186 24.486 11.2728 24.4482C11.5271 24.4103 11.8274 24.3455 12.1736 24.2537C12.5199 24.1618 12.838 24.0527 13.128 23.9262C13.4169 23.7988 13.6225 23.7037 13.7448 23.641C13.866 23.5794 14.051 23.4648 14.2999 23.2974L14.6732 23.0461L14.6764 23.0413L14.6813 23.038L14.6862 23.0348L14.6894 23.0299L14.6927 23.0251L14.6975 23.0218L14.7024 23.0186L14.7057 23.0137L14.7219 23.0089L14.7381 23.0056L14.7414 22.9894L14.7462 22.9732L14.7511 22.97L14.7544 22.9651L14.6245 22.957C14.5379 22.9516 14.4541 22.9462 14.3729 22.9408C14.2918 22.9354 14.1646 22.9111 13.9915 22.8678C13.8184 22.8246 13.6317 22.7598 13.4315 22.6733C13.2314 22.5869 13.0366 22.4842 12.8472 22.3654C12.6579 22.2465 12.521 22.1476 12.4366 22.0688C12.3533 21.9909 12.2451 21.8807 12.112 21.7381C11.98 21.5944 11.8653 21.4469 11.7679 21.2956C11.6705 21.1443 11.5774 20.9698 11.4887 20.7721L11.354 20.4771L11.3459 20.4528L11.3378 20.4285L11.3329 20.4123L11.3296 20.3961L11.354 20.3993L11.3783 20.4042L11.5569 20.4285C11.6759 20.4447 11.8626 20.4501 12.1168 20.4447C12.3711 20.4393 12.547 20.4285 12.6443 20.4123C12.7417 20.3961 12.8012 20.3852 12.8229 20.3798L12.8553 20.3717L12.8959 20.3636L12.9365 20.3555L12.9397 20.3507L12.9446 20.3474L12.9495 20.3442L12.9527 20.3393L12.9203 20.3312L12.8878 20.3231L12.8553 20.315L12.8229 20.3069L12.7904 20.2988C12.7688 20.2934 12.7309 20.2826 12.6768 20.2664C12.6227 20.2502 12.4766 20.1907 12.2386 20.0881C12.0005 19.9854 11.8112 19.8855 11.6705 19.7882C11.5295 19.6907 11.395 19.584 11.268 19.4689C11.1414 19.3522 11.0023 19.202 10.8508 19.0183C10.6994 18.8347 10.5641 18.6212 10.4451 18.3781C10.326 18.135 10.2368 17.9027 10.1773 17.6811C10.118 17.4609 10.0789 17.2358 10.0604 17.0085L10.0312 16.6681L10.0474 16.6714L10.0636 16.6762L10.0799 16.6843L10.0961 16.6924L10.1123 16.7005L10.1286 16.7086L10.3801 16.8221C10.5479 16.8977 10.7562 16.9626 11.005 17.0166C11.2539 17.0706 11.4027 17.1004 11.4514 17.1057L11.5244 17.1139H11.6705L11.6673 17.109L11.6624 17.1057L11.6575 17.1025L11.6543 17.0976L11.651 17.0928L11.6461 17.0895L11.6413 17.0863L11.638 17.0814L11.6218 17.0733L11.6056 17.0652L11.6023 17.0604L11.5975 17.0571L11.5926 17.0539L11.5893 17.049L11.5731 17.0409L11.5569 17.0328L11.5536 17.0279C11.5504 17.0258 11.5039 16.9912 11.414 16.9242C11.3253 16.8561 11.2323 16.7681 11.1349 16.66C11.0375 16.552 10.9401 16.4385 10.8427 16.3196C10.7452 16.2005 10.6583 16.0731 10.583 15.9387C10.5073 15.8037 10.4272 15.6319 10.3428 15.4233C10.2595 15.2158 10.1962 15.0068 10.1529 14.7961C10.1096 14.5853 10.0853 14.3773 10.0799 14.172C10.0745 13.9667 10.0799 13.7911 10.0961 13.6453C10.1123 13.4994 10.1448 13.3346 10.1935 13.1509C10.2422 12.9672 10.3125 12.7727 10.4045 12.5674L10.5424 12.2594L10.5506 12.2351L10.5587 12.2108L10.5636 12.2076L10.5668 12.2027L10.57 12.1978L10.5749 12.1946L10.5798 12.1978L10.583 12.2027L10.5863 12.2076L10.5911 12.2108L10.596 12.2141L10.5993 12.2189L10.6025 12.2238L10.6074 12.227L10.6155 12.2432L10.6236 12.2594L10.6285 12.2627L10.6317 12.2675L10.8508 12.5107C10.9969 12.6727 11.17 12.8537 11.3702 13.0536C11.5704 13.2535 11.6813 13.3573 11.703 13.3648C11.7246 13.3735 11.7516 13.3983 11.7841 13.4394C11.8166 13.4794 11.9248 13.575 12.1087 13.7263C12.2927 13.8776 12.5334 14.0532 12.831 14.2531C13.1286 14.453 13.4586 14.6502 13.8211 14.8447C14.1836 15.0392 14.5731 15.2148 14.9897 15.3714C15.4063 15.5281 15.6985 15.6308 15.8662 15.6794C16.0339 15.728 16.3206 15.7902 16.7264 15.8658C17.1322 15.9415 17.4379 15.9901 17.6434 16.0117C17.849 16.0333 17.9897 16.0457 18.0654 16.049L18.1791 16.0522L18.1758 16.0279L18.1709 16.0036L18.1385 15.801C18.1168 15.6659 18.106 15.4768 18.106 15.2337C18.106 14.9906 18.125 14.7663 18.1628 14.561C18.2007 14.3557 18.2575 14.1477 18.3333 13.937C18.409 13.7263 18.4831 13.5572 18.5556 13.4297C18.6292 13.3033 18.7255 13.159 18.8445 12.9969C18.9636 12.8348 19.1178 12.6674 19.3071 12.4945C19.4965 12.3216 19.7129 12.1676 19.9563 12.0325C20.1998 11.8975 20.4243 11.7948 20.6299 11.7246C20.8355 11.6543 21.0086 11.6084 21.1493 11.5868C21.29 11.5652 21.3603 11.5527 21.3603 11.5495Z" fill="white"/>
+    </svg>      
+  </a>
+
+
+  <a href="#" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">Instagram</span>
+    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.666748" y="0.848145" width="36" height="36" rx="8" fill="#E61E25"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.66675 18.8481C9.66675 15.253 9.66675 13.4554 10.5234 12.1607C10.906 11.5825 11.4011 11.0874 11.9793 10.7048C13.274 9.84814 15.0716 9.84814 18.6667 9.84814C22.2619 9.84814 24.0595 9.84814 25.3542 10.7048C25.9324 11.0874 26.4275 11.5825 26.8101 12.1607C27.6667 13.4554 27.6667 15.253 27.6667 18.8481C27.6667 22.4433 27.6667 24.2409 26.8101 25.5356C26.4275 26.1138 25.9324 26.6089 25.3542 26.9915C24.0595 27.8481 22.2619 27.8481 18.6667 27.8481C15.0716 27.8481 13.274 27.8481 11.9793 26.9915C11.4011 26.6089 10.906 26.1138 10.5234 25.5356C9.66675 24.2409 9.66675 22.4433 9.66675 18.8481ZM23.326 18.8484C23.326 21.4217 21.2399 23.5078 18.6666 23.5078C16.0933 23.5078 14.0072 21.4217 14.0072 18.8484C14.0072 16.2751 16.0933 14.189 18.6666 14.189C21.2399 14.189 23.326 16.2751 23.326 18.8484ZM18.6666 21.9314C20.3693 21.9314 21.7496 20.5511 21.7496 18.8484C21.7496 17.1457 20.3693 15.7654 18.6666 15.7654C16.9639 15.7654 15.5836 17.1457 15.5836 18.8484C15.5836 20.5511 16.9639 21.9314 18.6666 21.9314ZM23.51 15.0497C24.1147 15.0497 24.6048 14.5595 24.6048 13.9549C24.6048 13.3502 24.1147 12.86 23.51 12.86C22.9054 12.86 22.4152 13.3502 22.4152 13.9549C22.4152 14.5595 22.9054 15.0497 23.51 15.0497Z" fill="white"/>
+    </svg>
+  </a>
+
+
+  <a href="#" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">GitHub</span>
+    <svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="0.848145" width="36" height="36" rx="8" fill="#E61E25"/>
+      <path d="M9 12.2681C9 11.6909 9.20271 11.2147 9.60811 10.8395C10.0135 10.4643 10.5405 10.2767 11.1892 10.2767C11.8263 10.2767 12.3417 10.4614 12.7355 10.8308C13.1409 11.2118 13.3436 11.7082 13.3436 12.32C13.3436 12.8741 13.1467 13.3359 12.7529 13.7053C12.3475 14.0863 11.8147 14.2767 11.1544 14.2767H11.1371C10.5 14.2767 9.98456 14.0863 9.59073 13.7053C9.19691 13.3244 9 12.8453 9 12.2681ZM9.22587 27.4196V15.8525H13.083V27.4196H9.22587ZM15.2201 27.4196H19.0772V20.9607C19.0772 20.5567 19.1236 20.245 19.2162 20.0256C19.3784 19.6331 19.6245 19.3012 19.9546 19.03C20.2847 18.7587 20.6988 18.6231 21.1969 18.6231C22.4942 18.6231 23.1429 19.4946 23.1429 21.2378V27.4196H27V20.7876C27 19.079 26.5946 17.7832 25.7838 16.9001C24.973 16.017 23.9015 15.5754 22.5695 15.5754C21.0753 15.5754 19.9112 16.2161 19.0772 17.4975V17.5321H19.0598L19.0772 17.4975V15.8525H15.2201C15.2432 16.2219 15.2548 17.3705 15.2548 19.2984C15.2548 21.2262 15.2432 23.9333 15.2201 27.4196Z" fill="white"/>
+    </svg>      
+  </a>
+
+    </div>
+    </div>
+  </div>
+  <div class="lg:border-t border-gray-3 text-center pt-9 pb-10">
+    <p class="font-light text-sm text-gray-2">&copy; 2023 Koren.dev</p>
+  </div>
+</footer>
+
+    </body>
+
+</html>

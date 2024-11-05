@@ -1,7 +1,7 @@
 ---
 title: Macromanagers
 description: Lorem ipsum dolorem
-url: 
+# url: 
 baseurl: 
 lang: en
 permalink: "/:title/"
@@ -20,7 +20,7 @@ highlighter: rouge
 
 plugins:
 - jekyll-seo-tag
-- jekyll-paginate
+- jekyll-remote-theme
 
 exclude:
 - vendor

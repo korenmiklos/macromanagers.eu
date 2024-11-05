@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Px Grotesk';
+    src: url(../fonts/Px-Grotesk-Light.woff2) format("woff2");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: 'Px Grotesk';
+    src: url(../fonts/Px-Grotesk-Regular.woff2) format("woff2");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Px Grotesk';
+    src: url(../fonts/Px-Grotesk-Regular-Italic.woff2) format("woff2");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Px Grotesk';
+    src: url(../fonts/Px-Grotesk-Bold.woff2) format("woff2");
+    font-weight: 700;
+  }  
+}
+
+.swiper-pagination {
+  @apply flex justify-center space-x-1.5;
+}
+.swiper-pagination-bullet {
+  @apply w-2.5 h-2.5 bg-gray-3;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-red w-7;
+}
+
+.prose table {
+  @apply bg-blue rounded-md text-white overflow-x-auto block whitespace-nowrap;
+}
+.prose table th {
+  @apply text-left text-white px-5 pt-3;
+}
+.prose table td {
+  @apply px-5;
+}
+.prose tbody tr {
+  @apply border-none;
+}
