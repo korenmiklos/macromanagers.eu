@@ -23,6 +23,18 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+
+      - name: Clean existing files
+        run: |
+          # List of directories to clean
+          dirs_to_clean=("_posts" "_publications" "_courses" "_data" "_datasets" "_events" "_software")
+          
+          for dir in "${dirs_to_clean[@]}"; do
+            if [ -e "$dir" ]; then
+              git rm -rf "$dir"
+              echo "Removed $dir from Git tracking"
+            fi
+          done
           
       - name: Create filter scripts
         run: |
@@ -116,7 +128,7 @@ jobs:
           import os
           
           # Define collections to process
-          collections = ['_posts', '_publications', '_courses']
+          collections = ["_posts", "_publications", "_courses", "_datasets", "_events", "_software"]
           
           # Process markdown files in collections
           for collection in collections:
