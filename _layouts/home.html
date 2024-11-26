@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign posts = site.courses | sort: 'date' | reverse %}
+{% assign posts = site.events | sort: 'date' | reverse %}
 <div class="relative overflow-hidden">
   <div class="mx-auto max-w-5xl px-6 lg:px-8 pt-24 pb-6 lg:pt-6 lg:pb-24 xl:pb-40 relative">
     {% for post in posts %}

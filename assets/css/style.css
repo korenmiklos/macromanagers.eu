@@ -3867,6 +3867,10 @@ select {
   .md\:aspect-h-12 {
     --tw-aspect-h: 12;
   }
+
+  .md\:aspect-h-10 {
+    --tw-aspect-h: 10;
+  }
 }
 
 .placeholder\:text-gray-2::-moz-placeholder {

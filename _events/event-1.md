@@ -1,10 +1,11 @@
 ---
-title: Command Line and Version Control
+title: Losing Your Female Talent
 code: missing
-description: Couple lines about the event
+description: This is a placeholder for the full course content
 event_date: 2025-04-01
-image: /assets/images/event.jpg
+image: /assets/images/event-1.jpg
 categories: ["topic label"]
+tags: [featured]
 speaker: Miklós Koren
 location: Spain, Madrid
 register: "#"
@@ -17,6 +18,7 @@ links:
     url: "#"
   - text: Replication code and data
     url: "#"
+
 ---
 
 This is a placeholder for the full course content. You can add more details, syllabus, and other relevant information here.
