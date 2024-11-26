@@ -2,7 +2,7 @@
 layout: null
 ---
 [
-  {% for item in site.publications %}
+  {% for item in site.events %}
     {
       "title"    : "{{ item.title | escape }}",
       "category" : "{{ item.category }}",
