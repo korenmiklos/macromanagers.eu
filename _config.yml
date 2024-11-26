@@ -6,8 +6,6 @@ baseurl:
 lang: en
 permalink: "/:title/"
 
-website: courses # options: blog | courses | publications
-
 plausible: koren.dev
 
 paginate: 4
