@@ -1,0 +1,180 @@
+# File: .github/workflows/update-from-remote-theme.yml
+name: Update from Remote Theme Repository
+
+on:
+  repository_dispatch:
+    types: [update-from-remote-theme]
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout macromanagers repository
+        uses: actions/checkout@v3
+        
+      - name: Checkout remote-theme repository
+        uses: actions/checkout@v3
+        with:
+          repository: korenmiklos/remote-theme
+          path: temp-remote
+          
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install PyYAML
+          
+      - name: Clean existing files
+        run: |
+          # List of directories to clean
+          dirs_to_clean=("_posts" "_publications" "_courses" "_datasets" "_events" "_software" "_data")
+          
+          for dir in "${dirs_to_clean[@]}"; do
+            if [ -e "$dir" ]; then
+              git rm -rf "$dir"
+              echo "Removed $dir from Git tracking"
+            fi
+          done
+          
+      - name: Create filter scripts
+        run: |
+          cat > filter_md.py << 'EOL'
+          import os
+          import yaml
+          
+          def has_macromanagers_tag(file_path):
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  # Read until second '---' to get YAML front matter
+                  content = ''
+                  yaml_count = 0
+                  for line in f:
+                      if line.strip() == '---':
+                          yaml_count += 1
+                          if yaml_count == 2:
+                              break
+                      content += line
+                  
+                  if yaml_count < 2:
+                      return False
+                  
+                  try:
+                      front_matter = yaml.safe_load(content)
+                      tags = front_matter.get('tags', [])
+                      return 'macromanagers' in (tags if isinstance(tags, list) else [tags])
+                  except:
+                      return False
+
+          def copy_markdown_files(src_dir, dest_dir):
+              if not os.path.exists(dest_dir):
+                  os.makedirs(dest_dir)
+              
+              for root, _, files in os.walk(src_dir):
+                  rel_path = os.path.relpath(root, src_dir)
+                  for file in files:
+                      if not file.endswith('.md'):
+                          continue
+                          
+                      src_file = os.path.join(root, file)
+                      if has_macromanagers_tag(src_file):
+                          dest_subdir = os.path.join(dest_dir, rel_path)
+                          if not os.path.exists(dest_subdir):
+                              os.makedirs(dest_subdir)
+                          dest_file = os.path.join(dest_subdir, file)
+                          with open(src_file, 'r', encoding='utf-8') as sf, open(dest_file, 'w', encoding='utf-8') as df:
+                              df.write(sf.read())
+          EOL
+          
+          cat > filter_data.py << 'EOL'
+          import os
+          import csv
+          import yaml
+          
+          def copy_csv_file(src_file, dest_file):
+              filtered_rows = []
+              with open(src_file, 'r', encoding='utf-8') as f:
+                  reader = csv.DictReader(f)
+                  if 'tag' not in reader.fieldnames:
+                      return False
+                  
+                  filtered_rows = [row for row in reader if 'macromanagers' in row['tag']]
+                  
+              if filtered_rows:
+                  with open(dest_file, 'w', encoding='utf-8', newline='') as f:
+                      writer = csv.DictWriter(f, fieldnames=reader.fieldnames)
+                      writer.writeheader()
+                      writer.writerows(filtered_rows)
+                  return True
+              return False
+
+          def copy_yaml_file(src_file, dest_file):
+              with open(src_file, 'r', encoding='utf-8') as f:
+                  try:
+                      data = yaml.safe_load(f)
+                      if not isinstance(data, list):
+                          return False
+                      
+                      filtered_data = [item for item in data if 'tag' in item and 'macromanagers' in item['tag']]
+                      
+                      if filtered_data:
+                          with open(dest_file, 'w', encoding='utf-8') as f:
+                              yaml.dump(filtered_data, f, allow_unicode=True)
+                          return True
+                  except:
+                      return False
+              return False
+
+          def copy_data_files(src_dir, dest_dir):
+              if not os.path.exists(dest_dir):
+                  os.makedirs(dest_dir)
+              
+              for root, _, files in os.walk(src_dir):
+                  rel_path = os.path.relpath(root, src_dir)
+                  for file in files:
+                      src_file = os.path.join(root, file)
+                      dest_subdir = os.path.join(dest_dir, rel_path)
+                      
+                      if not os.path.exists(dest_subdir):
+                          os.makedirs(dest_subdir)
+                      dest_file = os.path.join(dest_subdir, file)
+                      
+                      if file.endswith('.csv'):
+                          copy_csv_file(src_file, dest_file)
+                      elif file.endswith(('.yaml', '.yml')):
+                          copy_yaml_file(src_file, dest_file)
+          EOL
+          
+      - name: Filter and copy files
+        run: |
+          python3 -c "
+          from filter_md import copy_markdown_files
+          from filter_data import copy_data_files
+          import os
+          
+          # Define collections to process
+          collections = ['_posts', '_publications', '_courses', '_datasets', '_events', '_software']
+          
+          # Process markdown files in collections
+          for collection in collections:
+              src = os.path.join('temp-remote', collection)
+              if os.path.exists(src):
+                  copy_markdown_files(src, collection)
+          
+          # Process data files in _data
+          src_data = os.path.join('temp-remote', '_data')
+          if os.path.exists(src_data):
+              copy_data_files(src_data, '_data')
+          "
+          
+      - name: Remove temp folder
+        run: rm -rf temp-remote
+        
+      - name: Commit and push changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update from remote theme repository" || echo "No changes to commit"
+          git push
