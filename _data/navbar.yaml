@@ -1,5 +1,7 @@
 - text: Events
   url: "/events/"
+- text: Mentions
+  url: "/mentions/"
 - text: Datasets
   url: "/datasets/"
 - text: More

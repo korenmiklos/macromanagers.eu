@@ -1859,10 +1859,6 @@ select {
   bottom: 0px;
 }
 
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
 .bottom-14 {
   bottom: 3.5rem;
 }
@@ -1873,10 +1869,6 @@ select {
 
 .bottom-20 {
   bottom: 5rem;
-}
-
-.bottom-32 {
-  bottom: 8rem;
 }
 
 .bottom-40 {
