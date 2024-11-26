@@ -8,9 +8,7 @@
   dropdown:
   - text: Publications
     url: "/publications/"
-  - text: CV
-    url: "https://koren.mk/cv/"
-  - text: Blog
-    url: "https://codedthinking.com"
+  - text: Project
+    url: "/project/"
   - text: Codedthinking Story
     url: "https://codedthinking.com/story/"

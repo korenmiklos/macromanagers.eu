@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: 'Brockmann';
-    src: url(../fonts/brockmann-regular.woff2) format("woff2");
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: 'Brockmann';
-    src: url(../fonts/brockmann-regularitalic.woff2) format("woff2");
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: 'Brockmann';
-    src: url(../fonts/brockmann-bold.woff2) format("woff2");
-    font-weight: 700;
-  }  
-}
-
 .swiper-pagination {
   @apply flex justify-center space-x-1.5;
 }
