@@ -8,7 +8,7 @@ layout: default
         <a href="{{ '/' | relative_url }}" class="text-brand inline-block">&larr; Back to home</a>
         <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.15] mt-7">{{ page.title }}</h1>
         <div class="space-y-7 mt-8">
-          {% for post in site.mentions %}
+          {% for post in site.data.mentions %}
               {% include card-mentions.html %}
           {% endfor %}
         </div>
@@ -16,8 +16,7 @@ layout: default
       <div class="flex-1 lg:mt-14 relative">
         <h3 class="text-blue uppercase font-bold text-3xl mb-16">Recommended</h3>
         <div class="space-y-7">
-          {% assign posts = site.mentions | sort: 'date' | reverse %}
-          {% for post in posts limit: 3 %}
+          {% for post in site.data.mentions limit: 2 %}
             <div class="flex space-x-5 items-center relative">
               <svg class="w-[6.25rem] h-auto flex-none" width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="0.875" width="100" height="100" rx="4.54545" fill="#148FFF"/>
@@ -25,10 +24,10 @@ layout: default
                 <path d="M65.2384 50L36.5107 50" stroke="white" stroke-width="3.19198" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>                  
               <div>
-                <h4 class="font-bold text-lg text-brand leading-tight">{{ post.title }}</h4>
-                <p class="text-gray-2 leading-snug line-clamp-3">{{ post.description }}</p>
+                <h4 class="font-bold text-lg text-brand leading-tight">{{ post.heading }}</h4>
+                <p class="text-gray-2 leading-snug line-clamp-3">{{ post.copy }}</p>
               </div>
-              <a href="{{ post.url | relative_url }}" class="absolute inset-0" title="{{ post.title }}"></a>
+              <a href="{{ post.url }}" target="_blank" class="absolute inset-0" title="{{ post.title }}"></a>
             </div>
           {% endfor %}
         </div>

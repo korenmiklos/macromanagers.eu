@@ -57,9 +57,6 @@ collections:
   datasets:
     output: true
     permalink: /:collection/:name
-  mentions:
-    output: true
-    permalink: /:collection/:name
 
 # Defaults
 defaults:
@@ -88,8 +85,3 @@ defaults:
       type: datasets
     values:
       layout: dataset
-  - scope:
-      path: ""
-      type: mentions
-    values:
-      layout: mention

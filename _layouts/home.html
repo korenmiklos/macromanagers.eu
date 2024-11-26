@@ -247,7 +247,7 @@ layout: default
     </div>
     <div>
       <div class="space-y-7">
-        {% for post in posts limit: 3 %}
+        {% for post in site.data.mentions limit: 2 %}
           {% include card-mentions.html %}
         {% endfor %}
       </div>
