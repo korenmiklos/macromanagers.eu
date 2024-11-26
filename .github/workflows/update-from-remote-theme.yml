@@ -24,6 +24,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: pip install PyYAML
+          
       - name: Clean existing files
         run: |
           # List of directories to clean
