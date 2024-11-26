@@ -1,7 +1,7 @@
-- text: Courses
-  url: "/"
-- text: Software
-  url: "/software/"
+- text: Events
+  url: "/events/"
+- text: Datasets
+  url: "/datasets/"
 - text: More
   dropdown:
   - text: Publications
