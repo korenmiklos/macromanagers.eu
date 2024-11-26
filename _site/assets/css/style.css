@@ -1815,6 +1815,10 @@ select {
   bottom: -0.5rem;
 }
 
+.-bottom-6 {
+  bottom: -1.5rem;
+}
+
 .-left-1 {
   left: -0.25rem;
 }
@@ -1879,32 +1883,12 @@ select {
   bottom: 10rem;
 }
 
-.bottom-\[38\%\] {
-  bottom: 38%;
-}
-
 .left-0 {
   left: 0px;
 }
 
-.left-1\/4 {
-  left: 25%;
-}
-
-.left-28 {
-  left: 7rem;
-}
-
 .right-0 {
   right: 0px;
-}
-
-.right-36 {
-  right: 9rem;
-}
-
-.right-\[40\%\] {
-  right: 40%;
 }
 
 .top-0 {
@@ -1915,10 +1899,6 @@ select {
   top: 50%;
 }
 
-.top-10 {
-  top: 2.5rem;
-}
-
 .top-12 {
   top: 3rem;
 }
@@ -1927,24 +1907,8 @@ select {
   top: 4rem;
 }
 
-.top-2 {
-  top: 0.5rem;
-}
-
-.top-20 {
-  top: 5rem;
-}
-
 .top-3 {
   top: 0.75rem;
-}
-
-.top-32 {
-  top: 8rem;
-}
-
-.top-\[37\%\] {
-  top: 37%;
 }
 
 .z-10 {
@@ -2804,10 +2768,20 @@ select {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
+.from-brand {
+  --tw-gradient-from: #148FFF var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(20 143 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-transparent {
   --tw-gradient-from: transparent var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-blue {
+  --tw-gradient-to: #00177B var(--tw-gradient-to-position);
 }
 
 .to-white {
@@ -2955,6 +2929,11 @@ select {
   padding-bottom: 1rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -2998,6 +2977,10 @@ select {
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .pb-80 {
@@ -4450,11 +4433,6 @@ select {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .lg\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .lg\:py-20 {

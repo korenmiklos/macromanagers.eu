@@ -39,7 +39,7 @@
   
     <header @click.outside="mobile = false"
   class="bg-white transition duration-500 relative">
-  <div class="mx-auto max-w-7xl flex flex-wrap items-center space-x-8 justify-between px-6 lg:px-8 py-11 lg:py-12">
+  <div class="mx-auto max-w-7xl flex flex-wrap items-center space-x-8 justify-between px-6 lg:px-8 py-6">
     <a href="/">
       <img class="h-14 lg:h-24" src="http://localhost:4001/assets/images/logo.svg" height="96" alt="Koren.mk">
     </a>
@@ -153,14 +153,14 @@
       </div>
       <button @click="mobile = ! mobile" type="button" class="relative lg:hidden ml-4" aria-label="Open navigation">
         <svg :class="{ 'hidden': mobile, 'block': !(mobile) }" class="w-[1.625rem] h-[1.625rem]" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="26" y="6.65479" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 6.65479)" fill="#E61E25"/>
-          <rect x="26" y="16.25" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 16.25)" fill="#E61E25"/>
-          <rect x="26" y="25.8452" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 25.8452)" fill="#E61E25"/>
+          <rect x="26" y="6.65479" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 6.65479)" fill="#148FFF"/>
+          <rect x="26" y="16.25" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 16.25)" fill="#148FFF"/>
+          <rect x="26" y="25.8452" width="6.5" height="6.5" rx="0.928571" transform="rotate(-180 26 25.8452)" fill="#148FFF"/>
         </svg>
         <svg :class="{ 'block': mobile, 'hidden': !(mobile) }" class="w-[1.625rem] h-[1.625rem] hidden" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="26" y="6.65479" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 6.65479)" fill="#E61E25"/>
-          <rect x="26" y="16.25" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 16.25)" fill="#E61E25"/>
-          <rect x="26" y="25.8452" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 25.8452)" fill="#E61E25"/>
+          <rect x="26" y="6.65479" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 6.65479)" fill="#148FFF"/>
+          <rect x="26" y="16.25" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 16.25)" fill="#148FFF"/>
+          <rect x="26" y="25.8452" width="26" height="6.5" rx="0.928571" transform="rotate(-180 26 25.8452)" fill="#148FFF"/>
         </svg>
       </button>
     </div>
@@ -182,14 +182,14 @@
           
 
           
-            <a href="/" class="block py-4 text-2xl font-bold uppercase text-brand" 
+            <a href="/" class="block py-4 text-2xl font-bold text-brand" 
             >Courses</a>
           
         
           
 
           
-            <a href="/software/" class="block py-4 text-2xl font-bold uppercase text-brand" 
+            <a href="/software/" class="block py-4 text-2xl font-bold text-brand" 
             >Software</a>
           
         
@@ -199,7 +199,7 @@
             <div x-data="{ accordion: false }">
               <a
                 href="#"
-                class="flex items-center py-4 text-2xl font-bold uppercase text-brand"
+                class="flex items-center py-4 text-2xl font-bold text-brand"
                 @click.prevent="accordion = ! accordion"
               >
                 <span class="mr-4">More</span>

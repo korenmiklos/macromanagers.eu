@@ -4,12 +4,7 @@ layout: default
 
 {% assign posts = site.courses | sort: 'date' | reverse %}
 <div class="relative overflow-hidden">
-  <div class="absolute inset-0">
-    <img class="md:hidden h-auto w-full absolute top-0 left-0 right-0 bottom-0" src="{{ '/assets/images/koren-dev-hero-sm-1.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
-    <img class="md:hidden w-[74%] absolute bottom-14 -left-1 z-10" src="{{ '/assets/images/koren-dev-hero-sm-2.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
-    <img class="hidden md:block object-cover object-center h-full w-full" src="{{ '/assets/images/koren-dev-hero.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
-  </div>
-  <div class="mx-auto max-w-5xl px-6 lg:px-8 pt-24 lg:pt-6 lg:pb-24 xl:pb-40 relative">
+  <div class="mx-auto max-w-5xl px-6 lg:px-8 pt-24 pb-6 lg:pt-6 lg:pb-24 xl:pb-40 relative">
     {% for post in posts %}
       {% if post.tags contains 'featured' %}
         <div class="grid md:grid-cols-2 items-end gap-14 md:gap-0">
@@ -28,20 +23,10 @@ layout: default
           </div>
           <div class="-mx-6 md:mx-0">
             <div class="w-[68.5%] md:w-full relative">
-              <div class="aspect-w-16 aspect-h-16 md:aspect-h-12 md:rounded overflow-hidden">
+              <div class="absolute rounded-md bg-gradient-to-b from-brand to-blue -right-5 -bottom-6 w-full h-full"></div>
+              <div class="aspect-w-16 aspect-h-16 md:aspect-h-12 rounded-md overflow-hidden relative">
                 <img class="w-full h-full object-center object-cover" src="{{ post.image | absolute_url }}" alt="{{ post.title | escape }}">
               </div>
-              <svg class="absolute -left-14 top-16 hidden md:block" width="84" height="32" viewBox="0 0 84 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.918 10.5278H71.6448C72.4554 10.5278 73.1125 11.185 73.1125 11.9956V21.0278H12.3858C11.5751 21.0278 10.918 20.3707 10.918 19.56V10.5278Z" fill="#E61E25"/>
-                <path d="M0.417969 1.49562C0.417969 0.684982 1.07512 0.027832 1.88575 0.027832H9.45018C10.2608 0.027832 10.918 0.684982 10.918 1.49562V10.5278H1.88575C1.07512 10.5278 0.417969 9.87068 0.417969 9.06005V1.49562Z" fill="#E61E25"/>
-                <path d="M83.6123 30.06C83.6123 30.8707 82.9552 31.5278 82.1445 31.5278L74.5801 31.5278C73.7695 31.5278 73.1123 30.8707 73.1123 30.06L73.1123 21.0278L82.1445 21.0278C82.9552 21.0278 83.6123 21.685 83.6123 22.4956L83.6123 30.06Z" fill="#E61E25"/>
-              </svg>
-              <svg class="absolute -right-5 bottom-20 hidden md:block" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.500977 1.72706C0.500977 0.916427 1.15813 0.259277 1.96876 0.259277H9.53319C10.3438 0.259277 11.001 0.916427 11.001 1.72706V10.7593H1.96876C1.15813 10.7593 0.500977 10.1021 0.500977 9.29149V1.72706Z" fill="#E61E25"/>
-                <path d="M21.501 1.72706C21.501 0.916427 22.1581 0.259277 22.9688 0.259277H30.5332C31.3438 0.259277 32.001 0.916427 32.001 1.72706V9.29149C32.001 10.1021 31.3438 10.7593 30.5332 10.7593H21.501V1.72706Z" fill="#E61E25"/>
-                <path d="M11.001 30.2915C11.001 31.1021 10.3438 31.7593 9.53319 31.7593L1.96876 31.7593C1.15813 31.7593 0.500977 31.1021 0.500976 30.2915L0.500976 22.7271C0.500976 21.9164 1.15812 21.2593 1.96876 21.2593L11.001 21.2593L11.001 30.2915Z" fill="#E61E25"/>
-                <path d="M21.501 19.7915C21.501 20.6021 20.8438 21.2593 20.0332 21.2593L11.001 21.2593L11.001 10.7593L21.501 10.7593L21.501 19.7915Z" fill="#E61E25"/>
-              </svg>              
             </div>
           </div>
         </div>
@@ -53,47 +38,14 @@ layout: default
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<div class="mx-auto max-w-7xl px-6 lg:px-8 pb-20 pt-24">
+<div class="mx-auto max-w-7xl px-6 lg:px-8 py-20">
   <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2] md:text-center">{{ page.intro.heading }}</h2>
   {% if page.intro.copy and page.intro.copy != empty %}
     <p class="text-lg text-center leading-relaxed text-gray-4 mt-3.5 max-w-2xl mx-auto">{{ page.intro.copy }}</p>
   {% endif %}
-
 </div>
 
 <div class="relative overflow-hidden">
-  <svg class="absolute md:hidden left-1/4 top-20" width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0L9.03222 0C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222L0 1.46779Z" fill="#E61E25"/>
-    <path d="M21 1.46779C21 0.65715 21.6571 0 22.4678 0L30.0322 0C30.8428 0 31.5 0.65715 31.5 1.46778V9.03222C31.5 9.84285 30.8429 10.5 30.0322 10.5H21V1.46779Z" fill="#E61E25"/>
-    <path d="M21 19.5322C21 20.3429 20.3429 21 19.5322 21L11.9678 21C11.1572 21 10.5 20.3429 10.5 19.5322L10.5 10.5L21 10.5L21 19.5322Z" fill="#E61E25"/>
-  </svg>    
-  <svg class="absolute md:hidden right-0 top-2" width="156" height="177" viewBox="0 0 156 177" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M51.2471 171.594V155.014H67.8273C70.3125 155.014 72.3273 157.028 72.3273 159.514L72.3273 171.594C72.3273 174.079 70.3125 176.094 67.8273 176.094H55.7471C53.2618 176.094 51.2471 174.079 51.2471 171.594Z" fill="#D4D2E3"/>
-    <path d="M4.5 103.768H51.2472V155.015H4.5C2.01472 155.015 0 153 0 150.515V108.268C0 105.782 2.01471 103.768 4.5 103.768Z" fill="#D4D2E3"/>
-    <path d="M51.8379 103.767V4.5C51.8379 2.01472 53.8526 0 56.3379 0H155.062V103.767H51.8379Z" fill="#D4D2E3"/>
-    <path d="M52.5 43.5H113.227C114.037 43.5 114.695 44.1571 114.695 44.9678V54H53.9678C53.1571 54 52.5 53.3429 52.5 52.5322V43.5Z" fill="#E61E25"/>
-    <path d="M42 34.4678C42 33.6571 42.6571 33 43.4678 33H51.0322C51.8429 33 52.5 33.6571 52.5 34.4678V43.5H43.4678C42.6571 43.5 42 42.8429 42 42.0322V34.4678Z" fill="#E61E25"/>
-    <path d="M125.194 63.0322C125.194 63.8429 124.537 64.5 123.727 64.5L116.162 64.5C115.351 64.5 114.694 63.8428 114.694 63.0322L114.694 54L123.727 54C124.537 54 125.194 54.6571 125.194 55.4678L125.194 63.0322Z" fill="#E61E25"/>
-  </svg>    
-  <svg class="absolute md:hidden left-0 top-[37%]" width="268" height="94" viewBox="0 0 268 94" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M196.642 4.49999C196.642 2.01471 194.627 -1.71448e-07 192.142 -3.82939e-07L4.5002 -1.63508e-05C2.01492 -1.65623e-05 0.000213448 2.0147 0.000213231 4.49998L0.000205908 88.6678C0.000205692 91.1531 2.01492 93.1678 4.50021 93.1678L192.142 93.1679C194.627 93.1679 196.642 91.1531 196.642 88.6679L196.642 4.49999Z" fill="#D4D2E3"/>
-    <path d="M236 62.9033C236 62.0927 236.657 61.4355 237.468 61.4355H245.032C245.843 61.4355 246.5 62.0927 246.5 62.9033V71.9355H237.468C236.657 71.9355 236 71.2784 236 70.4678V62.9033Z" fill="#E61E25"/>
-    <path d="M257 62.9033C257 62.0927 257.657 61.4355 258.468 61.4355H266.032C266.843 61.4355 267.5 62.0927 267.5 62.9033V70.4678C267.5 71.2784 266.843 71.9355 266.032 71.9355H257V62.9033Z" fill="#E61E25"/>
-    <path d="M246.5 91.4678C246.5 92.2784 245.843 92.9355 245.032 92.9355L237.468 92.9355C236.657 92.9355 236 92.2784 236 91.4678L236 83.9033C236 83.0927 236.657 82.4355 237.468 82.4355L246.5 82.4355L246.5 91.4678Z" fill="#E61E25"/>
-    <path d="M257 80.9678C257 81.7784 256.343 82.4355 255.532 82.4355L246.5 82.4355L246.5 71.9355L257 71.9355L257 80.9678Z" fill="#E61E25"/>
-  </svg>    
-  <svg class="absolute hidden md:block right-36 top-10" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0H9.03222C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222V1.46779Z" fill="#E61E25"/>
-    <path d="M21 1.46779C21 0.65715 21.6571 0 22.4678 0H30.0322C30.8428 0 31.5 0.65715 31.5 1.46778V9.03222C31.5 9.84285 30.8429 10.5 30.0322 10.5H21V1.46779Z" fill="#E61E25"/>
-    <path d="M10.5 30.0322C10.5 30.8429 9.84285 31.5 9.03222 31.5L1.46778 31.5C0.65715 31.5 -5.74498e-08 30.8429 -1.28318e-07 30.0322L-7.89621e-07 22.4678C-8.60489e-07 21.6572 0.657148 21 1.46778 21L10.5 21L10.5 30.0322Z" fill="#E61E25"/>
-    <path d="M21 19.5322C21 20.3429 20.3429 21 19.5322 21L10.5 21L10.5 10.5L21 10.5L21 19.5322Z" fill="#E61E25"/>
-  </svg>
-  <svg class="absolute hidden md:block right-[40%] bottom-[38%]" width="84" height="32" viewBox="0 0 84 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.5 10.5H71.2268C72.0374 10.5 72.6946 11.1571 72.6946 11.9678V21H11.9678C11.1571 21 10.5 20.3429 10.5 19.5322V10.5Z" fill="#E61E25"/>
-    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0H9.03222C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222V1.46779Z" fill="#E61E25"/>
-    <path d="M83.1943 30.0322C83.1943 30.8429 82.5372 31.5 81.7266 31.5L74.1621 31.5C73.3515 31.5 72.6943 30.8428 72.6943 30.0322L72.6943 21L81.7266 21C82.5372 21 83.1943 21.6571 83.1943 22.4678L83.1943 30.0322Z" fill="#E61E25"/>
-  </svg>
-    
   <div class="relative overflow-hidden">
     <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-20 lg:pt-28 lg:pb-16 relative">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-28 md:gap-0">
@@ -198,16 +150,6 @@ layout: default
 </div>
 
 <div class="relative">
-  <svg class="absolute top-32 left-28 hidden lg:block" width="84" height="32" viewBox="0 0 84 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.5 10.5H71.2268C72.0374 10.5 72.6946 11.1571 72.6946 11.9678V21H11.9678C11.1571 21 10.5 20.3429 10.5 19.5322V10.5Z" fill="#E61E25"/>
-    <path d="M0 1.46779C0 0.65715 0.65715 0 1.46778 0H9.03222C9.84285 0 10.5 0.65715 10.5 1.46778V10.5H1.46779C0.65715 10.5 0 9.84285 0 9.03222V1.46779Z" fill="#E61E25"/>
-    <path d="M83.1943 30.0322C83.1943 30.8429 82.5372 31.5 81.7266 31.5L74.1621 31.5C73.3515 31.5 72.6943 30.8428 72.6943 30.0322L72.6943 21L81.7266 21C82.5372 21 83.1943 21.6571 83.1943 22.4678L83.1943 30.0322Z" fill="#E61E25"/>
-  </svg>
-  <svg class="absolute bottom-32 right-0 hidden lg:block" width="135" height="177" viewBox="0 0 135 177" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M104.097 171.594L104.097 155.4L88.0532 155.4C85.5679 155.4 83.5532 157.415 83.5532 159.9L83.5532 171.594C83.5532 174.079 85.5679 176.094 88.0532 176.094L99.5972 176.094C102.082 176.094 104.097 174.079 104.097 171.594Z" fill="#D4D2E3"/>
-    <path d="M135 103.562L104.1 103.563L104.1 155.4L135 155.4L135 103.562Z" fill="#D4D2E3"/>
-    <path d="M104.099 103.563L104.099 4.5C104.099 2.01472 102.084 3.52264e-07 99.5991 7.86805e-07L4.50049 1.74144e-05C2.01521 1.78489e-05 0.000488634 2.01474 0.000489068 4.50002L0.000505602 99.0633C0.000506037 101.549 2.01522 103.563 4.50051 103.563L104.099 103.563Z" fill="#D4D2E3"/>
-  </svg>
   <div class="mx-auto max-w-[66rem] px-6 lg:px-8 pt-16 pb-20 lg:py-28 relative">
     <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2] md:text-center">{{ page.datasets.heading }}</h2>
     <div class="grid md:grid-cols-2 gap-8 lg:gap-20 xl:gap-40 mt-12 lg:mt-16">
@@ -293,4 +235,29 @@ layout: default
       <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>            
   </a> 
+</div>
+
+<div class="mx-auto max-w-7xl px-6 lg:px-8 py-28">
+  <div class="grid md:grid-cols-2 gap-14 md:gap-0">
+    <div class="md:pr-10 lg:pr-28 relative">
+      <h2 class="relative text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">{{ page.mentions.heading }}</h2>
+      {% if page.mentions.copy and page.mentions.copy != empty %}
+        <p class="relative text-lg leading-relaxed text-gray-2 mt-4">{{ page.mentions.copy }}</p>
+      {% endif %}
+    </div>
+    <div>
+      <div class="space-y-7">
+        {% for post in posts limit: 3 %}
+          {% include card-mentions.html %}
+        {% endfor %}
+      </div>
+      <a class="mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-brand bg-brand rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.mentions.button.url }}" {% if page.mentions.button.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+        <span>{{ page.mentions.button.text }}</span>
+        <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>            
+      </a>  
+    </div>
+  </div>
 </div>

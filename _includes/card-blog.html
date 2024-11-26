@@ -6,7 +6,7 @@
   </ul>
   <h3 class="mt-5 text-blue font-bold text-3xl uppercase">{{ post.title }}</h3>
   {% if post.description and post.description != empty %}
-    <p class="text-gray-4 mt-1">{{ post.description }}</p>
+    <p class="text-gray-4 mt-1 line-clamp-3">{{ post.description }}</p>
   {% endif %}
   <a href="{{ post.url | relative_url }}" class="text-brand mt-4 inline-block">Read more &rarr;</a>
 </div>
