@@ -2,7 +2,7 @@
 layout: null
 ---
 [
-  {% for item in site.courses %}
+  {% for item in site.publications %}
     {
       "title"    : "{{ item.title | escape }}",
       "category" : "{{ item.category }}",
