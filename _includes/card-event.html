@@ -2,7 +2,7 @@
   {% assign event_date = post.event_date | date: '%s' %}
   <div class="aspect-w-16 aspect-h-10 sm:aspect-h-6 rounded-md overflow-hidden relative">
     <img class="w-full h-full object-center object-cover" src="{{ post.image | absolute_url }}" loading="lazy" alt="{{ post.title | escape }}">
-    <div class="absolute top-0 left-0 bottom-0 w-28 flex justify-center items-center flex-col px-3 {% if event_date >= now %}bg-red text-white{% else %}bg-gray-4 text-gray-3{% endif %}">
+    <div class="absolute top-0 left-0 bottom-0 w-28 flex justify-center items-center flex-col px-3 {% if event_date >= now %}bg-brand text-white{% else %}bg-gray-4 text-gray-3{% endif %}">
       <p class="font-bold text-xl uppercase">{{ post.event_date | date: "%b" }}</p>
       <p class="font-bold text-6xl leading-none my-2">{{ post.event_date | date: "%d" }}</p>
       <div class="bg-white/50 h-px w-full"></div>
@@ -32,5 +32,5 @@
   {% if post.description and post.description != empty %}
     <p class="leading-relaxed text-gray-4 mt-4 line-clamp-2">{{ post.description }}</p>
   {% endif %}
-  <a href="{{ post.url | relative_url }}" class="text-red mt-4 inline-block">Read more &rarr;</a>
+  <a href="{{ post.url | relative_url }}" class="text-brand mt-4 inline-block">Read more &rarr;</a>
 </div>

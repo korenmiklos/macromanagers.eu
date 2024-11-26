@@ -5,14 +5,14 @@ layout: default
 <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-11 pb-24 lg:pt-14 lg:pb-40 relative">
   <div class="flex flex-col lg:flex-row gap-20 xl:gap-32 relative">
     <div class="lg:w-2/3 xl:w-[60%]">
-      <a href="{{ '/datasets/' | relative_url }}" class="text-red inline-block">&larr; Back to datasets</a>
-      <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1] lg:leading-[1] mt-7 mb-1">{{ page.title }} {% if page.accessRights and page.accessRights != empty %}<span class="bg-red inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1 relative -top-2.5 lg:-top-3">{{ page.accessRights }}</span>{% endif %}</h1>
+      <a href="{{ '/datasets/' | relative_url }}" class="text-brand inline-block">&larr; Back to datasets</a>
+      <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1] lg:leading-[1] mt-7 mb-1">{{ page.title }} {% if page.accessRights and page.accessRights != empty %}<span class="bg-brand inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1 relative -top-2.5 lg:-top-3">{{ page.accessRights }}</span>{% endif %}</h1>
       {% if page.publisher and page.publisher != empty %}
-        <p class="text-red font-bold text-lg">{{ page.publisher }}</p>
+        <p class="text-brand font-bold text-lg">{{ page.publisher }}</p>
       {% elsif page.creator and page.creator != empty %}
-        <p class="text-red font-bold text-lg">{{ page.creator }}</p>
+        <p class="text-brand font-bold text-lg">{{ page.creator }}</p>
       {% elsif page.distributor and page.distributor != empty %}
-        <p class="text-red font-bold text-lg">{{ page.distributor }}</p>
+        <p class="text-brand font-bold text-lg">{{ page.distributor }}</p>
       {% endif %}
 
       <ul class="mt-7 flex flex-wrap gap-1.5">
@@ -52,7 +52,7 @@ layout: default
         </div>
       {% endif %} 
 
-      <div class="mt-8 prose max-w-none prose-slate prose-headings:font-bold prose-headings:text-blue prose-h2:text-red prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-red hover:prose-a:text-red">
+      <div class="mt-8 prose max-w-none prose-slate prose-headings:font-bold prose-headings:text-blue prose-h2:text-brand prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-brand hover:prose-a:text-brand">
         {% if page.description and page.description != empty %}
           <p>{{ page.description }}</p>
         {% endif %}
@@ -83,7 +83,7 @@ layout: default
       {% endif %}
 
       {% if page.identifier and page.identifier != empty %}
-        <a class="uppercase mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.identifier | relative_url }}" {% if page.identifier contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+        <a class="uppercase mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-brand bg-brand rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.identifier | relative_url }}" {% if page.identifier contains 'http' %}target="_blank" rel="noopener" {% endif %}>
           <span>Get dataset</span>
           <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -105,7 +105,7 @@ layout: default
                 <path d="M65.2384 50L36.5107 50" stroke="white" stroke-width="3.19198" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>                  
               <div>
-                <h4 class="font-bold text-lg text-red leading-tight">{{ post.title }}</h4>
+                <h4 class="font-bold text-lg text-brand leading-tight">{{ post.title }}</h4>
               </div>
               <a href="{{ post.url | relative_url }}" class="absolute inset-0" title="{{ post.title }}"></a>
             </div>

@@ -6,7 +6,7 @@ title: Blog
   <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-11 pb-24 lg:pt-14 lg:pb-32 relative min-h-[80rem]">
     <div class="flex flex-col lg:flex-row gap-20 xl:gap-32 relative">
       <div class="lg:w-2/3 xl:w-[60%] relative">
-        <a href="{{ '/' | relative_url }}" class="text-red inline-block">&larr; Back to blog</a>
+        <a href="{{ '/' | relative_url }}" class="text-brand inline-block">&larr; Back to blog</a>
         <div class="space-y-7 mt-8">
           {% for post in paginator.posts %}
               {% include card-blog.html %}
@@ -42,7 +42,7 @@ title: Blog
                   <path d="M65.2384 50L36.5107 50" stroke="white" stroke-width="3.19198" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>                  
                 <div>
-                  <h4 class="font-bold text-lg text-red leading-tight">{{ post.title }}</h4>
+                  <h4 class="font-bold text-lg text-brand leading-tight">{{ post.title }}</h4>
                   <p class="text-gray-2 leading-snug">{{ post.description }}</p>
                 </div>
                 <a href="{{ post.url | relative_url }}" class="absolute inset-0" title="{{ post.title }}"></a>

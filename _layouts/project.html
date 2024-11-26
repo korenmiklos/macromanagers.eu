@@ -15,7 +15,7 @@ layout: default
         <img class="w-full" src="{{ item.image | absolute_url }}" loading="lazy" alt="{{ item.name }}">
       {% endfor %}
     </div>
-    <div class="mt-14 lg:mt-16 prose max-w-none prose-slate prose-headings:font-bold prose-a:text-red hover:prose-a:text-red">
+    <div class="mt-14 lg:mt-16 prose max-w-none prose-slate prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand">
       {{ content }}
     </div>
   </div>
@@ -33,7 +33,7 @@ layout: default
                 {% if item.url and item.url != empty %} 
                 <a href="{{ item.url }}" class="group" target="_blank" rel="noopener noreferrer">
                 {% endif %}
-                <h4 class="font-bold text-lg text-red group-hover:underline">{{ item.name }}</h4>
+                <h4 class="font-bold text-lg text-brand group-hover:underline">{{ item.name }}</h4>
                 {% if item.url and item.url != empty %}</a>{% endif %}
                 <p class="text-gray-2">{{ item.title }}</p>
               </div>
@@ -54,7 +54,7 @@ layout: default
                 {% if item.url and item.url != empty %} 
                 <a href="{{ item.url }}" class="group" target="_blank" rel="noopener noreferrer">
                 {% endif %}
-                <h4 class="font-bold text-lg text-red group-hover:underline">{{ item.name }}</h4>
+                <h4 class="font-bold text-lg text-brand group-hover:underline">{{ item.name }}</h4>
                 {% if item.url and item.url != empty %}</a>{% endif %}
                 <p class="text-gray-2">{{ item.title }}</p>
               </div>
@@ -75,7 +75,7 @@ layout: default
                 {% if item.url and item.url != empty %} 
                 <a href="{{ item.url }}" class="group" target="_blank" rel="noopener noreferrer">
                 {% endif %}
-                <h4 class="font-bold text-lg text-red group-hover:underline">{{ item.name }}</h4>
+                <h4 class="font-bold text-lg text-brand group-hover:underline">{{ item.name }}</h4>
                 {% if item.url and item.url != empty %}</a>{% endif %}
                 <p class="text-gray-2">{{ item.title }}</p>
               </div>

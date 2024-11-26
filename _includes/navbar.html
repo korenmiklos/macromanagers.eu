@@ -2,13 +2,13 @@
   class="bg-white transition duration-500 relative">
   <div class="mx-auto max-w-7xl flex flex-wrap items-center space-x-8 justify-between px-6 lg:px-8 py-11 lg:py-12">
     <a href="{{ "/" | relative_url }}">
-      <img class="h-14 lg:h-24" src="{{ site.data.config[site.website].logo | absolute_url }}" height="96" alt="{{ site.title }}">
+      <img class="h-14 lg:h-24" src="{{ site.data.config.logo | absolute_url }}" height="96" alt="{{ site.title }}">
     </a>
 
     <div class="flex items-center flex-1 justify-end">
             
       <nav class="hidden lg:flex lg:mr-5">
-        {% for link in site.data.navbar[site.website] %}
+        {% for link in site.data.navbar %}
           {% if link.url contains 'http' %}
             {% assign domain = '' %}
           {% else %}
@@ -19,12 +19,12 @@
             <div class="relative" x-data="{ dropdown: false }">
               <button type="button" @click.prevent="dropdown = ! dropdown"
                 :class="{ 'shadow-dropdown': dropdown, '': !(dropdown) }"
-                class="group bg-white inline-flex transform-none items-center text-lg py-2.5 px-4 rounded-t-md focus:outline-none text-red"
+                class="group bg-white inline-flex transform-none items-center text-lg py-2.5 px-4 rounded-t-md focus:outline-none text-brand"
                 aria-expanded="false">
                 <div class="absolute top-3 left-0 right-0 -bottom-2 z-40 bg-white"></div>
                 <span class="relative z-50">{{ link.text }}</span>
                 <svg
-                  class="ml-0.5 h-5 w-5 group-hover:text-red text-red transform-none relative z-50"
+                  class="ml-0.5 h-5 w-5 group-hover:text-brand text-brand transform-none relative z-50"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor" aria-hidden="true">
                   <path fill-rule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414.0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414.0l-4-4a1 1 0 010-1.414z"
@@ -47,7 +47,7 @@
                         {% assign domain = '' | relative_url %}
                       {% endif %}                    
                       <a href="{{ domain }}{{ child.url }}"
-                        class="-m-4 flex items-start group rounded-xl p-4 text-dark hover:text-red">
+                        class="-m-4 flex items-start group rounded-xl p-4 text-dark hover:text-brand">
                         {% if child.icon and child.icon != empty %}
                           <div class="flex-shrink-0 mr-3">
                             {% include icons/{{ child.icon }}.svg %}                            
@@ -63,7 +63,7 @@
               </div>
             </div>
           {% else %}
-            <a class="text-lg hover:text-red py-2.5 px-4 text-red" href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>{{ link.text }}</a>
+            <a class="text-lg hover:text-brand py-2.5 px-4 text-brand" href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>{{ link.text }}</a>
           {% endif %}
         {% endfor %}            
       </nav>
@@ -77,7 +77,7 @@
               class="block relative z-20 w-full rounded-md border-0 bg-[#F9F9FF] py-3 pl-10 pr-3 text-blue ring-0 placeholder:text-gray-2 focus:ring-0 text-base sm:leading-6"
               placeholder="Search for..." type="search" autocomplete="off">
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 z-20">
-              <svg class="h-5 w-5 text-red" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg class="h-5 w-5 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd"
                   d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
                   clip-rule="evenodd"></path>
@@ -114,7 +114,7 @@
     >
     <div class="overflow-hidden bg-white">
       <div class="space-y-1 p-6 pb-20">
-        {% for link in site.data.navbar[site.website] %}
+        {% for link in site.data.navbar %}
           {% if link.url contains 'http' %}
             {% assign domain = '' %}
           {% else %}
@@ -125,7 +125,7 @@
             <div x-data="{ accordion: false }">
               <a
                 href="#"
-                class="flex items-center py-4 text-2xl font-bold uppercase text-red"
+                class="flex items-center py-4 text-2xl font-bold uppercase text-brand"
                 @click.prevent="accordion = ! accordion"
               >
                 <span class="mr-4">{{ link.text }}</span>
@@ -150,12 +150,12 @@
                   {% else %}
                     {% assign domain = '' | relative_url %}
                   {% endif %}                    
-                  <a href="{{ domain }}{{ child.url }}" class="py-4 block text-lg text-dark hover:text-red">{{ child.text }}</a>
+                  <a href="{{ domain }}{{ child.url }}" class="py-4 block text-lg text-dark hover:text-brand">{{ child.text }}</a>
                 {% endfor %}
               </div>
             </div>
           {% else %}
-            <a href="{{ domain }}{{ link.url }}" class="block py-4 text-2xl font-bold uppercase text-red" 
+            <a href="{{ domain }}{{ link.url }}" class="block py-4 text-2xl font-bold uppercase text-brand" 
             {% if link.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>{{ link.text }}</a>
           {% endif %}
         {% endfor %} 
@@ -163,13 +163,13 @@
     </div>
   </div>
 </header>
-{% assign filename = "search-" | append: site.website | append: ".json" %}
+{% assign filename = "search.json" %}
 <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
 <script>
 	window.simpleJekyllSearch = new SimpleJekyllSearch({
 		searchInput: document.getElementById('search-input'),
 		resultsContainer: document.getElementById('results-container'),
-		searchResultTemplate: '<li><a class="py-2 block leading-tight hover:text-red" href="{url}">{title}</a></li>',
+		searchResultTemplate: '<li><a class="py-2 block leading-tight hover:text-brand" href="{url}">{title}</a></li>',
 		noResultsText: '<li class="no-results py-3">No results found</li>',
 		json: "{{ filename | relative_url }}"
 	});
@@ -196,7 +196,7 @@
 		function removeActive() {
 			for (i = 0; i < results.children.length; i++) {
 				// results.children[i].classList.remove("bg-slate-50");
-        results.children[i].classList.remove("text-red");
+        results.children[i].classList.remove("text-brand");
 			}
 		}
 
@@ -204,14 +204,14 @@
 
 			removeActive();
 			// event.target.parentElement.classList.add("bg-slate-50");
-      event.target.parentElement.classList.add("text-red");
+      event.target.parentElement.classList.add("text-brand");
 			currentItem = null;
 
 		});
 
 		results.addEventListener("mouseout", function(event) {
 			// event.target.parentElement.classList.remove("bg-slate-50");
-      event.target.parentElement.classList.remove("text-red");
+      event.target.parentElement.classList.remove("text-brand");
 		});
 
 
@@ -231,7 +231,7 @@
 					}
 					removeActive();
 					// resultItems[currentItem].classList.add("bg-slate-50");
-          resultItems[currentItem].classList.add("text-red");
+          resultItems[currentItem].classList.add("text-brand");
 				}
 
 			} else if (event.keyCode === 38) {
@@ -244,7 +244,7 @@
 					}
 					removeActive();
 					// resultItems[currentItem].classList.add("bg-slate-50");
-          resultItems[currentItem].classList.add("text-red");
+          resultItems[currentItem].classList.add("text-brand");
 				}
 
 			} else if (event.keyCode === 13 && currentItem !== null) {

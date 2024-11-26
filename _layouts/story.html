@@ -19,7 +19,7 @@ layout: default
 </div>
 
 <div class="mx-auto max-w-3xl px-6 lg:px-8 py-16 lg:py-28">
-  <div class="text-center prose max-w-none prose-slate prose-headings:font-bold prose-headings:text-gray-1 prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-red hover:prose-a:text-red">
+  <div class="text-center prose max-w-none prose-slate prose-headings:font-bold prose-headings:text-gray-1 prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-brand hover:prose-a:text-brand">
     {{ content }}
   </div>
 </div>
@@ -29,7 +29,7 @@ layout: default
     <img class="max-w-[13.75rem] h-auto hidden lg:block rounded-md" src="{{ page.about.image | absolute_url }}" alt="{{ page.about.name | escape }}">
     <div>
       {% if page.about.name and page.about.name != empty %}
-        <h2 class="text-5xl lg:text-6xl font-bold text-red flex items-center gap-4">
+        <h2 class="text-5xl lg:text-6xl font-bold text-brand flex items-center gap-4">
           <svg class="flex-none h-auto w-20 sm:w-9" width="37" height="44" viewBox="0 0 37 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.191 37.1375H0.951679C0.428255 37.1375 0 36.7092 0 36.1856V25.9813C0 25.4578 0.428255 25.0294 0.951679 25.0294H12.191V37.1375Z" fill="#E61E25"/>
             <path d="M36.5777 1.75549V24.0775C36.5777 24.601 36.1494 25.0294 35.626 25.0294H12.1909V1.75549C12.1909 1.23194 12.6192 0.803589 13.1426 0.803589H35.626C36.1494 0.803589 36.5777 1.23194 36.5777 1.75549Z" fill="#E61E25"/>
@@ -42,7 +42,7 @@ layout: default
         <p class="text-lg leading-relaxed text-gray-2 mt-5">{{ page.about.copy }}</p>
       {% endif %}
       {% if page.about.link.url and page.about.link.url != empty %}
-        <a href="{{ page.about.link.url | relative_url }}" class="text-red mt-2 inline-block">{{ page.about.link.text }} &rarr;</a>
+        <a href="{{ page.about.link.url | relative_url }}" class="text-brand mt-2 inline-block">{{ page.about.link.text }} &rarr;</a>
       {% endif %}
     </div>
   </div>
@@ -53,7 +53,7 @@ layout: default
     {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
     <div class="flex items-center flex-col lg:flex-row gap-12 lg:gap-20">
       <img class="lg:max-w-[38%] h-auto rounded-md" src="{{ item.image | absolute_url }}" alt="{{ item.heading }}">
-      <div class="prose max-w-none prose-lg prose-slate prose-headings:font-bold prose-headings:text-blue prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-red hover:prose-a:text-red {% if thecycle == 'even' %}lg:order-first{% endif %}">{{ item.copy | markdownify }}</div>
+      <div class="prose max-w-none prose-lg prose-slate prose-headings:font-bold prose-headings:text-blue prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-brand hover:prose-a:text-brand {% if thecycle == 'even' %}lg:order-first{% endif %}">{{ item.copy | markdownify }}</div>
     </div>
   {% endfor %}
 </div>

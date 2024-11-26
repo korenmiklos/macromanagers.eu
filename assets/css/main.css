@@ -30,7 +30,7 @@
   @apply w-2.5 h-2.5 bg-gray-3;
 }
 .swiper-pagination-bullet-active {
-  @apply bg-red w-7;
+  @apply bg-brand w-7;
 }
 
 .prose table {

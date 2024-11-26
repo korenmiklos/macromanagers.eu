@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: "Brockmann,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
-        mono: "DM Mono,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas",
+        sans: "Montserrat,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
+        // mono: "DM Mono,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas",
       },
       maxWidth: {
         '7xl': '78rem',
@@ -18,8 +18,8 @@ module.exports = {
         current: 'currentColor',
         'white': '#ffffff',
         'black': '#000000',
-        'red': '#E61E25',
-        'blue': '#1D1D40',
+        'brand': '#148FFF',
+        'blue': '#00177B',
         'dark': '#232324',
         'gray-1': '#5D5A88',
         'gray-2': '#747297', //'#9795B5',
