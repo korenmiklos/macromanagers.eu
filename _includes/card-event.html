@@ -1,0 +1,36 @@
+<div class="pt-10 pb-4">
+  {% assign event_date = post.event_date | date: '%s' %}
+  <div class="aspect-w-16 aspect-h-10 sm:aspect-h-6 rounded-md overflow-hidden relative">
+    <img class="w-full h-full object-center object-cover" src="{{ post.image | absolute_url }}" loading="lazy" alt="{{ post.title | escape }}">
+    <div class="absolute top-0 left-0 bottom-0 w-28 flex justify-center items-center flex-col px-3 {% if event_date >= now %}bg-red text-white{% else %}bg-gray-4 text-gray-3{% endif %}">
+      <p class="font-bold text-xl uppercase">{{ post.event_date | date: "%b" }}</p>
+      <p class="font-bold text-6xl leading-none my-2">{{ post.event_date | date: "%d" }}</p>
+      <div class="bg-white/50 h-px w-full"></div>
+      <p class="font-bold text-xs mt-4">{{ post.event_date | date: "%Y" }}</p>
+    </div>
+  </div>
+  <h3 class="uppercase text-blue font-bold text-[1.75rem] mt-4">{{ post.title }}</h3>
+  <div class="flex space-x-6 italic">
+    {% if post.speaker and post.speaker != empty %}
+    <p class="flex space-x-1.5 items-center">
+      <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 9.99935C12.3012 9.99935 14.1667 8.13387 14.1667 5.83268C14.1667 3.5315 12.3012 1.66602 10 1.66602C7.69882 1.66602 5.83334 3.5315 5.83334 5.83268C5.83334 8.13387 7.69882 9.99935 10 9.99935Z" fill="#5D5A88"/>
+        <path d="M10.0001 12.084C5.82514 12.084 2.42514 14.884 2.42514 18.334C2.42514 18.5673 2.60847 18.7507 2.84181 18.7507H17.1585C17.3918 18.7507 17.5751 18.5673 17.5751 18.334C17.5751 14.884 14.1751 12.084 10.0001 12.084Z" fill="#5D5A88"/>
+      </svg>                  
+      <span class="text-gray-2">{{ post.speaker }}</span>
+    </p>
+    {% endif %}     
+    {% if post.location and post.location != empty %}
+      <p class="flex space-x-1.5 items-center">
+        <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.99984 18.3327C9.80539 18.3327 9.63873 18.2771 9.49984 18.166C9.36095 18.0549 9.25678 17.9091 9.18734 17.7285C8.92345 16.9507 8.59012 16.2216 8.18734 15.541C7.79845 14.8605 7.24984 14.0618 6.5415 13.1452C5.83317 12.2285 5.25678 11.3535 4.81234 10.5202C4.38178 9.68685 4.1665 8.6799 4.1665 7.49935C4.1665 5.87435 4.729 4.49935 5.854 3.37435C6.99289 2.23546 8.37484 1.66602 9.99984 1.66602C11.6248 1.66602 12.9998 2.23546 14.1248 3.37435C15.2637 4.49935 15.8332 5.87435 15.8332 7.49935C15.8332 8.76324 15.5901 9.81879 15.104 10.666C14.6318 11.4993 14.0832 12.3257 13.4582 13.1452C12.7082 14.1452 12.1387 14.9785 11.7498 15.6452C11.3748 16.298 11.0623 16.9924 10.8123 17.7285C10.7429 17.923 10.6318 18.0757 10.479 18.1868C10.3401 18.2841 10.1804 18.3327 9.99984 18.3327ZM9.99984 9.58268C10.5832 9.58268 11.0762 9.38129 11.479 8.97852C11.8818 8.57574 12.0832 8.08268 12.0832 7.49935C12.0832 6.91601 11.8818 6.42296 11.479 6.02018C11.0762 5.6174 10.5832 5.41602 9.99984 5.41602C9.4165 5.41602 8.92345 5.6174 8.52067 6.02018C8.11789 6.42296 7.9165 6.91601 7.9165 7.49935C7.9165 8.08268 8.11789 8.57574 8.52067 8.97852C8.92345 9.38129 9.4165 9.58268 9.99984 9.58268Z" fill="#5D5A88"/>
+        </svg>
+        <span class="text-gray-2 italic text-[0.9375rem]">{{ post.location }}</span>
+      </p>
+    {% endif %}       
+  </div>
+  {% if post.description and post.description != empty %}
+    <p class="leading-relaxed text-gray-4 mt-4 line-clamp-2">{{ post.description }}</p>
+  {% endif %}
+  <a href="{{ post.url | relative_url }}" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>

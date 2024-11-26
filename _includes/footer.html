@@ -1,0 +1,17 @@
+<footer class="mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="flex flex-col lg:flex-row items-center lg:justify-between">
+    <div class="pt-11 pb-12">
+      <a href="{{ "/" | relative_url }}">
+        <img class="h-24 w-auto" src="{{ site.data.config[site.website].logo | absolute_url }}" loading="lazy" height="96" alt="{{ site.title }}">
+      </a>
+    </div>
+    <div class="flex space-x-6 border-t lg:border-0 border-gray-3 w-full lg:w-auto justify-center pt-8">
+      {% include social-networks.html %}
+    </div>
+    </div>
+  </div>
+  <div class="lg:border-t border-gray-3 text-center pt-9 pb-10">
+    <p class="font-light text-sm text-gray-2">{{ site.data.config[site.website].copyright }}</p>
+  </div>
+</footer>

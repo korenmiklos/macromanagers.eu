@@ -1,0 +1,36 @@
+{
+  "name": "hugotw3",
+  "version": "1.0.0",
+  "description": "Jekyll & Tailwind CSS 3.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "latest",
+    "@tailwindcss/typography": "latest",
+    "autoprefixer": "latest",
+    "concurrently": "latest",
+    "postcss": "latest",
+    "postcss-cli": "latest",
+    "tailwindcss": "latest"
+  },
+  "scripts": {
+    "dev": "concurrently npm:watch:*",
+    "watch:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "watch:jekyll": "bundle exec jekyll s --port 4001 --trace"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "jekyll",
+    "tailwind",
+    "tailwindcss"
+  ],
+  "author": "Ivan",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

@@ -1,0 +1,19 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <meta property="og:image" content="{% if site.brand.image contains 'http' %}{{ site.brand.image }}{% else %}{{ site.uploads | absolute_url }}{{ site.brand.image }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/koren-dev/png/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/koren-dev/png/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/koren-dev/png/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/koren-dev/png/apple-touch-icon.png">  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  {% if jekyll.environment == 'production' and site.plausible %}
+    {% include plausible.html %}
+  {% endif %}
+</head>

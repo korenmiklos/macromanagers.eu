@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="scroll-smooth">
+
+  {% include head.html %}
+
+  <body x-data="{ mobile: false }" class="relative antialiased">
+  
+    {% include navbar.html %}
+
+    {{ content }} 
+    
+    {% include footer.html %}
+
+    </body>
+
+</html>

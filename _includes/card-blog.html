@@ -1,0 +1,12 @@
+<div class="border-b border-gray-3 pb-4 last:border-none">
+  <ul class="flex flex-wrap gap-2">
+    {% for item in post.categories %}
+      <li class="uppercase text-xs text-white font-bold bg-blue rounded-sm px-4 py-1.5">{{ item }}</li>
+    {% endfor %}
+  </ul>
+  <h3 class="mt-5 text-blue font-bold text-3xl uppercase">{{ post.title }}</h3>
+  {% if post.description and post.description != empty %}
+    <p class="text-gray-4 mt-1">{{ post.description }}</p>
+  {% endif %}
+  <a href="{{ post.url | relative_url }}" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>

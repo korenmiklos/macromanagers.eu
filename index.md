@@ -1,30 +1,44 @@
 ---
-layout: home-courses-2
-title: Courses
+layout: home-publications
+title: 
 
-events:
-  heading: Upcoming events
-  copy: A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor.
-  button:
-    text: More events
-    url: "/events/"
+hero:
+  superheading: "#publications #lectures"
+  heading: Big title about the content
+  copy: A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu egestas morbi sem vulputate etiam facilisis.
 
-software:
-  heading: Download software
-  copy: A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor.
-  button:
-    text: More software
-    url: /software/
+about:
+  name: Miklós Koren
+  copy: A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu egestas morbi sem vulputate etiam facilisis.
+  image: /assets/images/miklos-koren.jpg
+  link:
+    text: Read CV
+    url: /cv/
 
-datasets:
-  heading: Browse datasets
-  button:
-    text: More datasets
-    url: "/datasets/"
+blocks:
+- block: cards
+  cards:
+  - heading: Ready to get started?
+    copy: Morbi eget neque vel turpis turpis lacinia lacinia eget neque lacinia. 
+    icon: thin-rocket
+    button:
+      text: Learn more
+      url: "/getting-started/"
+  - heading: New to platform?
+    copy: Morbi eget neque vel turpis turpis lacinia lacinia eget neque lacinia. 
+    icon: thin-academic-cap
+    button:
+      text: Learn more
+      url: "/getting-started/"
 
-publications:
-  heading: Browse publications
+- block: navigation
+
+- block: cta
+  heading: Ready to get started?
+  copy: Morbi eget neque vel turpis lacinia eget neque vel turpis lacinia lacinia eget neque vel turpis lacinia eget vel turpis lacinia eget neque vel turpis lacinia lacinia eget neque.
+  icon: thin-rocket
   button:
-    text: More
-    url: "#"
+    text: Get started
+    url: "/getting-started/"
+
 ---

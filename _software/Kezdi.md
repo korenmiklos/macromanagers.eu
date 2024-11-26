@@ -2,6 +2,7 @@
 title: Kezdi.jl
 description: A data analysis package for economists
 date: 2024-07-12
+language: julia
 categories:
 - julia
 code: |-

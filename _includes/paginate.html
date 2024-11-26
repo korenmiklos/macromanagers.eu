@@ -1,0 +1,42 @@
+<div class="flex justify-between items-center space-x-2 border-t border-gray-3 pt-8">
+  <div>
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" title="Previous">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-red">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>        
+      </a>
+    {% endif %} 
+  </div>
+  <div class="space-x-2 hidden lg:flex">
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <span class="h-2.5 w-7 bg-red rounded-sm" title="{{ page }}"></span>
+      {% elsif page == 1 %}
+        <a class="h-2.5 w-2.5 bg-gray-3 rounded-sm" href="{{ site.paginate_path | replace: '/:num', '' }}" title="{{ page }}"></a>
+      {% else %}
+        <a class="h-2.5 w-2.5 bg-gray-3 rounded-sm" href="{{ site.paginate_path | replace: ':num', page }}" title="{{ page }}"></a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="flex space-x-2 lg:hidden text-blue items-center">
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <span class="w-7 h-7 flex justify-center items-center bg-red rounded-sm text-white leading-none"><span>{{ page }}</span></span>
+      {% elsif page == 1 %}
+        <a class="hover:text-red py-0.5 px-2.5" href="{{ site.paginate_path | replace: '/:num', '' }}">{{ page }}</a>
+      {% else %}
+        <a class="hover:text-red py-0.5 px-2.5" href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" title="Next">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-red">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>        
+      </a>
+    {% endif %}
+  </div> 
+</div>

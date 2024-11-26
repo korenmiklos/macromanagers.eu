@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="sm:hidden h-auto w-full absolute top-0 left-0 right-0" src="{{ '/assets/images/koren-mk-hero-sm-1.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+    <img class="sm:hidden absolute top-1/2 left-0" src="{{ '/assets/images/koren-mk-hero-sm-2.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+    <img class="sm:hidden h-auto w-full absolute bottom-0 left-0 right-0" src="{{ '/assets/images/koren-mk-hero-sm-3.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+    <img class="hidden sm:block object-cover object-center h-full w-full" src="{{ '/assets/images/koren-mk-hero.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+  </div>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 py-28 lg:py-20 text-center relative">
+    {% if page.hero.superheading and page.hero.superheading != empty %}
+      <p class="text-lg uppercase font-bold text-red mb-2 tracking-widest">{{ page.hero.superheading }}</p>
+    {% endif %}
+    <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">{{ page.hero.heading | escape }}</h1>
+    {% if page.hero.copy and page.hero.copy != empty %}
+      <p class="text-lg leading-relaxed text-gray-2 mt-5 max-w-2xl mx-auto">{{ page.hero.copy }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="mx-auto max-w-5xl px-6 lg:px-8 py-16 lg:py-28">
+  <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 xl:gap-36">
+    <img class="max-w-[13.75rem] h-auto rounded-lg" src="{{ page.about.image | absolute_url }}" alt="{{ page.about.name | escape }}">
+    <div>
+      {% if page.about.name and page.about.name != empty %}
+        <h2 class="text-5xl lg:text-6xl font-bold text-red flex items-center gap-4">
+          <svg class="flex-none hidden sm:block" width="37" height="44" viewBox="0 0 37 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.191 37.1375H0.951679C0.428255 37.1375 0 36.7092 0 36.1856V25.9813C0 25.4578 0.428255 25.0294 0.951679 25.0294H12.191V37.1375Z" fill="#E61E25"/>
+            <path d="M36.5777 1.75549V24.0775C36.5777 24.601 36.1494 25.0294 35.626 25.0294H12.1909V1.75549C12.1909 1.23194 12.6192 0.803589 13.1426 0.803589H35.626C36.1494 0.803589 36.5777 1.23194 36.5777 1.75549Z" fill="#E61E25"/>
+            <path d="M12.1909 37.1375H17.3347C17.8582 37.1375 18.2864 37.5658 18.2864 38.0893V42.2444C18.2864 42.7679 17.8582 43.1963 17.3347 43.1963H13.1426C12.6192 43.1963 12.1909 42.7679 12.1909 42.2444V37.1375Z" fill="#E61E25"/>
+          </svg>
+          <span>{{ page.about.name }}</span>
+        </h2>
+      {% endif %}
+      {% if page.about.copy and page.about.copy != empty %}
+        <p class="text-lg leading-relaxed text-gray-2 mt-5">{{ page.about.copy }}</p>
+      {% endif %}
+      {% if page.about.link.url and page.about.link.url != empty %}
+        <a href="{{ page.about.link.url | relative_url }}" class="text-red mt-2 inline-block">{{ page.about.link.text }} &rarr;</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="mx-auto max-w-6xl px-6 lg:px-8 xl:px-20 py-20 lg:py-28">
+  <div class="grid md:grid-cols-2 gap-14 lg:gap-24">
+    {% assign posts = site.publications | sort: 'date' | reverse %}
+    {% for post in posts %}
+      <div class="">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 -8.74228e-08C14.1046 -3.91405e-08 15 0.895431 15 2L15 13C15 14.1046 14.1046 15 13 15L-6.55671e-07 15L-8.74228e-08 2C-3.91405e-08 0.89543 0.895431 -6.1653e-07 2 -5.68248e-07L13 -8.74228e-08Z" fill="#E61E25"/>
+        </svg>
+        <a href="{{ post.url | relative_url }}">
+          <h3 class="mt-5 uppercase text-gray-1 font-bold text-3xl">{{ post.title }}</h3>
+        </a>
+        {% if post.cite and post.cite != empty %}
+          <p class="text-gray-2 italic text-sm mt-5">{{ post.cite }}</p>
+        {% endif %}
+        <hr class="border-gray-3 mt-2">
+        <div class="mt-10 relative">
+          <div class="relative text-gray-1 text-lg leading-relaxed line-clamp-[15]">{{ post.excerpt }}</div>
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+        </div>
+        <a href="{{ post.url | relative_url }}" class="text-red mt-4 inline-block">Read more &rarr;</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

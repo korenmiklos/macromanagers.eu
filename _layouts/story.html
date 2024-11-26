@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<div class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="md:hidden object-cover object-center h-full w-full" src="{{ '/assets/images/story-hero-sm.png' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+    <img class="hidden md:block object-cover object-top h-full w-full" src="{{ '/assets/images/story-hero.png' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+  </div>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-80 md:pt-24 md:pb-48 relative">
+  <div class="md:w-[69%] relative">
+    <a href="{{ '/' | relative_url }}" class="text-white hidden md:inline-block mb-16">&larr; Back to courses</a>
+    <h1 class="text-5xl lg:text-6xl text-white font-bold leading-[1.2]">{{ page.hero.heading }}</h1>
+    {% if page.hero.copy and page.hero.copy != empty %}
+      <p class="text-lg leading-relaxed text-white mt-4 max-w-2xl">{{ page.hero.copy }}</p>
+    {% endif %}
+  </div>
+  </div>
+</div>
+
+<div class="mx-auto max-w-3xl px-6 lg:px-8 py-16 lg:py-28">
+  <div class="text-center prose max-w-none prose-slate prose-headings:font-bold prose-headings:text-gray-1 prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-red hover:prose-a:text-red">
+    {{ content }}
+  </div>
+</div>
+
+<div class="mx-auto max-w-5xl px-6 lg:px-8 xl:px-12 py-16">
+  <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 xl:gap-36">
+    <img class="max-w-[13.75rem] h-auto hidden lg:block rounded-md" src="{{ page.about.image | absolute_url }}" alt="{{ page.about.name | escape }}">
+    <div>
+      {% if page.about.name and page.about.name != empty %}
+        <h2 class="text-5xl lg:text-6xl font-bold text-red flex items-center gap-4">
+          <svg class="flex-none h-auto w-20 sm:w-9" width="37" height="44" viewBox="0 0 37 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.191 37.1375H0.951679C0.428255 37.1375 0 36.7092 0 36.1856V25.9813C0 25.4578 0.428255 25.0294 0.951679 25.0294H12.191V37.1375Z" fill="#E61E25"/>
+            <path d="M36.5777 1.75549V24.0775C36.5777 24.601 36.1494 25.0294 35.626 25.0294H12.1909V1.75549C12.1909 1.23194 12.6192 0.803589 13.1426 0.803589H35.626C36.1494 0.803589 36.5777 1.23194 36.5777 1.75549Z" fill="#E61E25"/>
+            <path d="M12.1909 37.1375H17.3347C17.8582 37.1375 18.2864 37.5658 18.2864 38.0893V42.2444C18.2864 42.7679 17.8582 43.1963 17.3347 43.1963H13.1426C12.6192 43.1963 12.1909 42.7679 12.1909 42.2444V37.1375Z" fill="#E61E25"/>
+          </svg>
+          <span>{{ page.about.name }}</span>
+        </h2>
+      {% endif %}
+      {% if page.about.copy and page.about.copy != empty %}
+        <p class="text-lg leading-relaxed text-gray-2 mt-5">{{ page.about.copy }}</p>
+      {% endif %}
+      {% if page.about.link.url and page.about.link.url != empty %}
+        <a href="{{ page.about.link.url | relative_url }}" class="text-red mt-2 inline-block">{{ page.about.link.text }} &rarr;</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="mx-auto max-w-5xl px-6 lg:px-8 xl:px-12 py-16 lg:py-28 space-y-16">
+  {% for item in page.cards %}
+    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+    <div class="flex items-center flex-col lg:flex-row gap-12 lg:gap-20">
+      <img class="lg:max-w-[38%] h-auto rounded-md" src="{{ item.image | absolute_url }}" alt="{{ item.heading }}">
+      <div class="prose max-w-none prose-lg prose-slate prose-headings:font-bold prose-headings:text-blue prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-red hover:prose-a:text-red {% if thecycle == 'even' %}lg:order-first{% endif %}">{{ item.copy | markdownify }}</div>
+    </div>
+  {% endfor %}
+</div>

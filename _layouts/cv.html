@@ -1,0 +1,166 @@
+---
+layout: default
+---
+
+<div class="mx-auto max-w-7xl px-6 lg:px-8 py-11 lg:pt-14 lg:pb-32">
+  <div class="flex flex-col lg:flex-row gap-16 lg:gap-20 xl:gap-32">
+    <div class="flex-1">
+      <a href="{{ '/' | relative_url }}" class="text-red inline-block">&larr; Back to publications</a>
+      <div class="flex flex-col lg:flex-row gap-7 mt-16">
+        <div>
+          <img class="w-32 lg:w-40 h-auto rounded-md" src="{{ page.about.image | absolute_url }}" alt="{{ page.about.name | escape }}">
+        </div>
+        <div class="flex-1">
+          {% if page.about.name and page.about.name != empty %}
+            <h1 class="text-5xl lg:text-6xl font-bold text-blue">{{ page.about.name }}</h1>
+          {% endif %}
+          {% if page.about.position and page.about.position != empty %}
+            <p class="text-gray-1 font-bold text-lg">{{ page.about.position }}</p>
+          {% endif %}
+          {% if page.about.location and page.about.location != empty %}
+            <p class="text-gray-2 leading-snug mt-1.5">{{ page.about.location }}</p>
+          {% endif %}
+          {% if page.about.personal_data and page.about.personal_data != empty %}
+            <p class="text-gray-2 mt-2">{{ page.about.personal_data }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% if page.about.interests and page.about.interests != empty %}
+        <p class="font-bold text-gray-2 mt-5">Research and Teaching Interests</p>
+        <p class="leading-relaxed text-gray-2">{{ page.about.interests }}</p>
+      {% endif %}
+      {% if page.statement and page.statement != empty %}
+        <p class="text-red my-16 uppercase font-bold text-3xl leading-tight">“{{ page.statement }}”</p>
+      {% endif %}
+
+      {% for accordion in page.accordion %}
+        <div x-data="{ expanded: false }" class="">
+          <h2>
+            <button x-on:click="expanded = ! expanded"
+              class="w-full py-3 flex items-center text-left text-[1.75rem] uppercase font-bold font-display text-blue">
+              <span class="grow">{{ accordion.heading }}</span>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                :class="{ 'rotate-90': expanded, 'transform-none': !(expanded) }"
+                class="h-8 w-8 duration-300 transform-none text-red flex-none" viewBox="0 0 20 20" fill="currentcolor">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414.0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </h2>
+          <div x-show="expanded" x-collapse>
+            <ul class="space-y-6 text-blue leading-snug pb-16">
+              {% for item in accordion.items %}
+                <li class="flex space-x-8">
+                  <div class="text-red min-w-[6rem]">{{ item.date }}</div>
+                  <div>{{ item.copy | markdownify }}</div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+
+      {% assign filtered_publications = site.publications | sort: 'date' | reverse %}
+      {% for item in page.publications %}
+        <div x-data="{ expanded: false }" class="">
+          <h2>
+            <button x-on:click="expanded = ! expanded"
+              class="w-full py-3 flex items-center text-left text-[1.75rem] uppercase font-bold font-display text-blue">
+              <span class="grow">{{ item.heading }}</span>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                :class="{ 'rotate-90': expanded, 'transform-none': !(expanded) }"
+                class="h-8 w-8 duration-300 transform-none text-red flex-none" viewBox="0 0 20 20" fill="currentcolor">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414.0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </h2>
+          <div x-show="expanded" x-collapse>
+            <ul class="space-y-6 text-blue leading-snug pb-16">
+              {% for publication in filtered_publications %}
+                {% if publication.tags contains item.tag %}
+                  <li><a class="hover:text-gray-1" href="{{ publication.url | relative_url }}">{{ publication.cite | markdownify }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+
+      {% for accordion in page.accordion_2 %}
+        <div x-data="{ expanded: false }" class="">
+          <h2>
+            <button x-on:click="expanded = ! expanded"
+              class="w-full py-3 flex items-center text-left text-[1.75rem] uppercase font-bold font-display text-blue">
+              <span class="grow">{{ accordion.heading }}</span>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                :class="{ 'rotate-90': expanded, 'transform-none': !(expanded) }"
+                class="h-8 w-8 duration-300 transform-none text-red flex-none" viewBox="0 0 20 20" fill="currentcolor">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414.0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </h2>
+          <div x-show="expanded" x-collapse>
+            <ul class="space-y-6 text-blue leading-snug pb-16">
+              {% for item in accordion.items %}
+                <li class="flex space-x-8">
+                  <div class="text-red min-w-[6rem]">{{ item.date }}</div>
+                  <div>{{ item.copy | markdownify }}</div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="lg:w-1/3 xl:w-[30%] lg:mt-20">
+      <h3 class="text-gray-1 uppercase font-bold text-3xl">Recommended courses</h3>
+      {% assign filtered_courses = site.courses | sort: 'date' | reverse %}
+      {% for post in filtered_courses %}
+        {% if post.tags contains 'top' %}
+          <div class="mt-7">
+            <a href="{{ post.url | prepend: site.data.config.courses.url }}" class="text-red font-bold text-lg inline-block">{{ post.title }} &rarr;</a>
+            {% if post.description and post.description != empty %}
+              <p class="text-gray-2 mt-0.5">{{ post.description }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <h3 class="text-gray-1 uppercase font-bold text-3xl mt-12">Top articles</h3>
+      {% assign filtered_blog = site.posts | sort: 'date' | reverse %}
+      {% for post in filtered_blog %}
+        {% if post.tags contains 'top' %}
+          <div class="mt-7">
+            <a href="{{ post.url | prepend: site.data.config.blog.url }}" class="text-red font-bold text-lg inline-block">{{ post.title }} &rarr;</a>
+            {% if post.description and post.description != empty %}
+              <p class="text-gray-2 mt-0.5">{{ post.description }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <h3 class="text-gray-1 font-bold text-lg mt-12">{{ page.contact.heading }}</h3>
+      <ul class="mt-6 space-y-1 text-gray-2 text-lg">
+        {% for item in page.contact.items %}
+          <li class="">{{ item | markdownify }}</li>
+        {% endfor %}
+      </ul>
+
+      {% if page.pdf and page.pdf != empty %}
+        <a class="mt-12 text-lg font-bold text-red space-x-1 flex items-center justify-center border border-red rounded-full py-2.5 px-4" href="{{ page.pdf | relative_url }}" {% if item.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+          <span>PDF version</span>
+          <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#E61E25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.2499 9.65747L2.75 9.65747" stroke="#E61E25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>            
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

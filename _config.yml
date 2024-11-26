@@ -1,16 +1,14 @@
 ---
-title: Macromanagers
+title: Koren.mk
 description: Lorem ipsum dolorem
-# url: 
+url: 
 baseurl: 
 lang: en
 permalink: "/:title/"
 
-remote_theme: korenmiklos/remote-theme
-
 website: courses # options: blog | courses | publications
 
-google_analytics: 
+plausible: koren.dev
 
 paginate: 4
 paginate_path: "/blog/:num/" 
@@ -20,7 +18,7 @@ highlighter: rouge
 
 plugins:
 - jekyll-seo-tag
-- jekyll-remote-theme
+- jekyll-paginate
 
 exclude:
 - vendor

@@ -1,0 +1,190 @@
+---
+layout: default
+---
+
+{% assign posts = site.posts | sort: 'date' | reverse %}
+<div class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="md:hidden object-cover object-center h-full w-full" src="{{ '/assets/images/blog-hero-sm.png' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+    <img class="hidden md:block object-cover object-center h-full w-full" src="{{ '/assets/images/blog-hero.png' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+  </div>
+  <div class="mx-auto max-w-6xl px-6 lg:px-8 py-32 md:py-24 relative">
+    {% for post in posts %}
+      {% if post.tags contains 'featured' %}
+        <div class="md:px-14 md:py-16 rounded-xl md:bg-dark md:ml-auto md:w-[54%] relative">
+          <h1 class="text-5xl lg:text-6xl text-white font-bold leading-[1.2]">{{ post.title }}</h1>
+          {% if post.description and post.description != empty %}
+            <p class="text-lg leading-relaxed text-white mt-4 max-w-2xl">{{ post.description }}</p>
+          {% endif %}
+          <a class="mt-9 text-lg uppercase font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ post.url | relative_url }}" {% if post.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+            <span>Read now</span>
+            <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+          </a>  
+          <svg class="hidden md:block absolute w-20 h-auto -left-12 top-12" width="85" height="33" viewBox="0 0 85 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.4258 11.2979H72.1526C72.9632 11.2979 73.6204 11.955 73.6204 12.7656V21.7979H12.8936C12.0829 21.7979 11.4258 21.1407 11.4258 20.3301V11.2979Z" fill="white"/>
+            <path d="M0.925781 2.26564C0.925781 1.455 1.58293 0.797852 2.39357 0.797852H9.958C10.7686 0.797852 11.4258 1.455 11.4258 2.26564V11.2979H2.39357C1.58293 11.2979 0.925781 10.6407 0.925781 9.83007V2.26564Z" fill="white"/>
+            <path d="M84.1211 30.8301C84.1211 31.6407 83.4639 32.2979 82.6533 32.2979L75.0889 32.2979C74.2782 32.2979 73.6211 31.6407 73.6211 30.8301L73.6211 21.7979L82.6533 21.7979C83.4639 21.7979 84.1211 22.455 84.1211 23.2656L84.1211 30.8301Z" fill="white"/>
+          </svg>            
+        </div>
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="mx-auto max-w-7xl px-6 lg:px-8 py-28">
+  <div class="grid md:grid-cols-2 gap-14 md:gap-0">
+    <div class="md:pr-10 lg:pr-28 relative">
+      <h2 class="relative text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">{{ page.blog.heading }}</h2>
+      {% if page.blog.copy and page.blog.copy != empty %}
+        <p class="relative text-lg leading-relaxed text-gray-2 mt-4">{{ page.blog.copy }}</p>
+      {% endif %}
+      <svg class="absolute bottom-0 left-0 w-32 h-auto hidden md:block" width="133" height="155" viewBox="0 0 133 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M87.7363 5.37482L87.7363 24.2659L70.2171 24.2659C67.7318 24.2659 65.7171 22.2512 65.7171 19.7659L65.7171 5.37481C65.7171 2.88953 67.7318 0.874815 70.2171 0.874815L83.2363 0.874817C85.7216 0.874817 87.7363 2.88954 87.7363 5.37482Z" fill="#E61E25"/>
+        <path d="M128.086 66.9325L87.7381 66.9325L87.7381 24.2723L128.086 24.2723C130.571 24.2723 132.586 26.287 132.586 28.7723L132.586 62.4325C132.586 64.9177 130.571 66.9325 128.086 66.9325Z" fill="#E61E25"/>
+        <path d="M87.7383 66.9333L87.7383 150.5C87.7383 152.985 85.7236 155 83.2383 155L4.50056 155C2.01529 155 0.000564751 152.985 0.000564969 150.5L0.000571881 71.4333C0.000572098 68.948 2.01529 66.9333 4.50057 66.9333L87.7383 66.9333Z" fill="#E61E25"/>
+      </svg>        
+    </div>
+    <div>
+      <div class="space-y-7">
+        {% for post in posts limit: 3 %}
+          {% include card-blog.html %}
+        {% endfor %}
+      </div>
+      <a class="mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center uppercase border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.blog.button.url | relative_url }}" {% if page.blog.button.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+        <span>{{ page.blog.button.text }}</span>
+        <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>            
+      </a>  
+    </div>
+  </div>
+</div>
+
+<div class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="md:hidden h-auto w-full absolute object-cover object-center" src="{{ '/assets/images/about-sm.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+    <img class="hidden md:block object-cover object-center h-full w-full" src="{{ '/assets/images/about.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+  </div>
+  <div class="mx-auto max-w-5xl px-6 lg:px-8 py-28 lg:py-32 relative">
+    <h1 class="text-5xl lg:text-6xl text-white font-bold leading-[1.2] max-w-2xl">{{ page.story.heading | escape }}</h1>
+    {% if page.story.copy and page.story.copy != empty %}
+      <p class="text-lg leading-relaxed text-white mt-4 max-w-2xl">{{ page.story.copy }}</p>
+    {% endif %}
+    <a class="mt-12 text-lg font-bold text-red uppercase space-x-2 inline-flex items-center justify-center border border-white bg-white rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.story.button.url | relative_url }}" {% if page.story.button.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+      <span>{{ page.story.button.text }}</span>
+      <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16.2499 9.65747L2.75 9.65747" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>            
+    </a>  
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<div class="relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-20 lg:pt-28 lg:pb-16 relative">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-0">
+      <div class="md:pl-12 xl:pl-28 md:order-last">
+        <h2 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">{{ page.courses.heading }}</h2>
+        {% if page.courses.copy and page.courses.copy != empty %}
+          <p class="text-lg leading-relaxed text-gray-2 mt-3.5 max-w-2xl mx-auto">{{ page.courses.copy }}</p>
+        {% endif %}
+        <a class="mt-8 text-lg uppercase font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.courses.button.url | relative_url }}" {% if page.courses.button.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+          <span>{{ page.courses.button.text }}</span>
+          <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>            
+        </a>  
+      </div>
+      <div>
+        <div class="swiper overflow-hidden -mr-6 md:mr-0 relative" aria-label="Slider">
+          <div class="swiper-wrapper flex">
+            {% assign posts = site.courses | sort: 'date' | reverse %}
+            {% for post in posts limit: 6 %}
+              <div class="swiper-slide shrink-0">
+                <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+                  <img class="w-full h-full object-center object-cover" src="{{ post.image | absolute_url }}" loading="lazy" alt="{{ post.title | escape }}">
+                </div>
+                <ul class="flex flex-wrap gap-2 mt-5">
+                  {% for item in post.categories %}
+                    <li class="uppercase text-xs text-white font-bold bg-blue rounded-sm px-4 py-1.5">{{ item }}</li>
+                  {% endfor %}
+                </ul>
+                <h3 class="mt-5 text-gray-1 font-bold text-xl">{{ post.title }}</h3>
+                {% if post.description and post.description != empty %}
+                  <p class="text-gray-2 text-lg mt-1">{{ post.description }}</p>
+                {% endif %}
+                <a href="{{ post.url | prepend: site.data.config.courses.url }}" class="text-red mt-4 inline-block">Read more &rarr;</a>
+              </div>            
+            {% endfor %}
+          </div>
+          <div class="flex justify-between md:justify-center items-center mt-12 md:mt-16 space-x-4 max-w-2xl mx-auto pr-6 md:pr-0">
+            <div class="swiper-button-prev md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </svg>        
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-red">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>        
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 bottom-16 w-1/5 bg-gradient-to-r from-transparent to-white/75 lg:hidden"></div>
+        </div>
+        <script>
+          var swiper = new Swiper(".swiper", {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
+            // Responsive breakpoints
+            breakpoints: {
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              }
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          
+          });
+        </script>      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="md:hidden object-cover object-center h-full w-full" src="{{ '/assets/images/cta-sm.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+    <img class="hidden md:block object-cover object-center h-full w-full" src="{{ '/assets/images/koren-mk-hero.svg' | absolute_url }}" alt="{{ page.hero.heading | escape }}">
+  </div>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-36 lg:pt-20 text-center relative">
+    {% if page.cta.superheading and page.cta.superheading != empty %}
+      <p class="text-lg uppercase font-bold text-red mb-2 tracking-widest">{{ page.cta.superheading }}</p>
+    {% endif %}
+    <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1.2]">{{ page.cta.heading | escape }}</h1>
+    {% if page.cta.copy and page.cta.copy != empty %}
+      <p class="text-lg leading-relaxed text-gray-2 mt-5 max-w-2xl mx-auto">{{ page.cta.copy }}</p>
+    {% endif %}
+    <a class="mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center uppercase border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.cta.button.url | relative_url }}" {% if page.cta.button.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+      <span>{{ page.cta.button.text }}</span>
+      <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>            
+    </a>  
+  </div>
+</div>

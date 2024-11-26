@@ -1,0 +1,15 @@
+<div class="swiper-slide shrink-0">
+  <div class="aspect-w-16 aspect-h-10 rounded-md overflow-hidden">
+    <img class="w-full h-full object-center object-cover" src="{{ post.image | absolute_url }}" loading="lazy" alt="{{ post.title | escape }}">
+  </div>
+  <ul class="flex flex-wrap gap-2 mt-5">
+    {% for item in post.categories %}
+      <li class="uppercase text-xs text-white font-bold bg-blue rounded-sm px-4 py-1.5">{{ item }}</li>
+    {% endfor %}
+  </ul>
+  <h3 class="mt-5 text-gray-1 font-bold text-xl">{{ post.title }}</h3>
+  {% if post.description and post.description != empty %}
+    <p class="text-gray-4 text-lg mt-1 line-clamp-2">{{ post.description }}</p>
+  {% endif %}
+  <a href="{{ post.url | relative_url }}" class="text-red mt-4 inline-block">Read more &rarr;</a>
+</div>

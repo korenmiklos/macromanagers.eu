@@ -1,0 +1,125 @@
+---
+layout: default
+---
+
+<div class="mx-auto max-w-7xl px-6 lg:px-8 pt-11 pb-24 lg:pt-14 lg:pb-40 relative">
+  <div class="flex flex-col lg:flex-row gap-20 xl:gap-32 relative">
+    <div class="lg:w-2/3 xl:w-[60%]">
+      <a href="{{ '/datasets/' | relative_url }}" class="text-red inline-block">&larr; Back to datasets</a>
+      <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1] lg:leading-[1] mt-7 mb-1">{{ page.title }} {% if page.accessRights and page.accessRights != empty %}<span class="bg-red inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1 relative -top-2.5 lg:-top-3">{{ page.accessRights }}</span>{% endif %}</h1>
+      {% if page.publisher and page.publisher != empty %}
+        <p class="text-red font-bold text-lg">{{ page.publisher }}</p>
+      {% elsif page.creator and page.creator != empty %}
+        <p class="text-red font-bold text-lg">{{ page.creator }}</p>
+      {% elsif page.distributor and page.distributor != empty %}
+        <p class="text-red font-bold text-lg">{{ page.distributor }}</p>
+      {% endif %}
+
+      <ul class="mt-7 flex flex-wrap gap-1.5">
+        {% for tag in page.entities %}
+          <li class="bg-blue border-blue border inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1">{{ tag }}</li>
+        {% endfor %}
+      </ul>     
+      <hr class="border-gray-3 mt-4">
+      <ul class="mt-4 flex flex-wrap gap-1.5 mb-12">
+        {% for tag in page.subject %}
+          <li class="border-gray-4 bg-gray-4 border inline-block uppercase text-xs text-white font-bold rounded-sm px-3 pt-1.5 pb-1">{{ tag }}</li>
+        {% endfor %}
+      </ul>       
+      
+      {% if page.extent.records and page.extent.records != empty %}
+        <div class="mt-5 flex items-center space-x-2">
+          <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.8327 2.16602H4.16602C2.74935 2.16602 1.66602 3.24935 1.66602 4.66602V16.3327C1.66602 17.7493 2.74935 18.8327 4.16602 18.8327H15.8327C17.2493 18.8327 18.3327 17.7493 18.3327 16.3327V4.66602C18.3327 3.24935 17.2493 2.16602 15.8327 2.16602ZM6.66602 14.666C6.66602 15.166 6.33268 15.4993 5.83268 15.4993C5.33268 15.4993 4.99935 15.166 4.99935 14.666V11.3327C4.99935 10.8327 5.33268 10.4993 5.83268 10.4993C6.33268 10.4993 6.66602 10.8327 6.66602 11.3327V14.666ZM10.8327 14.666C10.8327 15.166 10.4993 15.4993 9.99935 15.4993C9.49935 15.4993 9.16602 15.166 9.16602 14.666V6.33268C9.16602 5.83268 9.49935 5.49935 9.99935 5.49935C10.4993 5.49935 10.8327 5.83268 10.8327 6.33268V14.666ZM14.9993 14.666C14.9993 15.166 14.666 15.4993 14.166 15.4993C13.666 15.4993 13.3327 15.166 13.3327 14.666V9.66602C13.3327 9.16602 13.666 8.83268 14.166 8.83268C14.666 8.83268 14.9993 9.16602 14.9993 9.66602V14.666Z" fill="#5D5A88"/>
+          </svg>
+          <span class="text-gray-4 text-lg">{{ page.extent.records }} records</span>
+        </div>
+      {% endif %}
+      {% if page.coverage.spatial and page.coverage.spatial != empty %}
+        <div class="mt-0.5 flex items-center space-x-2">
+          <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.99984 18.8327C9.80539 18.8327 9.63873 18.7771 9.49984 18.666C9.36095 18.5549 9.25678 18.4091 9.18734 18.2285C8.92345 17.4507 8.59012 16.7216 8.18734 16.041C7.79845 15.3605 7.24984 14.5618 6.5415 13.6452C5.83317 12.7285 5.25678 11.8535 4.81234 11.0202C4.38178 10.1868 4.1665 9.1799 4.1665 7.99935C4.1665 6.37435 4.729 4.99935 5.854 3.87435C6.99289 2.73546 8.37484 2.16602 9.99984 2.16602C11.6248 2.16602 12.9998 2.73546 14.1248 3.87435C15.2637 4.99935 15.8332 6.37435 15.8332 7.99935C15.8332 9.26324 15.5901 10.3188 15.104 11.166C14.6318 11.9993 14.0832 12.8257 13.4582 13.6452C12.7082 14.6452 12.1387 15.4785 11.7498 16.1452C11.3748 16.798 11.0623 17.4924 10.8123 18.2285C10.7429 18.423 10.6318 18.5757 10.479 18.6868C10.3401 18.7841 10.1804 18.8327 9.99984 18.8327ZM9.99984 10.0827C10.5832 10.0827 11.0762 9.88129 11.479 9.47852C11.8818 9.07574 12.0832 8.58268 12.0832 7.99935C12.0832 7.41601 11.8818 6.92296 11.479 6.52018C11.0762 6.1174 10.5832 5.91602 9.99984 5.91602C9.4165 5.91602 8.92345 6.1174 8.52067 6.52018C8.11789 6.92296 7.9165 7.41601 7.9165 7.99935C7.9165 8.58268 8.11789 9.07574 8.52067 9.47852C8.92345 9.88129 9.4165 10.0827 9.99984 10.0827Z" fill="#5D5A88"/>
+            </svg>                
+          <span class="text-gray-4 text-lg">{{ page.coverage.spatial }}</span>
+        </div>
+      {% endif %}
+      {% if page.coverage.temporal and page.coverage.temporal != empty %}
+        <div class="mt-0.5 flex items-center space-x-2">
+          <svg class="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.8337 3.83268H15.0003V2.99935C15.0003 2.49935 14.667 2.16602 14.167 2.16602C13.667 2.16602 13.3337 2.49935 13.3337 2.99935V3.83268H6.66699V2.99935C6.66699 2.49935 6.33366 2.16602 5.83366 2.16602C5.33366 2.16602 5.00033 2.49935 5.00033 2.99935V3.83268H4.16699C2.75033 3.83268 1.66699 4.91602 1.66699 6.33268V7.16602H18.3337V6.33268C18.3337 4.91602 17.2503 3.83268 15.8337 3.83268ZM1.66699 16.3327C1.66699 17.7493 2.75033 18.8327 4.16699 18.8327H15.8337C17.2503 18.8327 18.3337 17.7493 18.3337 16.3327V8.83268H1.66699V16.3327ZM14.167 10.4993C14.667 10.4993 15.0003 10.8327 15.0003 11.3327C15.0003 11.8327 14.667 12.166 14.167 12.166C13.667 12.166 13.3337 11.8327 13.3337 11.3327C13.3337 10.8327 13.667 10.4993 14.167 10.4993ZM14.167 13.8327C14.667 13.8327 15.0003 14.166 15.0003 14.666C15.0003 15.166 14.667 15.4993 14.167 15.4993C13.667 15.4993 13.3337 15.166 13.3337 14.666C13.3337 14.166 13.667 13.8327 14.167 13.8327ZM10.0003 10.4993C10.5003 10.4993 10.8337 10.8327 10.8337 11.3327C10.8337 11.8327 10.5003 12.166 10.0003 12.166C9.50033 12.166 9.16699 11.8327 9.16699 11.3327C9.16699 10.8327 9.50033 10.4993 10.0003 10.4993ZM10.0003 13.8327C10.5003 13.8327 10.8337 14.166 10.8337 14.666C10.8337 15.166 10.5003 15.4993 10.0003 15.4993C9.50033 15.4993 9.16699 15.166 9.16699 14.666C9.16699 14.166 9.50033 13.8327 10.0003 13.8327ZM5.83366 10.4993C6.33366 10.4993 6.66699 10.8327 6.66699 11.3327C6.66699 11.8327 6.33366 12.166 5.83366 12.166C5.33366 12.166 5.00033 11.8327 5.00033 11.3327C5.00033 10.8327 5.33366 10.4993 5.83366 10.4993ZM5.83366 13.8327C6.33366 13.8327 6.66699 14.166 6.66699 14.666C6.66699 15.166 6.33366 15.4993 5.83366 15.4993C5.33366 15.4993 5.00033 15.166 5.00033 14.666C5.00033 14.166 5.33366 13.8327 5.83366 13.8327Z" fill="#5D5A88"/>
+            </svg>                
+          <span class="text-gray-4 text-lg">{{ page.coverage.temporal }}</span>
+        </div>
+      {% endif %} 
+
+      <div class="mt-8 prose max-w-none prose-slate prose-headings:font-bold prose-headings:text-blue prose-h2:text-red prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-red hover:prose-a:text-red">
+        {% if page.description and page.description != empty %}
+          <p>{{ page.description }}</p>
+        {% endif %}
+        {{ content }}
+      </div>
+
+      {% if page.bibliographicCitation and page.bibliographicCitation != empty %}
+        <h3 class="mt-6 text-slate-600 font-bold">Data citation</h3>
+        <p class="text-slate-600 leading-normal">{{ page.bibliographicCitation }}</p>
+      {% endif %}
+      {% if page.rights and page.rights != empty %}
+        <h3 class="mt-6 text-slate-600 font-bold">License</h3>
+        <p class="text-slate-600 leading-normal">{{ page.rights }}</p>
+      {% endif %}
+      {% if page.acknowledgement and page.acknowledgement != empty %}
+        <h3 class="mt-6 text-slate-600 font-bold">Acknowledgement</h3>
+        <p class="text-slate-600 leading-normal">{{ page.acknowledgement }}</p>
+      {% endif %}
+      {% if page.format and page.format != empty %}
+        <h3 class="mt-6 text-slate-600 font-bold">Format</h3>
+        {% for item in page.format %}
+          <p class="text-slate-600 leading-normal">{{ item }}</p>
+        {% endfor %}
+      {% endif %}
+      {% if page.extent.size and page.extent.size != empty %}
+        <h3 class="mt-6 text-slate-600 font-bold">Size</h3>
+        <p class="text-slate-600 leading-normal">{{ page.extent.size }}</p>
+      {% endif %}
+
+      {% if page.identifier and page.identifier != empty %}
+        <a class="uppercase mt-8 text-lg font-bold text-white space-x-2 inline-flex items-center justify-center border border-red bg-red rounded-full py-2.5 px-6 w-full md:w-auto" href="{{ page.identifier | relative_url }}" {% if page.identifier contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+          <span>Get dataset</span>
+          <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.2499 9.65747L2.75 9.65747" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>            
+        </a>  
+      {% endif %}
+    </div>
+    <div class="flex-1 lg:mt-14">
+      <h3 class="text-blue uppercase font-bold text-3xl mb-16">Other datasets</h3>
+      <div class="space-y-7">
+        {% assign other_datasets = site.datasets | sort: 'date' | reverse %}
+        {% for post in other_datasets limit: 3 %}
+          {% if post.url != page.url %}
+            <div class="flex space-x-5 items-center relative">
+              <svg class="w-[6.25rem] h-auto flex-none" width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.875" width="100" height="100" rx="4.54545" fill="#E61E25"/>
+                <path d="M51.7344 36.4965L65.2378 50L51.7344 63.5034" stroke="white" stroke-width="3.19198" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M65.2384 50L36.5107 50" stroke="white" stroke-width="3.19198" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>                  
+              <div>
+                <h4 class="font-bold text-lg text-red leading-tight">{{ post.title }}</h4>
+              </div>
+              <a href="{{ post.url | relative_url }}" class="absolute inset-0" title="{{ post.title }}"></a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <svg class="h-auto absolute right-0 bottom-10 hidden lg:block" width="156" height="177" viewBox="0 0 156 177" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M103.815 4.49988V21.0801H87.2352C84.75 21.0801 82.7352 19.0654 82.7352 16.5801L82.7352 4.49988C82.7352 2.0146 84.75 -0.00012207 87.2352 -0.00012207H99.3154C101.801 -0.00012207 103.815 2.0146 103.815 4.49988Z" fill="#D4D2E3"/>
+    <path d="M150.563 72.3262H103.815V21.079H150.563C153.048 21.079 155.063 23.0937 155.063 25.579V67.8262C155.063 70.3115 153.048 72.3262 150.563 72.3262Z" fill="#D4D2E3"/>
+    <path d="M103.225 72.3267V171.594C103.225 174.079 101.21 176.094 98.7247 176.094H4.50012C2.01484 176.094 0.00012207 174.079 0.00012207 171.594V76.8267C0.00012207 74.3415 2.01484 72.3267 4.50012 72.3267H103.225Z" fill="#D4D2E3"/>
+    <path d="M92.8937 115.446C92.8937 114.636 93.5508 113.979 94.3615 113.979H101.926C102.737 113.979 103.394 114.636 103.394 115.446V124.479H94.3615C93.5508 124.479 92.8937 123.821 92.8937 123.011V115.446Z" fill="#E61E25"/>
+    <path d="M113.894 115.446C113.894 114.636 114.551 113.979 115.361 113.979H122.926C123.737 113.979 124.394 114.636 124.394 115.446V123.011C124.394 123.821 123.737 124.479 122.926 124.479H113.894V115.446Z" fill="#E61E25"/>
+    <path d="M113.894 133.511C113.894 134.321 113.237 134.979 112.426 134.979L104.861 134.979C104.051 134.979 103.394 134.321 103.394 133.511L103.394 124.479L113.894 124.479L113.894 133.511Z" fill="#E61E25"/>
+  </svg>
+</div>

@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<div class="mx-auto max-w-7xl px-6 lg:px-8 pt-11 pb-24 lg:pt-14 lg:pb-0">
+  <div class="flex flex-col lg:flex-row lg:gap-20 xl:gap-32">
+    <div class="lg:w-2/3 xl:w-[60%]">
+      <a href="{{ '/events/' | relative_url }}" class="text-red inline-block">&larr; Back to events</a>
+      <h1 class="text-5xl lg:text-6xl text-blue font-bold leading-[1] lg:leading-[1] mt-7">{{ page.title }}</h1>
+      {% assign now = 'now' | date: '%s' %}
+      {% assign event_date = page.event_date | date: '%s' %}
+      <div class="aspect-w-16 aspect-h-10 sm:aspect-h-6 rounded-md overflow-hidden relative mt-8">
+        <img class="w-full h-full object-center object-cover" src="{{ page.image | absolute_url }}" loading="lazy" alt="{{ page.title | escape }}">
+        <div class="absolute top-0 left-0 bottom-0 w-28 flex justify-center items-center flex-col px-3 {% if event_date >= now %}bg-red text-white{% else %}bg-gray-4 text-gray-3{% endif %}">
+          <p class="font-bold text-xl uppercase">{{ page.event_date | date: "%b" }}</p>
+          <p class="font-bold text-6xl leading-none my-2">{{ page.event_date | date: "%d" }}</p>
+          <div class="bg-white/50 h-px w-full"></div>
+          <p class="font-bold text-xs mt-4">{{ page.event_date | date: "%Y" }}</p>
+        </div>
+      </div>
+
+      <div class="flex space-x-6 items-center mt-3">
+        {% if page.speaker and page.speaker != empty %}
+          <div class="leading-tight">
+            <p class="font-bold text-lg text-red">Speaker</p>
+            <p class="text-gray-2">{{ page.speaker }}</p>
+          </div>
+        {% endif %}     
+        {% if page.location and page.location != empty %}
+          <p class="flex space-x-1.5 items-center">
+            <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.99984 18.3327C9.80539 18.3327 9.63873 18.2771 9.49984 18.166C9.36095 18.0549 9.25678 17.9091 9.18734 17.7285C8.92345 16.9507 8.59012 16.2216 8.18734 15.541C7.79845 14.8605 7.24984 14.0618 6.5415 13.1452C5.83317 12.2285 5.25678 11.3535 4.81234 10.5202C4.38178 9.68685 4.1665 8.6799 4.1665 7.49935C4.1665 5.87435 4.729 4.49935 5.854 3.37435C6.99289 2.23546 8.37484 1.66602 9.99984 1.66602C11.6248 1.66602 12.9998 2.23546 14.1248 3.37435C15.2637 4.49935 15.8332 5.87435 15.8332 7.49935C15.8332 8.76324 15.5901 9.81879 15.104 10.666C14.6318 11.4993 14.0832 12.3257 13.4582 13.1452C12.7082 14.1452 12.1387 14.9785 11.7498 15.6452C11.3748 16.298 11.0623 16.9924 10.8123 17.7285C10.7429 17.923 10.6318 18.0757 10.479 18.1868C10.3401 18.2841 10.1804 18.3327 9.99984 18.3327ZM9.99984 9.58268C10.5832 9.58268 11.0762 9.38129 11.479 8.97852C11.8818 8.57574 12.0832 8.08268 12.0832 7.49935C12.0832 6.91601 11.8818 6.42296 11.479 6.02018C11.0762 5.6174 10.5832 5.41602 9.99984 5.41602C9.4165 5.41602 8.92345 5.6174 8.52067 6.02018C8.11789 6.42296 7.9165 6.91601 7.9165 7.49935C7.9165 8.08268 8.11789 8.57574 8.52067 8.97852C8.92345 9.38129 9.4165 9.58268 9.99984 9.58268Z" fill="#5D5A88"/>
+            </svg>
+            <span class="text-gray-2 italic text-[0.9375rem]">{{ page.location }}</span>
+          </p>
+        {% endif %}                
+
+      </div>
+      <div class="mt-6 prose max-w-none prose-slate prose-headings:font-bold prose-h2:text-red prose-h2:uppercase prose-h2:text-3xl prose-pre:bg-blue prose-img:rounded-md prose-a:text-red hover:prose-a:text-red">
+        {{ content }}
+      </div>
+      <svg class="w-40 h-auto mt-3 lg:mt-12 ml-auto -mr-6 lg:mr-0" width="156" height="177" viewBox="0 0 156 177" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M104.595 4.58191V21.1621H88.0145C85.5292 21.1621 83.5145 19.1474 83.5145 16.6621L83.5145 4.58191C83.5145 2.09663 85.5292 0.0819092 88.0145 0.0819092H100.095C102.58 0.0819092 104.595 2.09663 104.595 4.58191Z" fill="#D4D2E3"/>
+        <path d="M151.342 72.4082H104.595V21.1611H151.342C153.827 21.1611 155.842 23.1758 155.842 25.661V67.9082C155.842 70.3935 153.827 72.4082 151.342 72.4082Z" fill="#D4D2E3"/>
+        <path d="M104.004 72.4088V171.676C104.004 174.161 101.989 176.176 99.5039 176.176H5.2793C2.79401 176.176 0.779297 174.161 0.779297 171.676V76.9088C0.779297 74.4235 2.79401 72.4088 5.2793 72.4088H104.004Z" fill="#D4D2E3"/>
+        <path d="M93.6729 115.526C93.6729 114.716 94.33 114.059 95.1406 114.059H102.705C103.516 114.059 104.173 114.716 104.173 115.526V124.559H95.1406C94.33 124.559 93.6729 123.901 93.6729 123.091V115.526Z" fill="#E61E25"/>
+        <path d="M114.673 115.526C114.673 114.716 115.33 114.059 116.141 114.059H123.705C124.516 114.059 125.173 114.716 125.173 115.526V123.091C125.173 123.901 124.516 124.559 123.705 124.559H114.673V115.526Z" fill="#E61E25"/>
+        <path d="M114.673 133.591C114.673 134.401 114.016 135.059 113.205 135.059L105.641 135.059C104.83 135.059 104.173 134.401 104.173 133.591L104.173 124.559L114.673 124.559L114.673 133.591Z" fill="#E61E25"/>
+      </svg>        
+    </div>
+    <div class="flex-1 -mt-14 lg:mt-14">
+      <h3 class="text-blue uppercase font-bold text-3xl mb-16">Recommended Events</h3>
+      <div class="space-y-7">
+        {% assign maxRelated = 2 %}
+        {% assign minCommonTags =  1 %}
+        {% assign maxRelatedCounter = 0 %}
+        {% for post in site.events %}
+
+          {% assign sameTagCount = 0 %}
+          {% assign commonTags = '' %}
+
+          {% for category in post.categories %}
+            {% if post.url != page.url %}
+                {% if page.categories contains category %}
+                    {% assign sameTagCount = sameTagCount | plus: 1 %}
+                {% endif %}
+            {% endif %}
+          {% endfor %}
+
+          {% if sameTagCount >= minCommonTags %}
+            <div class="flex space-x-5 items-center relative">
+              <svg class="w-[6.25rem] h-auto flex-none" width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.875" width="100" height="100" rx="4.54545" fill="#E61E25"/>
+                <path d="M51.7344 36.4965L65.2378 50L51.7344 63.5034" stroke="white" stroke-width="3.19198" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M65.2384 50L36.5107 50" stroke="white" stroke-width="3.19198" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>                  
+              <div>
+                <h4 class="font-bold text-lg text-red leading-tight">{{ post.title }}</h4>
+                <p class="text-gray-2 leading-snug line-clamp-3">{{ post.description }}</p>
+              </div>
+              <a href="{{ post.url | relative_url }}" class="absolute inset-0" title="{{ post.title }}"></a>
+            </div>
+            {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+            {% if maxRelatedCounter >= maxRelated %}
+                {% break %}
+            {% endif %}
+          {% endif %}
+    
+        {% endfor %}
+      </div>
+
+      <h3 class="text-blue uppercase font-bold text-3xl mb-16 mt-24">Resources</h3>
+      <div class="space-y-7">
+        {% for item in page.links %}
+          <a class="text-lg font-bold uppercase  text-red space-x-1 flex items-center justify-center border border-red rounded-full py-2.5 px-2 tracking-tight" href="{{ item.url | relative_url }}" {% if item.url contains 'http' %}target="_blank" rel="noopener" {% endif %}>
+            <span>{{ item.text }}</span>
+            <svg class="flex-none" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.9043 3.31177L16.2499 9.65742L9.9043 16.0031" stroke="#E61E25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.2499 9.65747L2.75 9.65747" stroke="#E61E25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

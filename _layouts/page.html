@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="max-w-3xl">
+  <header class="mb-9">
+    <h1 class="font-display text-3xl tracking-tight text-slate-900 font-bold">{{ page.title }}</h1>
+    {% if page.subtitle and page.subtitle != empty %}
+      <p class="text-lg text-slate-600 mt-9">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+  <div class="mt-12 prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-bold lg:prose-headings:scroll-mt-[5rem] prose-a:font-semibold hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg">
+    {{ content }}
+  </div>
+</div>
