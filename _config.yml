@@ -1,12 +1,12 @@
 ---
-title: Macromanagers
-description: Lorem ipsum dolorem
-url: 
-baseurl: 
+title: MACROMANAGERS
+description: The Macroeconomics of Managers
+url: https://macromanagers.eu
+baseurl: https://macromanagers.eu
 lang: en
 permalink: "/:title/"
 
-plausible: koren.dev
+plausible: macromanagers.eu
 
 paginate: 4
 paginate_path: "/blog/:num/" 

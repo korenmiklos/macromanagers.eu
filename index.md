@@ -3,9 +3,8 @@ layout: home
 title: Courses
 
 intro:
-  heading: Big title about the content
-  copy: A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu egestas morbi sem vulputate etiam facilisis.
-
+  heading: MACROMANAGERS
+  copy: The project, supported by the National Research, Development and Innovation Office and the European Research Council, studies the role of management practices in economic development. 
 events:
   heading: Upcoming events
   copy: Join conference talks, workshops, and other events.
@@ -27,7 +26,7 @@ publications:
 
 mentions:
   heading: Media mentions
-  copy: A little introduction what the reader can find here lorem ipsum dolor sit amet consectetur adipiscing elit tortor.
+  copy: Our related research has been featured in the press.
   button:
     text: More mentions
     url: "/mentions/"
