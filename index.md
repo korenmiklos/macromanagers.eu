@@ -4,7 +4,7 @@ title: Courses
 
 intro:
   heading: MACROMANAGERS
-  copy: The project, supported by the National Research, Development and Innovation Office and the European Research Council, studies the role of management practices in economic development. 
+  copy: The project studies the role of management practices in economic development. 
 events:
   heading: Upcoming events
   copy: Join conference talks, workshops, and other events.
