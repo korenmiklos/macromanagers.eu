@@ -7,7 +7,7 @@
 - text: More
   dropdown:
   - text: Publications
-    url: "https://koren.mk"
+    url: "/publications/"
   - text: CV
     url: "https://koren.mk/cv/"
   - text: Blog

@@ -4486,6 +4486,10 @@ select {
     padding-top: 1.5rem;
   }
 
+  .lg\:pb-28 {
+    padding-bottom: 7rem;
+  }
+
   .lg\:text-6xl {
     font-size: 3.5rem;
   }
