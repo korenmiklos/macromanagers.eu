@@ -33,7 +33,7 @@ def copy_yaml_file(src_file, dest_file):
             return False
     return False
 
-def copy_data_files(src_dir, dest_dir):
+def copy_data_files(src_dir, dest_dir, files_to_check=[]):
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
     
@@ -47,7 +47,11 @@ def copy_data_files(src_dir, dest_dir):
                 os.makedirs(dest_subdir)
             dest_file = os.path.join(dest_subdir, file)
             
-            if file.endswith('.csv'):
-                copy_csv_file(src_file, dest_file)
-            elif file.endswith(('.yaml', '.yml')):
-                copy_yaml_file(src_file, dest_file)
+            if file in files_to_check:
+                if file.endswith('.csv'):
+                    copy_csv_file(src_file, dest_file)
+                elif file.endswith(('.yaml', '.yml')):
+                    copy_yaml_file(src_file, dest_file)
+            else:
+                # copy file as is
+                os.replace(src_file, dest_file)
