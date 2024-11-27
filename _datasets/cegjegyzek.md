@@ -3,9 +3,9 @@ title: Cégjegyzék LTS
 description: Temporal dataset of court records on Hungarian businesses, their owners, officers and establishments. 
 date: 2024-09-11
 extent:
-  records: 10m+
+  records: 10M+
   size: 6GB
-accessRights: Limited use
+accessRights: Restricted use
 coverage: 
   spatial: Hungary
   temporal: 1988-2022
@@ -15,8 +15,6 @@ entities:
 - locations
 subject:
 - managers
-- hungary
-- elvonal
 publisher: Opten Kft.
 creator: CEU MicroData 
 distributor: HUN-REN KRTK

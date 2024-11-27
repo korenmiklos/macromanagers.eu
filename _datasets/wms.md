@@ -10,11 +10,9 @@ coverage:
   spatial: Hungary
   temporal: 2018
 entities: 
-- firms
-- management
+- businesses
 subject:
-- management survey
-- interview
+- managers
 publisher: CEU MicroData
 creator: CEU MicroData
 distributor: CEU MicroData

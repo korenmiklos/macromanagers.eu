@@ -11,10 +11,9 @@ coverage:
   temporal: 2013
 entities: 
 - individuals
-- managers
 subject:
-- persons
-- life path
+- managers
+- biography
 publisher: Who is who Verlag für Personenenzyklopädien AG
 creator: CEU Microdata
 distributor: CEU Microdata

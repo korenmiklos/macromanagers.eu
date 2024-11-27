@@ -5,7 +5,7 @@ date: 2024-11-07
 extent:
   records: 10M+
   size: 300GB
-accessRights: Limited use
+accessRights: Restricted use
 coverage: 
   spatial: Germany
   temporal: 1991-2021
@@ -14,8 +14,6 @@ entities:
 - businesses
 subject:
 - managers
-- germany
-- business graph
 publisher: Palturai GmbH
 creator: Palturai GmbH
 distributor: CEU MicroData 

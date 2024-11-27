@@ -3,17 +3,16 @@ title: Mérleg LTS
 description: Balance sheet and income statement panel of Hungarian firms. 
 date: 2024-09-13
 extent:
-  records: 11M+
+  records: 10M+
   size: 20GB
-accessRights: Limited use
+accessRights: Restricted use
 coverage: 
   spatial: Hungary
   temporal: 1980-2022
 entities: 
-- firms
+- businesses
 subject:
-- balance
-- income
+- financials
 publisher: Opten Kft.
 creator: CEU MicroData
 distributor: HUN-REN KRTK
