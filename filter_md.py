@@ -18,7 +18,9 @@ def has_macromanagers_tag(file_path):
         
         try:
             front_matter = yaml.safe_load(content)
-            tags = front_matter.get('tags', [])
+            tags = front_matter.get('tag', [])
+            if not tags:
+                tags = front_matter.get('tags', [])
             return 'macromanagers' in (tags if isinstance(tags, list) else [tags])
         except:
             return False

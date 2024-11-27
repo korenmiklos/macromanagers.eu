@@ -6,6 +6,7 @@ _site
 .bundle/
 vendor/
 __pycache__/
+temp-remote/
 
 # OS or Editor folders
 .DS_Store
