@@ -6,10 +6,7 @@ def copy_csv_file(src_file, dest_file):
     filtered_rows = []
     with open(src_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
-        if 'tag' not in reader.fieldnames:
-            return False
-        
-        filtered_rows = [row for row in reader if 'macromanagers' in row['tag']]
+        filtered_rows = [item for item in reader if ('tag' in item and 'macromanagers' in item['tag']) or ('tags' in item and 'macromanagers' in item['tags'])]
         
     if filtered_rows:
         with open(dest_file, 'w', encoding='utf-8', newline='') as f:
@@ -26,7 +23,7 @@ def copy_yaml_file(src_file, dest_file):
             if not isinstance(data, list):
                 return False
             
-            filtered_data = [item for item in data if 'tag' in item and 'macromanagers' in item['tag']]
+            filtered_data = [item for item in data if ('tag' in item and 'macromanagers' in item['tag']) or ('tags' in item and 'macromanagers' in item['tags'])]
             
             if filtered_data:
                 with open(dest_file, 'w', encoding='utf-8') as f:
