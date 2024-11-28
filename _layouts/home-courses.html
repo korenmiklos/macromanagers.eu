@@ -184,7 +184,7 @@ layout: default
           <p class="text-gray-2 italic text-sm mt-4">{{ post.cite }}</p>
         {% endif %}
         <hr class="border-gray-3 mt-2 hidden lg:block">
-        <a href="{{ post.url | prepend: site.data.config.publications.url }}" class="text-brand mt-4 lg:mt-12 inline-block">Read more &rarr;</a>
+        <a href="{{ post.url | prepend: site.config.publications.url }}" class="text-brand mt-4 lg:mt-12 inline-block">Read more &rarr;</a>
         {% unless forloop.index == 3 %}
         <hr class="border-gray-3 mt-4 lg:hidden">
         {% endunless %}

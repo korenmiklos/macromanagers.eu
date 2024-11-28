@@ -14,4 +14,4 @@ To start developing:
 `npm run dev`
 
 
-{{ site.data.config[site.website].copyright }}
+{{ site.config[site.website].copyright }}

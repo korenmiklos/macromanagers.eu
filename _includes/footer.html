@@ -4,7 +4,7 @@
     <div class="flex flex-col lg:flex-row items-center lg:justify-between">
       <div class="pt-11 pb-12">
         <a href="{{ "/" | relative_url }}">
-          <img class="h-24 w-auto" src="{{ site.data.config.logo_light | absolute_url }}" loading="lazy" height="96" alt="{{ site.title }}">
+          <img class="h-24 w-auto" src="{{ site.config.logo_light | absolute_url }}" loading="lazy" height="96" alt="{{ site.title }}">
         </a>
       </div>
       <div class="flex space-x-6 border-t lg:border-0 border-gray-3 w-full lg:w-auto justify-center pt-8">
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="lg:border-t border-white text-center pt-9 pb-10">
-      <p class="font-light text-sm text-white">{{ site.data.config.copyright }}</p>
+      <p class="font-light text-sm text-white">{{ site.config.copyright }}</p>
     </div>
   </div>
 </footer>

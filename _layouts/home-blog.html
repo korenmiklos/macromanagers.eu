@@ -120,7 +120,7 @@ layout: default
                 {% if post.description and post.description != empty %}
                   <p class="text-gray-2 text-lg mt-1">{{ post.description }}</p>
                 {% endif %}
-                <a href="{{ post.url | prepend: site.data.config.courses.url }}" class="text-brand mt-4 inline-block">Read more &rarr;</a>
+                <a href="{{ post.url | prepend: site.config.courses.url }}" class="text-brand mt-4 inline-block">Read more &rarr;</a>
               </div>            
             {% endfor %}
           </div>

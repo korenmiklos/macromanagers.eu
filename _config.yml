@@ -83,3 +83,76 @@ defaults:
       type: datasets
     values:
       layout: dataset
+navbar:
+  publications:
+  - text: Publications
+    url: "/"
+  - text: CV
+    url: "/cv/"
+  - text: Project
+    url: "/project/"
+  - text: More
+    dropdown:
+    - text: Courses
+      url: "https://koren.dev"
+    - text: Software
+      url: "https://koren.dev/software/"
+    - text: Blog
+      url: "https://codedthinking.com"
+    - text: Codedthinking Story
+      url: "https://codedthinking.com/story/"
+
+  courses:
+  - text: Courses
+    url: "/"
+  - text: Software
+    url: "/software/"
+  - text: More
+    dropdown:
+    - text: Publications
+      url: "https://koren.mk"
+    - text: CV
+      url: "https://koren.mk/cv/"
+    - text: Blog
+      url: "https://codedthinking.com"
+    - text: Codedthinking Story
+      url: "https://codedthinking.com/story/"
+
+  blog:
+  - text: Blog
+    url: "/"
+  - text: The story
+    url: "/story/"
+  - text: More
+    dropdown:
+    - text: Courses
+      url: "https://koren.dev"
+    - text: Software
+      url: "https://koren.dev/software/"
+    - text: Publications
+      url: "https://koren.mk"
+    - text: CV
+      url: "https://koren.mk/cv/"
+config:
+  social:
+    facebook: "#"
+    twitter: "#"
+    instagram: "#"
+    linkedin: "#"
+    google: "#"
+    github: "#"
+
+  publications:
+    logo: /assets/images/koren-mk.svg
+    copyright: "&copy; 2023 Koren.mk"
+    url: https://koren.mk
+
+  courses:
+    logo: /assets/images/koren-dev.svg
+    copyright: "&copy; 2023 Koren.dev"
+    url: https://koren.dev
+
+  blog:
+    logo: /assets/images/koren-ct.svg
+    copyright: "&copy; 2023 Coded Thinking OÜ"
+    url: https://codedthinking.com

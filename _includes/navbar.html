@@ -2,13 +2,13 @@
   class="bg-white transition duration-500 relative">
   <div class="mx-auto max-w-7xl flex flex-wrap items-center space-x-8 justify-between px-6 lg:px-8 py-6">
     <a href="{{ "/" | relative_url }}">
-      <img class="h-14 lg:h-24" src="{{ site.data.config.logo | absolute_url }}" height="96" alt="{{ site.title }}">
+      <img class="h-14 lg:h-24" src="{{ site.config.logo | absolute_url }}" height="96" alt="{{ site.title }}">
     </a>
 
     <div class="flex items-center flex-1 justify-end">
             
       <nav class="hidden lg:flex lg:mr-5">
-        {% for link in site.data.navbar %}
+        {% for link in site.navbar %}
           {% if link.url contains 'http' %}
             {% assign domain = '' %}
           {% else %}
@@ -114,7 +114,7 @@
     >
     <div class="overflow-hidden bg-white">
       <div class="space-y-1 p-6 pb-20">
-        {% for link in site.data.navbar %}
+        {% for link in site.navbar %}
           {% if link.url contains 'http' %}
             {% assign domain = '' %}
           {% else %}
