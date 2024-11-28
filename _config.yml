@@ -88,20 +88,18 @@ social:
   github: "https://github.com/korenmiklos"
 logo: /assets/images/logo.svg
 logo_light: /assets/images/logo-light.svg
-copyright: "&copy; 2023 HUN-REN KRTK"
+copyright: "&copy; 2024 HUN-REN KRTK"
 url: https://macromanagers.eu
 navbar:
+  - text: Project
+    url: "/project/"
   - text: Events
     url: "/events/"
-  - text: Mentions
-    url: "/mentions/"
   - text: Datasets
     url: "/datasets/"
   - text: More
     dropdown:
     - text: Publications
       url: "/publications/"
-    - text: Project
-      url: "/project/"
-    - text: Codedthinking Story
-      url: "https://codedthinking.com/story/"
+    - text: Media mentions
+      url: "/mentions/"
