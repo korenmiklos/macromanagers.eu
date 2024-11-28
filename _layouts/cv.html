@@ -123,7 +123,7 @@ layout: default
       {% for post in filtered_courses %}
         {% if post.tags contains 'top' %}
           <div class="mt-7">
-            <a href="{{ post.url | prepend: site.config.courses.url }}" class="text-brand font-bold text-lg inline-block">{{ post.title }} &rarr;</a>
+            <a href="{{ post.url | prepend: site.courses.url }}" class="text-brand font-bold text-lg inline-block">{{ post.title }} &rarr;</a>
             {% if post.description and post.description != empty %}
               <p class="text-gray-2 mt-0.5">{{ post.description }}</p>
             {% endif %}
@@ -136,7 +136,7 @@ layout: default
       {% for post in filtered_blog %}
         {% if post.tags contains 'top' %}
           <div class="mt-7">
-            <a href="{{ post.url | prepend: site.config.blog.url }}" class="text-brand font-bold text-lg inline-block">{{ post.title }} &rarr;</a>
+            <a href="{{ post.url | prepend: site.blog.url }}" class="text-brand font-bold text-lg inline-block">{{ post.title }} &rarr;</a>
             {% if post.description and post.description != empty %}
               <p class="text-gray-2 mt-0.5">{{ post.description }}</p>
             {% endif %}

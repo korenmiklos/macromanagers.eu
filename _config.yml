@@ -1,7 +1,6 @@
 ---
 title: MACROMANAGERS
 description: The Macroeconomics of Managers
-url: 
 baseurl: 
 lang: en
 permalink: "/:title/"
@@ -83,16 +82,14 @@ defaults:
       type: datasets
     values:
       layout: dataset
-config:
-  social:
-    twitter: "https://twitter.com/korenmiklos"
-    google: "https://scholar.google.com/citations?user=fFTegXUAAAAJ"
-    github: "https://github.com/korenmiklos"
-
-  logo: /assets/images/logo.svg
-  logo_light: /assets/images/logo-light.svg
-  copyright: "&copy; 2023 HUN-REN KRTK"
-  url: https://macromanagers.eu
+social:
+  twitter: "https://twitter.com/korenmiklos"
+  google: "https://scholar.google.com/citations?user=fFTegXUAAAAJ"
+  github: "https://github.com/korenmiklos"
+logo: /assets/images/logo.svg
+logo_light: /assets/images/logo-light.svg
+copyright: "&copy; 2023 HUN-REN KRTK"
+url: https://macromanagers.eu
 navbar:
   - text: Events
     url: "/events/"
