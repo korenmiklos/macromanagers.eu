@@ -12,6 +12,7 @@ authors:
 - koren
 coauthors:
 - depirro
+- koren
 - laki
 - orban
 - reizer
