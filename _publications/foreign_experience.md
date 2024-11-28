@@ -7,8 +7,7 @@ team:
   - koren
   - laki
 grants:
-- name: NKFIH
-  image: /assets/images/grant-2.png
+- elvonal
 title: "The Value of International Experience: Managerial Talent and Firm Performance in Post-Communist Hungary"
 date: 2024-11-01
 tags:

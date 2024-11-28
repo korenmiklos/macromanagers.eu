@@ -10,10 +10,8 @@ team:
   - "koren"
   - "orban"
 grants:
-- name: ERC
-  image: /assets/images/erc.png
-- name: NKFIH
-  image: /assets/images/elvonal.png
+- erc-advanced-2022
+- elvonal
 title: "The Macroeconomics of Managers: Supply, Selection, and Competition"
 date: 2023-09-29
 tags:

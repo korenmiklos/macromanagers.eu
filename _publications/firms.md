@@ -7,8 +7,7 @@ team:
   - szilagyi
   - vereckei
 grants:
-- name: NKFIH
-  image: /assets/images/grant-2.png
+- elvonal
 title: Kis- és középvállalkozások Magyarországon, 1988-2022
 date: 2024-12-01
 tags:
