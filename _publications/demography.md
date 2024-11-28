@@ -7,8 +7,7 @@ team:
   - "orban"
   - "tothcs"
 grants:
-- name: NKFIH
-  image: /assets/images/elvonal.png
+- elvonal
 title: "Demography of Entrepreneurs: Entry, Exit, and Population Aging"
 date: 2024-11-01
 tags:
