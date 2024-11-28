@@ -17,9 +17,9 @@ layout: default
 
     <h2 class="text-blue font-normal mt-8 lg:mt-16">Made possible by</h2>
     <div class="gap-7 grid lg:grid-cols-2 mt-12">
-      {% for item in page.grants %}
-        <img class="w-full" src="{{ item.image | absolute_url }}" loading="lazy" alt="{{ item.name }}">
-      {% endfor %}
+      {% for grant1 in page.grants %}{% for grant2 in site.data.grants %}{% if grant1 == grant2.id %}
+        <img class="w-full" src="{{ grant2.logo | absolute_url }}" loading="lazy" alt="{{ grant2.title }}">
+      {% endif %}{% endfor %}{% endfor %}
     </div>
     <div class="mt-14 lg:mt-16 prose max-w-none prose-slate prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand">
       {{ content }}

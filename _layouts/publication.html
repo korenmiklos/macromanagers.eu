@@ -46,10 +46,10 @@ layout: default
       {% if page.grants and page.grants != empty %}
         <h2 class="text-blue uppercase font-bold text-3xl mb-16 mt-24">Sponsor institute</h2>
         <div class="space-y-7">
-          {% for item in page.grants %}
-            <img class="w-full" src="{{ item.image | absolute_url }}" loading="lazy" alt="{{ item.name }}">
-          {% endfor %}
-        </div>
+          {% for grant1 in page.grants %}{% for grant2 in site.data.grants %}{% if grant1 == grant2.id %}
+          <img class="w-full" src="{{ grant2.logo | absolute_url }}" loading="lazy" alt="{{ grant2.title }}">
+        {% endif %}{% endfor %}{% endfor %}
+          </div>
       {% endif %}
 
       <h2 class="text-blue uppercase font-bold text-3xl mb-16 mt-24">Project Resources</h2>
