@@ -19,7 +19,7 @@ coauthors:
 - telegdy
 - tothcs
 team:
-- kiss
+- kissg
 - neubrandt
 - szilagyi
 - vereckei
