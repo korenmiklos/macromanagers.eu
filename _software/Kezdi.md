@@ -3,6 +3,9 @@ title: Kezdi.jl
 description: A data analysis package for economists
 date: 2024-07-12
 language: julia
+authors:
+- koren
+- kissg
 categories:
 - julia
 code: |-
