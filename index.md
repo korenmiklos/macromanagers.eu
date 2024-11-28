@@ -4,7 +4,7 @@ title: Courses
 
 intro:
   heading: MACROMANAGERS
-  copy: The project studies the role of management practices in economic development. 
+  copy: What is the role of managers and entrepreneurs in economic development? 
 events:
   heading: Upcoming events
   copy: Join conference talks, workshops, and other events.

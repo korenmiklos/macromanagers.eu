@@ -19,11 +19,12 @@ coauthors:
 - telegdy
 - tothcs
 team:
+- kiss
 - neubrandt
 - szilagyi
 - vereckei
 
-intro: Some info about the project lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam est, pretium eu lacinia in, consectetur a tellus. In laoreet nulla tellus, non hendrerit lacus pharetra sit amet. Vestibulum vitae massa nulla. Maecenas in odio consectetur augue sagittis ultricies. Sed aliquam, est vitae consequat faucibus, nisi mauris consectetur ligula, at maximus nisl ipsum vel augue. Maecenas id nisi justo. Vivamus eleifend et nulla quis dictum.
+intro: "What is the role of managers and entrepreneurs in economic development? It is understood that good management practices can improve business performance, but what policy interventions can help such practices spread? We build quantifiable equilbrium models and estimate them on 40 years of micro data from Austria, Germany and Hungary to answer these questions."
 ---
 
-Some info about the project lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam est, pretium eu lacinia in, consectetur a tellus. In laoreet nulla tellus, non hendrerit lacus pharetra sit amet. Vestibulum vitae massa nulla. Maecenas in odio consectetur augue sagittis ultricies. Sed aliquam, est vitae consequat faucibus, nisi mauris consectetur ligula, at maximus nisl ipsum vel augue. Maecenas id nisi justo. Vivamus eleifend et nulla quis dictum.
+This research was funded by the European Research Council (ERC Advanced Grant agreement number 101097789) and by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). The views expressed in this paper are those of the authors and do not necessary reflect the official view of the European Union, the European Research Council, or the National Research, Development and Innovation Office.
