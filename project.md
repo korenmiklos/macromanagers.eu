@@ -3,11 +3,8 @@ layout: project
 title: MACROMANAGERS
 date: 2022-09-01
 grants:
-- name: ERC
-  image: /assets/images/grant-1.png
-- name: NKFIH
-  image: /assets/images/grant-2.png
-
+- erc-advanced-2022
+- elvonal
 authors:
 - koren
 coauthors:

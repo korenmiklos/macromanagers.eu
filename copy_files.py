@@ -4,7 +4,7 @@ import os
 
 # Define collections to process
 collections = ['_posts', '_publications', '_courses', '_datasets', '_events', '_software']
-files = ['team.csv', 'mentions.yaml']
+files = ['team.csv', 'mentions.yaml', 'grants.yaml']
 
 # Process markdown files in collections
 for collection in collections:
