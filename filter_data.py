@@ -48,10 +48,8 @@ def copy_data_files(src_dir, dest_dir, files_to_check=[]):
             dest_file = os.path.join(dest_subdir, file)
             
             if file in files_to_check:
+                # copy .csv always, buy .yaml only if it contains the tag 
                 if file.endswith('.csv'):
-                    copy_csv_file(src_file, dest_file)
+                    os.replace(src_file, dest_file)
                 elif file.endswith(('.yaml', '.yml')):
                     copy_yaml_file(src_file, dest_file)
-            else:
-                # copy file as is
-                os.replace(src_file, dest_file)
