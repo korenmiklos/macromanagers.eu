@@ -1,5 +1,4 @@
-erc-starting-2012:
-  id: erc-starting-2012
+- id: erc-starting-2012
   title: KNOWLEDGEFLOWS
   donor: European Research Council
   number: 313164
@@ -8,8 +7,7 @@ erc-starting-2012:
   start: 2012
   end: 2018
   acknowledgement: This research was funded by the European Research Council (ERC Starting Grant agreement number 313164). The views expressed in this project are those of the authors and do not necessary reflect the official view of the European Union or the European Research Council.
-erc-advanced-2023:
-  id: erc-advanced-2023
+- id: erc-advanced-2023
   title: MACROMGR
   donor: European Research Council
   number: 101097789
@@ -18,8 +16,7 @@ erc-advanced-2023:
   start: 2023
   end: 2028
   acknowledgement: This research was funded by the European Research Council (ERC Advanced Grant agreement number 101097789). The views expressed in this project are those of the authors and do not necessary reflect the official view of the European Union or the European Research Council.
-elvonal:
-  id: elvonal
+- id: elvonal
   title: Market for Managers
   donor: Hungarian National Research, Development and Innovation Office
   number: 144193
@@ -28,8 +25,7 @@ elvonal:
   start: 2022
   end: 2027
   acknowledgement: This research was funded by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). The views expressed in this project are those of the authors and do not necessary reflect the official view of the National Research, Development and Innovation Office.
-rethink:
-  id: rethink
+- id: rethink
   title: RETHINK-GSC
   donor: European Commission
   number: 101061123
@@ -38,8 +34,7 @@ rethink:
   start: 2022
   end: 2025
   acknowledgement: This research was funded by the European Commission (Horizon 2020 grant agreement number 101061123). The views expressed in this project are those of the authors and do not necessary reflect the official view of the European Union.
-respect: 
-  id: respect
+- id: respect
   title: RESPECT
   donor: European Commission
   number: 770680
