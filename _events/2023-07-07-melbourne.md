@@ -4,6 +4,7 @@ description: 2023 Macro Development Workshop at Deakin University
 event_date: 2023-07-07
 categories: 
   -  workshop
+project: babyboom
 speaker: Krisztina Orban
 location: Melbourne, Australia
 register: "#"
