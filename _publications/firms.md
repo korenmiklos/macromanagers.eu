@@ -9,7 +9,7 @@ team:
 grants:
 - elvonal
 title: Kis- és középvállalkozások Magyarországon, 1988-2022
-date: 2024-12-01
+date: 2024-11-01
 tags:
   - working
   - macromanagers

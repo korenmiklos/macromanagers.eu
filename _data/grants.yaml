@@ -1,31 +1,31 @@
-- id: erc-starting-2012
+erc-starting-2012:
   title: KNOWLEDGEFLOWS
   donor: European Research Council
   number: 313164
-  logo: /assets/images/grant-1.png
+  logo: /assets/images/erc.png
   url: https://cordis.europa.eu/project/id/313164
   start: 2012
   end: 2018
   acknowledgement: This research was funded by the European Research Council (ERC Starting Grant agreement number 313164). The views expressed in this project are those of the authors and do not necessary reflect the official view of the European Union or the European Research Council.
-- id: erc-advanced-2022
+erc-advanced-2022:
   title: MACROMGR
   donor: European Research Council
   number: 101097789
-  logo: /assets/images/grant-1.png
+  logo: /assets/images/erc.png
   url: https://cordis.europa.eu/project/id/101097789
   start: 2023
   end: 2028
   acknowledgement: This research was funded by the European Research Council (ERC Advanced Grant agreement number 101097789). The views expressed in this project are those of the authors and do not necessary reflect the official view of the European Union or the European Research Council.
-- id: elvonal
+elvonal:
   title: Market for Managers
   donor: Hungarian National Research, Development and Innovation Office
   number: 144193
-  logo: /assets/images/grant-2.png
+  logo: /assets/images/elvonal.png
   url: https://nkfih.gov.hu/palyazoknak/nkfi-alap/tamogatott-projektek-kkp22
   start: 2022
   end: 2027
   acknowledgement: This research was funded by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). The views expressed in this project are those of the authors and do not necessary reflect the official view of the National Research, Development and Innovation Office.
-- id: rethink
+rethink:
   title: RETHINK-GSC
   donor: European Commission
   number: 101061123
@@ -34,7 +34,7 @@
   start: 2022
   end: 2025
   acknowledgement: This research was funded by the European Commission (Horizon 2020 grant agreement number 101061123). The views expressed in this project are those of the authors and do not necessary reflect the official view of the European Union.
-- id: respect
+respect:
   title: RESPECT
   donor: European Commission
   number: 770680

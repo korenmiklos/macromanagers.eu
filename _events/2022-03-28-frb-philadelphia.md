@@ -9,6 +9,7 @@ aspectratio: 54
 code: missing
 description: Research seminar at the FRB Philadelphia
 image: https://images.unsplash.com/photo-1685134895237-f320ec7aa385?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2ODAxOTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzI2NDM2MjB8&ixlib=rb-4.0.3&q=80&w=1080
+project: expat
 categories:
 - seminar
 - macromanagers
