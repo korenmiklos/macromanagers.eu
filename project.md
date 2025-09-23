@@ -15,6 +15,7 @@ coauthors:
 - reizer
 - telegdy
 - tothcs
+- wohak
 team:
 - kissg
 - neubrandt
