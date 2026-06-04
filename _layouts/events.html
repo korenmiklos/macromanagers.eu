@@ -24,7 +24,7 @@ layout: default
       </div>
 
       <div x-show="tab === 'upcoming'" class="divide-y divide-gray-3">
-        {% for post in posts %}
+        {% for post in posts reversed %}
           {% assign event_date = post.event_date | date: '%s' %}
           {% if event_date >= now %}
             {% include card-event.html %}
