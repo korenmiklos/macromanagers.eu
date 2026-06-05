@@ -65,7 +65,7 @@ layout: default
         <div>
           <div class="swiper swiper-events overflow-hidden -mr-6 md:mr-0 relative" aria-label="Slider">
             <div class="swiper-wrapper flex">
-              {% assign posts = site.events | sort: 'event_date' | reverse %}
+              {% assign posts = site.events | sort: 'event_date' %}
               {% assign now = 'now' | date: '%s' %}
               {% assign future_posts = "" | split: "" %}
               {% for post in posts %}
